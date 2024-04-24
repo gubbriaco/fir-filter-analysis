@@ -1,3 +1,12 @@
+#ifndef DEFINITIONS_H
+
+
+/**
+ * Represents FIR filter size
+ * @param SIZE FIR filter size
+ */
+#define SIZE 11
+
 /**
  * Represents the data type used to store the coefficients of the FIR filter
  * @param coeffsType data type for FIR filter coefficients
@@ -15,3 +24,6 @@ typedef int samplesType;
  * @param accType data type for FIR filter intermediate accumulator
  */
 typedef int accType;
+
+
+#endif
