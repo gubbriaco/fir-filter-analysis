@@ -2,11 +2,11 @@
 
 
 /**
- * Unoptimized Design.
+ * Operation Chaining Design.
  * @param inputFilter
  * @param outputFilter
  */
-void firConvolutionUnoptimized(samplesType inputFilter, samplesType* outputFilter) {
+void firConvolutionOperationChaining(samplesType inputFilter, samplesType* outputFilter) {
 
 	/**
 	 * Data structure containing the coefficients of the FIR filter.

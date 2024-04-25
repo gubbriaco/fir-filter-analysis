@@ -25,5 +25,26 @@ typedef int samplesType;
  */
 typedef int accType;
 
+/**
+ * Unoptimized Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionUnoptimized(samplesType inputFilter, samplesType* outputFilter);
+
+/**
+ * Operation Chaining Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionOperationChaining(samplesType inputFilter, samplesType* outputFilter);
+
+/**
+ * Loop Fission Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionLoopFission(samplesType inputFilter, samplesType* outputFilter);
+
 
 #endif
