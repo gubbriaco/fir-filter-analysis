@@ -6,6 +6,8 @@ void firConvolutionUnoptimized(samplesType inputFilter, samplesType* outputFilte
 void firConvolutionOperationChaining(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopFission(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionCodeHoisting(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionLoopUnrollingFactor2(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionLoopUnrollingFactor4(samplesType inputFilter, samplesType* outputFilter);
 
 
 int main() {
@@ -35,6 +37,18 @@ int main() {
 	printf("\n*******firConvolutionLoopFission*******\n");
 	for( int i=0; i<SIZE; ++i ) {
 		firConvolutionLoopFission( inputFilter[i], &outputFilter );
+		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
+	}
+
+	printf("\n*******firConvolutionLoopUnrollingFactor2*******\n");
+	for( int i=0; i<SIZE; ++i ) {
+		firConvolutionLoopUnrollingFactor2( inputFilter[i], &outputFilter );
+		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
+	}
+
+	printf("\n*******firConvolutionLoopUnrollingFactor4*******\n");
+	for( int i=0; i<SIZE; ++i ) {
+		firConvolutionLoopUnrollingFactor4( inputFilter[i], &outputFilter );
 		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
 	}
 

@@ -40,11 +40,31 @@ void firConvolutionUnoptimized(samplesType inputFilter, samplesType* outputFilte
 void firConvolutionOperationChaining(samplesType inputFilter, samplesType* outputFilter);
 
 /**
+ * Code Hoisting Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionCodeHoisting(samplesType inputFilter, samplesType* outputFilter);
+
+/**
  * Loop Fission Design.
  * @param inputFilter
  * @param outputFilter
  */
 void firConvolutionLoopFission(samplesType inputFilter, samplesType* outputFilter);
 
+/**
+ * Loop Unrolling Factor=2 Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionLoopUnrollingFactor2(samplesType inputFilter, samplesType* outputFilter);
+
+/**
+ * Loop Unrolling Factor=4 Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionLoopUnrollingFactor4(samplesType inputFilter, samplesType* outputFilter);
 
 #endif
