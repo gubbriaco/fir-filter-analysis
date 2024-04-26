@@ -28,10 +28,9 @@ void firConvolutionCodeHoisting(samplesType inputFilter, samplesType* outputFilt
 
 	int i;
 	/**
-	 * This loop implements the convolution operation between the vector of input samples stored
-	 * in the shiftRegister scroll register and the vector of FIR filter coefficientsFilter
-	 * coefficients. The result of this convolution is accumulated in the accumulator variable,
-	 * which represents the FIR filter output for the current input sample inputFilter.
+	 * This loop provides one less iteration than normal so as to implement the if part of
+	 * the code for the base case (i==0) outside the for loop and thus avoiding a resource-
+	 * level overhead to implement that just-mentioned if.
 	 */
 	loop: for( i=SIZE-1; i>0; --i ) {
 		shiftRegister[i] = shiftRegister[i-1];
