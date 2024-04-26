@@ -1,0 +1,20 @@
+
+
+Implementation tool: Xilinx Vivado v.2018.3
+Project:             fir_filter
+Solution:            OperationChaining7nsSolution
+Device target:       xc7z020clg484-1
+Report date:         Fri Apr 26 11:27:30 +0200 2024
+
+#=== Post-Implementation Resource usage ===
+SLICE:           75
+LUT:            186
+FF:             222
+DSP:              4
+BRAM:             0
+SRL:              0
+#=== Final timing ===
+CP required:    7.000
+CP achieved post-synthesis:    5.745
+CP achieved post-implementation:    5.692
+Timing met
