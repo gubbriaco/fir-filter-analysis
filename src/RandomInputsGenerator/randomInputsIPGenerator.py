@@ -4,7 +4,7 @@ import random
 class RandomInputsIPGenerator:
     
     @staticmethod
-    def randInputsIP(path, cycles, noInputs, noBitsInput):
+    def randInputsIP(path, noInputs, noBitsInput):
         with open(path, 'w') as file:
             for _ in range(noInputs):
                 binaryInput = RandomInputsIPGenerator.generateBinary32(
@@ -13,10 +13,9 @@ class RandomInputsIPGenerator:
 
                 RandomInputsIPGenerator.writeToFile(
                     file=file,
-                    cycles=cycles,
                     binaryInput=binaryInput
                 )
-            file.write(f"        wait;\n")
+            file.write(f"          wait;\n")
             file.close()
                 
     @staticmethod         
@@ -29,7 +28,6 @@ class RandomInputsIPGenerator:
         )
     
     @staticmethod
-    def writeToFile(file, cycles, binaryInput):
-        file.write(f'        inputFilter <= "{binaryInput}";\n')
-        #file.write(f'        inputFilter <= "00000000000000000000000000000001";\n')
-        file.write(f'        wait for {cycles}*clk_period;\n')
+    def writeToFile(file, binaryInput):
+        file.write(f'          inputFilter <= "{binaryInput}";\n')
+        file.write(f'          wait for cycles*clk_period;\n')
