@@ -36,6 +36,8 @@ architecture Behavioral of firConvolutionUnoptimized_tb is
 	signal outputFilter :  STD_LOGIC_VECTOR (31 DOWNTO 0);
 	signal outputFilter_ap_vld :  STD_LOGIC;
 
+	signal cycles: integer := 44;
+
 
 	begin
 	
@@ -61,34 +63,35 @@ architecture Behavioral of firConvolutionUnoptimized_tb is
 			begin
 				ap_rst <= '1';
 				ap_start <= '0';
-				wait for 125ns;
+				wait for 250ns;
 				ap_rst <= '0';
 				wait for clk_period;
 				ap_start <= '1';
-				
-        inputFilter <= "01001010111000001011001001101011";
-        wait for 44*clk_period;
-        inputFilter <= "01111111110010010101101100001000";
-        wait for 44*clk_period;
-        inputFilter <= "11000010010111001100100000010011";
-        wait for 44*clk_period;
-        inputFilter <= "00010101100101111101011111011001";
-        wait for 44*clk_period;
-        inputFilter <= "00101100100001000111010101001111";
-        wait for 44*clk_period;
-        inputFilter <= "11101101110010110111110111100110";
-        wait for 44*clk_period;
-        inputFilter <= "10110001010010001000001110000100";
-        wait for 44*clk_period;
-        inputFilter <= "11011111111010111010110000000010";
-        wait for 44*clk_period;
-        inputFilter <= "10001101010110010101101110001101";
-        wait for 44*clk_period;
-        inputFilter <= "10000000000011010101100110011101";
-        wait for 44*clk_period;
-        inputFilter <= "01000000100011010000111111101111";
-        wait for 44*clk_period;
-        wait;
+
+          inputFilter <= "01101100011111000000011010001110";
+          wait for cycles*clk_period;
+          inputFilter <= "10101100001011101011101101100010";
+          wait for cycles*clk_period;
+          inputFilter <= "11110000011100010010110001111100";
+          wait for cycles*clk_period;
+          inputFilter <= "01101101000111100000010100000100";
+          wait for cycles*clk_period;
+          inputFilter <= "11000100010011111001010011011001";
+          wait for cycles*clk_period;
+          inputFilter <= "01101001100110010111101010010010";
+          wait for cycles*clk_period;
+          inputFilter <= "10110101110111110100000101110011";
+          wait for cycles*clk_period;
+          inputFilter <= "11110011001101000000001100001010";
+          wait for cycles*clk_period;
+          inputFilter <= "01010001001110100111010101001001";
+          wait for cycles*clk_period;
+          inputFilter <= "10100010011110110010000010011000";
+          wait for cycles*clk_period;
+          inputFilter <= "11101000110011101001011101010001";
+          wait for cycles*clk_period;
+          wait;
+		  
 		end process uut_process;
 
 end Behavioral;
