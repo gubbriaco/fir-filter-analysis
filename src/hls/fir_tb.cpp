@@ -1,5 +1,6 @@
 #include "definitions.h"
 #include <stdio.h>
+#include "ap_int.h"
 
 
 void firConvolutionUnoptimized(samplesType inputFilter, samplesType* outputFilter);
@@ -8,6 +9,9 @@ void firConvolutionLoopFission(samplesType inputFilter, samplesType* outputFilte
 void firConvolutionCodeHoisting(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopUnrollingFactor2(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopUnrollingFactor4(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionLoopPipelining(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionBitwidthOptimization(ap_int<32> inputFilter, ap_int<64+(SIZE-1)>* outputFilter);
+void firConvolutionAXI(hls::stream<AXI_TYPE> &inputStreamFilter, hls::stream<AXI_TYPE> &outputStreamFilter);
 
 
 int main() {
@@ -50,6 +54,43 @@ int main() {
 	for( int i=0; i<SIZE; ++i ) {
 		firConvolutionLoopUnrollingFactor4( inputFilter[i], &outputFilter );
 		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
+	}
+
+	printf("\n*******firConvolutionLoopPipelining*******\n");
+	for( int i=0; i<SIZE; ++i ) {
+		firConvolutionLoopPipelining( inputFilter[i], &outputFilter );
+		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
+	}
+
+	/*
+	ap_int<32> inputFilterAp[SIZE] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+	ap_int<64+(SIZE-1)> outputFilterAp;
+	printf("\n*******firConvolutionBitwidthOptimization*******\n");
+	ap_int<4> i;
+	for( i=0; i<SIZE; ++i ) {
+		firConvolutionBitwidthOptimization( inputFilterAp[i], &outputFilterAp );
+		printf("%-20d%-20d%-20d\n", i, inputFilterAp[i], outputFilterAp);
+	}
+	*/
+
+	hls::stream<AXI_TYPE> inputStreamFilter;
+	hls::stream<AXI_TYPE> outputStreamFilter;
+	AXI_TYPE inFilter, outFilter;
+	for (int i=0; i<SIZE; i++) {
+		inFilter.data=inputFilter[i];
+		inFilter.strb = -1;
+		inFilter.keep = 15;
+		inFilter.user = 0;
+		inFilter.last = (i==SIZE-1) ? 1 : 0;
+		inFilter.id = 0;
+		inFilter.dest = 0;
+		inputStreamFilter << inFilter;
+	}
+	printf("\n*******firConvolutionAXI*******\n");
+	firConvolutionAXI( inputStreamFilter, outputStreamFilter );
+	for( int i=0; i<SIZE; ++i ) {
+		outFilter = outputStreamFilter.read();
+		printf("%-20d%-20d%-20d\n", i, inFilter.data.to_int(), outFilter.data.to_int());
 	}
 
 	return 0;

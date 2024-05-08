@@ -1,3 +1,10 @@
+#include "ap_int.h"
+#include <ap_axi_sdata.h>
+#include <hls_stream.h>
+#include <stdio.h>
+
+
+
 #ifndef DEFINITIONS_H
 
 
@@ -66,5 +73,33 @@ void firConvolutionLoopUnrollingFactor2(samplesType inputFilter, samplesType* ou
  * @param outputFilter
  */
 void firConvolutionLoopUnrollingFactor4(samplesType inputFilter, samplesType* outputFilter);
+
+/**
+ * Loop Pipelining Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionLoopPipelining(samplesType inputFilter, samplesType* outputFilter);
+
+/**
+ * Loop Pipelining Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionBitwidthOptimization(ap_int<32> inputFilter, ap_int<64+(SIZE-1)>* outputFilter);
+
+/**
+ * Represents the AXI type for AXI-stream interface.
+ * @param AXI_TYPE AXI type
+ */
+typedef ap_axiu<32, 2, 5, 6> AXI_TYPE;
+
+/**
+ * AXI Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionAXI(hls::stream<AXI_TYPE> &inputStreamFilter, hls::stream<AXI_TYPE> &outputStreamFilter);
+
 
 #endif

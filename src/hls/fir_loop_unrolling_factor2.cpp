@@ -34,15 +34,18 @@ void firConvolutionLoopUnrollingFactor2(samplesType inputFilter, samplesType* ou
 		shiftRegister[i] = shiftRegister[i-1];
 		shiftRegister[i-1] = shiftRegister[i-2];
 	}
-	shiftRegister[1] = shiftRegister[0];
+	if( i==1 ) {
+		shiftRegister[1] = shiftRegister[0];
+	}
 	shiftRegister[0] = inputFilter;
 
-	loopAccumulator: for( i=SIZE-1; i>1; i=i-2 ) {
-		accumulator += shiftRegister[i] * coefficientsFilter[i];
-		accumulator += shiftRegister[i-1] * coefficientsFilter[i-1];
+	loopAccumulator: for( i=SIZE-1; i>=0; --i ) {
+		if( i==0 ) {
+			accumulator += inputFilter * coefficientsFilter[0];
+		} else {
+			accumulator += shiftRegister[i] * coefficientsFilter[i];
+		}
 	}
-	accumulator += shiftRegister[1] * coefficientsFilter[1];
-	accumulator += inputFilter * coefficientsFilter[0];
 
 	*outputFilter = accumulator;
 
