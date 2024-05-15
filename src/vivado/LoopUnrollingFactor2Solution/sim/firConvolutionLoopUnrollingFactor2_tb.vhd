@@ -36,7 +36,7 @@ architecture Behavioral of firConvolutionLoopUnrollingFactor2_tb is
 	signal outputFilter :  STD_LOGIC_VECTOR (31 DOWNTO 0);
 	signal outputFilter_ap_vld :  STD_LOGIC;
 
-	signal cycles: integer := 35;
+	signal cycles: integer := 57;
 
 
 	begin
