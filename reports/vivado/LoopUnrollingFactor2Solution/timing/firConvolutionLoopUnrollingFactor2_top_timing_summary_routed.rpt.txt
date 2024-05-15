@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed May  1 17:33:13 2024
+| Date         : Wed May 15 12:24:01 2024
 | Host         : Giorgio running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file firConvolutionLoopUnrollingFactor2_top_timing_summary_routed.rpt -pb firConvolutionLoopUnrollingFactor2_top_timing_summary_routed.pb -rpx firConvolutionLoopUnrollingFactor2_top_timing_summary_routed.rpx -warn_on_violation
 | Design       : firConvolutionLoopUnrollingFactor2_top
@@ -126,7 +126,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      4.203        0.000                      0                  559        0.199        0.000                      0                  559        4.500        0.000                       0                   129  
+      4.330        0.000                      0                  389        0.141        0.000                      0                  389        4.500        0.000                       0                    77  
 
 
 All user specified timing constraints are met.
@@ -149,7 +149,7 @@ myclk  {0.000 5.000}      10.000          100.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-myclk               4.203        0.000                      0                  559        0.199        0.000                      0                  559        4.500        0.000                       0                   129  
+myclk               4.330        0.000                      0                  389        0.141        0.000                      0                  389        4.500        0.000                       0                    77  
 
 
 ------------------------------------------------------------------------------------------------
@@ -180,136 +180,28 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  myclk
   To Clock:  myclk
 
-Setup :            0  Failing Endpoints,  Worst Slack        4.203ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.199ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        4.330ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.141ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             4.203ns  (required time - arrival time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+Slack (MET) :             4.330ns  (required time - arrival time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[6]/D
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             myclk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
-  Data Path Delay:        5.551ns  (logic 4.009ns (72.215%)  route 1.542ns (27.785%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.150ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.510ns = ( 14.510 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.116ns
-    Clock Pessimism Removal (CPR):    0.457ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.873     5.116    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y22          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
-  -------------------------------------------------------------------    -------------------
-    DSP48_X3Y22          DSP48E1 (Prop_dsp48e1_CLK_P[6])
-                                                      4.009     9.125 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/P[6]
-                         net (fo=1, routed)           1.542    10.668    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2_n_103
-    SLICE_X96Y52         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[6]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock myclk rise edge)     10.000    10.000 r  
-    K19                                               0.000    10.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000    10.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.609    14.510    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X96Y52         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[6]/C
-                         clock pessimism              0.457    14.967    
-                         clock uncertainty           -0.035    14.931    
-    SLICE_X96Y52         FDRE (Setup_fdre_C_D)       -0.061    14.870    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[6]
-  -------------------------------------------------------------------
-                         required time                         14.870    
-                         arrival time                         -10.668    
-  -------------------------------------------------------------------
-                         slack                                  4.203    
-
-Slack (MET) :             4.237ns  (required time - arrival time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[3]/D
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             myclk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
-  Data Path Delay:        5.515ns  (logic 4.009ns (72.695%)  route 1.506ns (27.305%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.150ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.510ns = ( 14.510 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.116ns
-    Clock Pessimism Removal (CPR):    0.457ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.873     5.116    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y22          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
-  -------------------------------------------------------------------    -------------------
-    DSP48_X3Y22          DSP48E1 (Prop_dsp48e1_CLK_P[3])
-                                                      4.009     9.125 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/P[3]
-                         net (fo=1, routed)           1.506    10.631    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2_n_106
-    SLICE_X96Y50         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[3]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock myclk rise edge)     10.000    10.000 r  
-    K19                                               0.000    10.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000    10.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.609    14.510    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X96Y50         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[3]/C
-                         clock pessimism              0.457    14.967    
-                         clock uncertainty           -0.035    14.931    
-    SLICE_X96Y50         FDRE (Setup_fdre_C_D)       -0.063    14.868    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[3]
-  -------------------------------------------------------------------
-                         required time                         14.868    
-                         arrival time                         -10.631    
-  -------------------------------------------------------------------
-                         slack                                  4.237    
-
-Slack (MET) :             4.331ns  (required time - arrival time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
-                            (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[0]
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[0]
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
   Data Path Delay:        4.208ns  (logic 4.206ns (99.952%)  route 0.002ns (0.048%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.596ns = ( 14.596 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.116ns
-    Clock Pessimism Removal (CPR):    0.495ns
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.590ns = ( 14.590 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.110ns
+    Clock Pessimism Removal (CPR):    0.494ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -324,13 +216,13 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.873     5.116    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y22          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+                         net (fo=76, routed)          1.867     5.110    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y26          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
   -------------------------------------------------------------------    -------------------
-    DSP48_X3Y22          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[0])
-                                                      4.206     9.322 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/PCOUT[0]
-                         net (fo=1, routed)           0.002     9.324    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2_n_157
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[0]
+    DSP48_X4Y26          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[0])
+                                                      4.206     9.316 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/PCOUT[0]
+                         net (fo=1, routed)           0.002     9.318    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2_n_156
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[0]
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)     10.000    10.000 r  
@@ -339,32 +231,32 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.694    14.596    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CLK
-                         clock pessimism              0.495    15.090    
-                         clock uncertainty           -0.035    15.055    
-    DSP48_X3Y23          DSP48E1 (Setup_dsp48e1_CLK_PCIN[0])
-                                                     -1.400    13.655    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0
+                         net (fo=76, routed)          1.688    14.590    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/CLK
+                         clock pessimism              0.494    15.083    
+                         clock uncertainty           -0.035    15.048    
+    DSP48_X4Y27          DSP48E1 (Setup_dsp48e1_CLK_PCIN[0])
+                                                     -1.400    13.648    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0
   -------------------------------------------------------------------
-                         required time                         13.655    
-                         arrival time                          -9.324    
+                         required time                         13.648    
+                         arrival time                          -9.318    
   -------------------------------------------------------------------
-                         slack                                  4.331    
+                         slack                                  4.330    
 
-Slack (MET) :             4.331ns  (required time - arrival time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+Slack (MET) :             4.330ns  (required time - arrival time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[10]
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[10]
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
   Data Path Delay:        4.208ns  (logic 4.206ns (99.952%)  route 0.002ns (0.048%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.596ns = ( 14.596 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.116ns
-    Clock Pessimism Removal (CPR):    0.495ns
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.590ns = ( 14.590 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.110ns
+    Clock Pessimism Removal (CPR):    0.494ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -379,13 +271,13 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.873     5.116    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y22          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+                         net (fo=76, routed)          1.867     5.110    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y26          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
   -------------------------------------------------------------------    -------------------
-    DSP48_X3Y22          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[10])
-                                                      4.206     9.322 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/PCOUT[10]
-                         net (fo=1, routed)           0.002     9.324    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2_n_147
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[10]
+    DSP48_X4Y26          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[10])
+                                                      4.206     9.316 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/PCOUT[10]
+                         net (fo=1, routed)           0.002     9.318    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2_n_146
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[10]
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)     10.000    10.000 r  
@@ -394,32 +286,32 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.694    14.596    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CLK
-                         clock pessimism              0.495    15.090    
-                         clock uncertainty           -0.035    15.055    
-    DSP48_X3Y23          DSP48E1 (Setup_dsp48e1_CLK_PCIN[10])
-                                                     -1.400    13.655    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0
+                         net (fo=76, routed)          1.688    14.590    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/CLK
+                         clock pessimism              0.494    15.083    
+                         clock uncertainty           -0.035    15.048    
+    DSP48_X4Y27          DSP48E1 (Setup_dsp48e1_CLK_PCIN[10])
+                                                     -1.400    13.648    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0
   -------------------------------------------------------------------
-                         required time                         13.655    
-                         arrival time                          -9.324    
+                         required time                         13.648    
+                         arrival time                          -9.318    
   -------------------------------------------------------------------
-                         slack                                  4.331    
+                         slack                                  4.330    
 
-Slack (MET) :             4.331ns  (required time - arrival time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+Slack (MET) :             4.330ns  (required time - arrival time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[11]
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[11]
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
   Data Path Delay:        4.208ns  (logic 4.206ns (99.952%)  route 0.002ns (0.048%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.596ns = ( 14.596 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.116ns
-    Clock Pessimism Removal (CPR):    0.495ns
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.590ns = ( 14.590 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.110ns
+    Clock Pessimism Removal (CPR):    0.494ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -434,13 +326,13 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.873     5.116    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y22          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+                         net (fo=76, routed)          1.867     5.110    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y26          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
   -------------------------------------------------------------------    -------------------
-    DSP48_X3Y22          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[11])
-                                                      4.206     9.322 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/PCOUT[11]
-                         net (fo=1, routed)           0.002     9.324    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2_n_146
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[11]
+    DSP48_X4Y26          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[11])
+                                                      4.206     9.316 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/PCOUT[11]
+                         net (fo=1, routed)           0.002     9.318    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2_n_145
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[11]
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)     10.000    10.000 r  
@@ -449,32 +341,32 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.694    14.596    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CLK
-                         clock pessimism              0.495    15.090    
-                         clock uncertainty           -0.035    15.055    
-    DSP48_X3Y23          DSP48E1 (Setup_dsp48e1_CLK_PCIN[11])
-                                                     -1.400    13.655    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0
+                         net (fo=76, routed)          1.688    14.590    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/CLK
+                         clock pessimism              0.494    15.083    
+                         clock uncertainty           -0.035    15.048    
+    DSP48_X4Y27          DSP48E1 (Setup_dsp48e1_CLK_PCIN[11])
+                                                     -1.400    13.648    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0
   -------------------------------------------------------------------
-                         required time                         13.655    
-                         arrival time                          -9.324    
+                         required time                         13.648    
+                         arrival time                          -9.318    
   -------------------------------------------------------------------
-                         slack                                  4.331    
+                         slack                                  4.330    
 
-Slack (MET) :             4.331ns  (required time - arrival time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+Slack (MET) :             4.330ns  (required time - arrival time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[12]
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[12]
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
   Data Path Delay:        4.208ns  (logic 4.206ns (99.952%)  route 0.002ns (0.048%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.596ns = ( 14.596 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.116ns
-    Clock Pessimism Removal (CPR):    0.495ns
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.590ns = ( 14.590 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.110ns
+    Clock Pessimism Removal (CPR):    0.494ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -489,13 +381,13 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.873     5.116    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y22          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+                         net (fo=76, routed)          1.867     5.110    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y26          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
   -------------------------------------------------------------------    -------------------
-    DSP48_X3Y22          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[12])
-                                                      4.206     9.322 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/PCOUT[12]
-                         net (fo=1, routed)           0.002     9.324    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2_n_145
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[12]
+    DSP48_X4Y26          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[12])
+                                                      4.206     9.316 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/PCOUT[12]
+                         net (fo=1, routed)           0.002     9.318    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2_n_144
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[12]
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)     10.000    10.000 r  
@@ -504,32 +396,32 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.694    14.596    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CLK
-                         clock pessimism              0.495    15.090    
-                         clock uncertainty           -0.035    15.055    
-    DSP48_X3Y23          DSP48E1 (Setup_dsp48e1_CLK_PCIN[12])
-                                                     -1.400    13.655    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0
+                         net (fo=76, routed)          1.688    14.590    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/CLK
+                         clock pessimism              0.494    15.083    
+                         clock uncertainty           -0.035    15.048    
+    DSP48_X4Y27          DSP48E1 (Setup_dsp48e1_CLK_PCIN[12])
+                                                     -1.400    13.648    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0
   -------------------------------------------------------------------
-                         required time                         13.655    
-                         arrival time                          -9.324    
+                         required time                         13.648    
+                         arrival time                          -9.318    
   -------------------------------------------------------------------
-                         slack                                  4.331    
+                         slack                                  4.330    
 
-Slack (MET) :             4.331ns  (required time - arrival time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+Slack (MET) :             4.330ns  (required time - arrival time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[13]
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[13]
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
   Data Path Delay:        4.208ns  (logic 4.206ns (99.952%)  route 0.002ns (0.048%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.596ns = ( 14.596 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.116ns
-    Clock Pessimism Removal (CPR):    0.495ns
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.590ns = ( 14.590 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.110ns
+    Clock Pessimism Removal (CPR):    0.494ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -544,13 +436,13 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.873     5.116    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y22          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+                         net (fo=76, routed)          1.867     5.110    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y26          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
   -------------------------------------------------------------------    -------------------
-    DSP48_X3Y22          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[13])
-                                                      4.206     9.322 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/PCOUT[13]
-                         net (fo=1, routed)           0.002     9.324    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2_n_144
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[13]
+    DSP48_X4Y26          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[13])
+                                                      4.206     9.316 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/PCOUT[13]
+                         net (fo=1, routed)           0.002     9.318    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2_n_143
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[13]
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)     10.000    10.000 r  
@@ -559,32 +451,32 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.694    14.596    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CLK
-                         clock pessimism              0.495    15.090    
-                         clock uncertainty           -0.035    15.055    
-    DSP48_X3Y23          DSP48E1 (Setup_dsp48e1_CLK_PCIN[13])
-                                                     -1.400    13.655    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0
+                         net (fo=76, routed)          1.688    14.590    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/CLK
+                         clock pessimism              0.494    15.083    
+                         clock uncertainty           -0.035    15.048    
+    DSP48_X4Y27          DSP48E1 (Setup_dsp48e1_CLK_PCIN[13])
+                                                     -1.400    13.648    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0
   -------------------------------------------------------------------
-                         required time                         13.655    
-                         arrival time                          -9.324    
+                         required time                         13.648    
+                         arrival time                          -9.318    
   -------------------------------------------------------------------
-                         slack                                  4.331    
+                         slack                                  4.330    
 
-Slack (MET) :             4.331ns  (required time - arrival time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+Slack (MET) :             4.330ns  (required time - arrival time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[14]
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[14]
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
   Data Path Delay:        4.208ns  (logic 4.206ns (99.952%)  route 0.002ns (0.048%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.596ns = ( 14.596 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.116ns
-    Clock Pessimism Removal (CPR):    0.495ns
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.590ns = ( 14.590 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.110ns
+    Clock Pessimism Removal (CPR):    0.494ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -599,13 +491,13 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.873     5.116    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y22          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+                         net (fo=76, routed)          1.867     5.110    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y26          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
   -------------------------------------------------------------------    -------------------
-    DSP48_X3Y22          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[14])
-                                                      4.206     9.322 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/PCOUT[14]
-                         net (fo=1, routed)           0.002     9.324    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2_n_143
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[14]
+    DSP48_X4Y26          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[14])
+                                                      4.206     9.316 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/PCOUT[14]
+                         net (fo=1, routed)           0.002     9.318    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2_n_142
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[14]
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)     10.000    10.000 r  
@@ -614,32 +506,32 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.694    14.596    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CLK
-                         clock pessimism              0.495    15.090    
-                         clock uncertainty           -0.035    15.055    
-    DSP48_X3Y23          DSP48E1 (Setup_dsp48e1_CLK_PCIN[14])
-                                                     -1.400    13.655    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0
+                         net (fo=76, routed)          1.688    14.590    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/CLK
+                         clock pessimism              0.494    15.083    
+                         clock uncertainty           -0.035    15.048    
+    DSP48_X4Y27          DSP48E1 (Setup_dsp48e1_CLK_PCIN[14])
+                                                     -1.400    13.648    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0
   -------------------------------------------------------------------
-                         required time                         13.655    
-                         arrival time                          -9.324    
+                         required time                         13.648    
+                         arrival time                          -9.318    
   -------------------------------------------------------------------
-                         slack                                  4.331    
+                         slack                                  4.330    
 
-Slack (MET) :             4.331ns  (required time - arrival time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+Slack (MET) :             4.330ns  (required time - arrival time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[15]
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[15]
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
   Data Path Delay:        4.208ns  (logic 4.206ns (99.952%)  route 0.002ns (0.048%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.596ns = ( 14.596 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.116ns
-    Clock Pessimism Removal (CPR):    0.495ns
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.590ns = ( 14.590 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.110ns
+    Clock Pessimism Removal (CPR):    0.494ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -654,13 +546,13 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.873     5.116    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y22          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+                         net (fo=76, routed)          1.867     5.110    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y26          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
   -------------------------------------------------------------------    -------------------
-    DSP48_X3Y22          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[15])
-                                                      4.206     9.322 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/PCOUT[15]
-                         net (fo=1, routed)           0.002     9.324    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2_n_142
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[15]
+    DSP48_X4Y26          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[15])
+                                                      4.206     9.316 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/PCOUT[15]
+                         net (fo=1, routed)           0.002     9.318    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2_n_141
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[15]
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)     10.000    10.000 r  
@@ -669,32 +561,32 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.694    14.596    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CLK
-                         clock pessimism              0.495    15.090    
-                         clock uncertainty           -0.035    15.055    
-    DSP48_X3Y23          DSP48E1 (Setup_dsp48e1_CLK_PCIN[15])
-                                                     -1.400    13.655    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0
+                         net (fo=76, routed)          1.688    14.590    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/CLK
+                         clock pessimism              0.494    15.083    
+                         clock uncertainty           -0.035    15.048    
+    DSP48_X4Y27          DSP48E1 (Setup_dsp48e1_CLK_PCIN[15])
+                                                     -1.400    13.648    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0
   -------------------------------------------------------------------
-                         required time                         13.655    
-                         arrival time                          -9.324    
+                         required time                         13.648    
+                         arrival time                          -9.318    
   -------------------------------------------------------------------
-                         slack                                  4.331    
+                         slack                                  4.330    
 
-Slack (MET) :             4.331ns  (required time - arrival time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+Slack (MET) :             4.330ns  (required time - arrival time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[16]
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[16]
                             (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
   Data Path Delay:        4.208ns  (logic 4.206ns (99.952%)  route 0.002ns (0.048%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.596ns = ( 14.596 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.116ns
-    Clock Pessimism Removal (CPR):    0.495ns
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.590ns = ( 14.590 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.110ns
+    Clock Pessimism Removal (CPR):    0.494ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -709,13 +601,13 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.873     5.116    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y22          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
+                         net (fo=76, routed)          1.867     5.110    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y26          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
   -------------------------------------------------------------------    -------------------
-    DSP48_X3Y22          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[16])
-                                                      4.206     9.322 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/PCOUT[16]
-                         net (fo=1, routed)           0.002     9.324    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2_n_141
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/PCIN[16]
+    DSP48_X4Y26          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[16])
+                                                      4.206     9.316 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/PCOUT[16]
+                         net (fo=1, routed)           0.002     9.318    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2_n_140
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[16]
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)     10.000    10.000 r  
@@ -724,17 +616,127 @@ Slack (MET) :             4.331ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         1.694    14.596    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CLK
-                         clock pessimism              0.495    15.090    
-                         clock uncertainty           -0.035    15.055    
-    DSP48_X3Y23          DSP48E1 (Setup_dsp48e1_CLK_PCIN[16])
-                                                     -1.400    13.655    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0
+                         net (fo=76, routed)          1.688    14.590    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/CLK
+                         clock pessimism              0.494    15.083    
+                         clock uncertainty           -0.035    15.048    
+    DSP48_X4Y27          DSP48E1 (Setup_dsp48e1_CLK_PCIN[16])
+                                                     -1.400    13.648    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0
   -------------------------------------------------------------------
-                         required time                         13.655    
-                         arrival time                          -9.324    
+                         required time                         13.648    
+                         arrival time                          -9.318    
   -------------------------------------------------------------------
-                         slack                                  4.331    
+                         slack                                  4.330    
+
+Slack (MET) :             4.330ns  (required time - arrival time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[17]
+                            (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             myclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
+  Data Path Delay:        4.208ns  (logic 4.206ns (99.952%)  route 0.002ns (0.048%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.590ns = ( 14.590 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.110ns
+    Clock Pessimism Removal (CPR):    0.494ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          1.867     5.110    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y26          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X4Y26          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[17])
+                                                      4.206     9.316 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/PCOUT[17]
+                         net (fo=1, routed)           0.002     9.318    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2_n_139
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[17]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock myclk rise edge)     10.000    10.000 r  
+    K19                                               0.000    10.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000    10.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          1.688    14.590    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/CLK
+                         clock pessimism              0.494    15.083    
+                         clock uncertainty           -0.035    15.048    
+    DSP48_X4Y27          DSP48E1 (Setup_dsp48e1_CLK_PCIN[17])
+                                                     -1.400    13.648    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0
+  -------------------------------------------------------------------
+                         required time                         13.648    
+                         arrival time                          -9.318    
+  -------------------------------------------------------------------
+                         slack                                  4.330    
+
+Slack (MET) :             4.330ns  (required time - arrival time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[18]
+                            (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             myclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (myclk rise@10.000ns - myclk rise@0.000ns)
+  Data Path Delay:        4.208ns  (logic 4.206ns (99.952%)  route 0.002ns (0.048%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.590ns = ( 14.590 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.110ns
+    Clock Pessimism Removal (CPR):    0.494ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.143    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          1.867     5.110    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y26          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X4Y26          DSP48E1 (Prop_dsp48e1_CLK_PCOUT[18])
+                                                      4.206     9.316 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/PCOUT[18]
+                         net (fo=1, routed)           0.002     9.318    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2_n_138
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/PCIN[18]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock myclk rise edge)     10.000    10.000 r  
+    K19                                               0.000    10.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000    10.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.804    10.804 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.810    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.901 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          1.688    14.590    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    DSP48_X4Y27          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/CLK
+                         clock pessimism              0.494    15.083    
+                         clock uncertainty           -0.035    15.048    
+    DSP48_X4Y27          DSP48E1 (Setup_dsp48e1_CLK_PCIN[18])
+                                                     -1.400    13.648    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0
+  -------------------------------------------------------------------
+                         required time                         13.648    
+                         arrival time                          -9.318    
+  -------------------------------------------------------------------
+                         slack                                  4.330    
 
 
 
@@ -742,20 +744,20 @@ Slack (MET) :             4.331ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.199ns  (arrival time - required time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[2]/C
+Slack (MET) :             0.141ns  (arrival time - required time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[4]/C
                             (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[1]/D
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[0]/D
+                            (rising edge-triggered cell FDSE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
-  Data Path Delay:        0.304ns  (logic 0.209ns (68.837%)  route 0.095ns (31.163%))
-  Logic Levels:           1  (LUT5=1)
+  Data Path Delay:        0.287ns  (logic 0.189ns (65.806%)  route 0.098ns (34.194%))
+  Logic Levels:           1  (LUT4=1)
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.993ns
-    Source Clock Delay      (SCD):    1.475ns
-    Clock Pessimism Removal (CPR):    0.506ns
+    Destination Clock Delay (DCD):    1.987ns
+    Source Clock Delay      (SCD):    1.470ns
+    Clock Pessimism Removal (CPR):    0.505ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -765,14 +767,14 @@ Slack (MET) :             0.199ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.608     1.475    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X98Y54         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[2]/C
+                         net (fo=76, routed)          0.603     1.470    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X105Y66        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[4]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X98Y54         FDRE (Prop_fdre_C_Q)         0.164     1.639 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[2]/Q
-                         net (fo=15, routed)          0.095     1.733    firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167[2]
-    SLICE_X99Y54         LUT5 (Prop_lut5_I1_O)        0.045     1.778 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345[1]_i_1/O
-                         net (fo=1, routed)           0.000     1.778    firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345[1]_i_1_n_4
-    SLICE_X99Y54         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[1]/D
+    SLICE_X105Y66        FDRE (Prop_fdre_C_Q)         0.141     1.611 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[4]/Q
+                         net (fo=3, routed)           0.098     1.709    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_6_fu_211_p3
+    SLICE_X104Y66        LUT4 (Prop_lut4_I3_O)        0.048     1.757 r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm[0]_i_1/O
+                         net (fo=1, routed)           0.000     1.757    firConvolutionLoopUnrollingFactor2_IP/U0/ap_NS_fsm[0]
+    SLICE_X104Y66        FDSE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)      0.000     0.000 r  
@@ -781,29 +783,78 @@ Slack (MET) :             0.199ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.878     1.993    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X99Y54         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[1]/C
-                         clock pessimism             -0.506     1.488    
-    SLICE_X99Y54         FDRE (Hold_fdre_C_D)         0.092     1.580    firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[1]
+                         net (fo=76, routed)          0.872     1.987    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X104Y66        FDSE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[0]/C
+                         clock pessimism             -0.505     1.483    
+    SLICE_X104Y66        FDSE (Hold_fdse_C_D)         0.133     1.616    firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[0]
   -------------------------------------------------------------------
-                         required time                         -1.580    
-                         arrival time                           1.778    
+                         required time                         -1.616    
+                         arrival time                           1.757    
   -------------------------------------------------------------------
-                         slack                                  0.199    
+                         slack                                  0.141    
 
-Slack (MET) :             0.206ns  (arrival time - required time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[3]/C
+Slack (MET) :             0.154ns  (arrival time - required time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[4]/C
                             (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[4]/D
                             (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
-  Data Path Delay:        0.342ns  (logic 0.209ns (61.063%)  route 0.133ns (38.937%))
+  Data Path Delay:        0.288ns  (logic 0.186ns (64.537%)  route 0.102ns (35.463%))
   Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.993ns
-    Source Clock Delay      (SCD):    1.476ns
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.987ns
+    Source Clock Delay      (SCD):    1.470ns
+    Clock Pessimism Removal (CPR):    0.505ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.603     1.470    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X105Y66        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y66        FDRE (Prop_fdre_C_Q)         0.141     1.611 f  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[4]/Q
+                         net (fo=3, routed)           0.102     1.713    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_6_fu_211_p3
+    SLICE_X104Y66        LUT2 (Prop_lut2_I1_O)        0.045     1.758 r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm[4]_i_1/O
+                         net (fo=6, routed)           0.000     1.758    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_2800
+    SLICE_X104Y66        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.872     1.987    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X104Y66        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[4]/C
+                         clock pessimism             -0.505     1.483    
+    SLICE_X104Y66        FDRE (Hold_fdre_C_D)         0.121     1.604    firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.604    
+                         arrival time                           1.758    
+  -------------------------------------------------------------------
+                         slack                                  0.154    
+
+Slack (MET) :             0.165ns  (arrival time - required time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_257_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/i_reg_128_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             myclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
+  Data Path Delay:        0.299ns  (logic 0.186ns (62.150%)  route 0.113ns (37.850%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.012ns
+    Source Clock Delay      (SCD):    1.496ns
     Clock Pessimism Removal (CPR):    0.503ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -814,14 +865,14 @@ Slack (MET) :             0.206ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.609     1.476    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X98Y52         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[3]/C
+                         net (fo=76, routed)          0.629     1.496    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X107Y67        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_257_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X98Y52         FDRE (Prop_fdre_C_Q)         0.164     1.640 r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[3]/Q
-                         net (fo=44, routed)          0.133     1.773    firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_state4
-    SLICE_X98Y53         LUT2 (Prop_lut2_I1_O)        0.045     1.818 r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm[4]_i_1/O
-                         net (fo=1, routed)           0.000     1.818    firConvolutionLoopUnrollingFactor2_IP/U0/ap_NS_fsm[4]
-    SLICE_X98Y53         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[4]/D
+    SLICE_X107Y67        FDRE (Prop_fdre_C_Q)         0.141     1.637 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_257_reg[2]/Q
+                         net (fo=2, routed)           0.113     1.750    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_257[2]
+    SLICE_X108Y67        LUT5 (Prop_lut5_I1_O)        0.045     1.795 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_reg_128[2]_i_1/O
+                         net (fo=1, routed)           0.000     1.795    firConvolutionLoopUnrollingFactor2_IP/U0/i_reg_128[2]_i_1_n_3
+    SLICE_X108Y67        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_reg_128_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)      0.000     0.000 r  
@@ -830,30 +881,30 @@ Slack (MET) :             0.206ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.878     1.993    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X98Y53         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[4]/C
-                         clock pessimism             -0.503     1.491    
-    SLICE_X98Y53         FDRE (Hold_fdre_C_D)         0.121     1.612    firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[4]
+                         net (fo=76, routed)          0.897     2.012    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X108Y67        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_reg_128_reg[2]/C
+                         clock pessimism             -0.503     1.510    
+    SLICE_X108Y67        FDRE (Hold_fdre_C_D)         0.120     1.630    firConvolutionLoopUnrollingFactor2_IP/U0/i_reg_128_reg[2]
   -------------------------------------------------------------------
-                         required time                         -1.612    
-                         arrival time                           1.818    
+                         required time                         -1.630    
+                         arrival time                           1.795    
   -------------------------------------------------------------------
-                         slack                                  0.206    
+                         slack                                  0.165    
 
-Slack (MET) :             0.212ns  (arrival time - required time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[3]/C
+Slack (MET) :             0.167ns  (arrival time - required time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/C
                             (rising edge-triggered cell FDSE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[3]/D
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[2]/D
                             (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
-  Data Path Delay:        0.317ns  (logic 0.209ns (65.983%)  route 0.108ns (34.017%))
-  Logic Levels:           1  (LUT5=1)
+  Data Path Delay:        0.311ns  (logic 0.189ns (60.679%)  route 0.122ns (39.321%))
+  Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.993ns
-    Source Clock Delay      (SCD):    1.475ns
-    Clock Pessimism Removal (CPR):    0.506ns
+    Destination Clock Delay (DCD):    1.988ns
+    Source Clock Delay      (SCD):    1.471ns
+    Clock Pessimism Removal (CPR):    0.505ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -863,14 +914,14 @@ Slack (MET) :             0.212ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.608     1.475    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X98Y54         FDSE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[3]/C
+                         net (fo=76, routed)          0.604     1.471    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X105Y65        FDSE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X98Y54         FDSE (Prop_fdse_C_Q)         0.164     1.639 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[3]/Q
-                         net (fo=13, routed)          0.108     1.746    firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167[3]
-    SLICE_X99Y54         LUT5 (Prop_lut5_I0_O)        0.045     1.791 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345[3]_i_1/O
-                         net (fo=1, routed)           0.000     1.791    firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345[3]_i_1_n_4
-    SLICE_X99Y54         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[3]/D
+    SLICE_X105Y65        FDSE (Prop_fdse_C_Q)         0.141     1.612 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/Q
+                         net (fo=12, routed)          0.122     1.734    firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg_n_3_[1]
+    SLICE_X104Y65        LUT3 (Prop_lut3_I0_O)        0.048     1.782 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280[2]_i_1/O
+                         net (fo=1, routed)           0.000     1.782    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280[2]_i_1_n_3
+    SLICE_X104Y65        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)      0.000     0.000 r  
@@ -879,78 +930,272 @@ Slack (MET) :             0.212ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.878     1.993    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X99Y54         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[3]/C
-                         clock pessimism             -0.506     1.488    
-    SLICE_X99Y54         FDRE (Hold_fdre_C_D)         0.092     1.580    firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[3]
+                         net (fo=76, routed)          0.873     1.988    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X104Y65        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[2]/C
+                         clock pessimism             -0.505     1.484    
+    SLICE_X104Y65        FDRE (Hold_fdre_C_D)         0.131     1.615    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.615    
+                         arrival time                           1.782    
+  -------------------------------------------------------------------
+                         slack                                  0.167    
+
+Slack (MET) :             0.171ns  (arrival time - required time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/C
+                            (rising edge-triggered cell FDSE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             myclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
+  Data Path Delay:        0.315ns  (logic 0.189ns (59.909%)  route 0.126ns (40.091%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.988ns
+    Source Clock Delay      (SCD):    1.471ns
+    Clock Pessimism Removal (CPR):    0.505ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.604     1.471    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X105Y65        FDSE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y65        FDSE (Prop_fdse_C_Q)         0.141     1.612 f  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/Q
+                         net (fo=12, routed)          0.126     1.738    firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg_n_3_[1]
+    SLICE_X104Y65        LUT4 (Prop_lut4_I1_O)        0.048     1.786 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280[4]_i_1/O
+                         net (fo=1, routed)           0.000     1.786    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280[4]_i_1_n_3
+    SLICE_X104Y65        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.873     1.988    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X104Y65        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[4]/C
+                         clock pessimism             -0.505     1.484    
+    SLICE_X104Y65        FDRE (Hold_fdre_C_D)         0.131     1.615    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.615    
+                         arrival time                           1.786    
+  -------------------------------------------------------------------
+                         slack                                  0.171    
+
+Slack (MET) :             0.175ns  (arrival time - required time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/C
+                            (rising edge-triggered cell FDSE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             myclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
+  Data Path Delay:        0.308ns  (logic 0.186ns (60.296%)  route 0.122ns (39.704%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.988ns
+    Source Clock Delay      (SCD):    1.471ns
+    Clock Pessimism Removal (CPR):    0.505ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.604     1.471    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X105Y65        FDSE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y65        FDSE (Prop_fdse_C_Q)         0.141     1.612 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/Q
+                         net (fo=12, routed)          0.122     1.734    firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg_n_3_[1]
+    SLICE_X104Y65        LUT2 (Prop_lut2_I1_O)        0.045     1.779 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280[1]_i_1/O
+                         net (fo=1, routed)           0.000     1.779    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280[1]_i_1_n_3
+    SLICE_X104Y65        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.873     1.988    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X104Y65        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[1]/C
+                         clock pessimism             -0.505     1.484    
+    SLICE_X104Y65        FDRE (Hold_fdre_C_D)         0.120     1.604    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -1.604    
+                         arrival time                           1.779    
+  -------------------------------------------------------------------
+                         slack                                  0.175    
+
+Slack (MET) :             0.178ns  (arrival time - required time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/C
+                            (rising edge-triggered cell FDSE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             myclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
+  Data Path Delay:        0.312ns  (logic 0.186ns (59.524%)  route 0.126ns (40.476%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.988ns
+    Source Clock Delay      (SCD):    1.471ns
+    Clock Pessimism Removal (CPR):    0.505ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.604     1.471    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X105Y65        FDSE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y65        FDSE (Prop_fdse_C_Q)         0.141     1.612 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[1]/Q
+                         net (fo=12, routed)          0.126     1.738    firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg_n_3_[1]
+    SLICE_X104Y65        LUT4 (Prop_lut4_I2_O)        0.045     1.783 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280[3]_i_1/O
+                         net (fo=1, routed)           0.000     1.783    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280[3]_i_1_n_3
+    SLICE_X104Y65        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.873     1.988    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X104Y65        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[3]/C
+                         clock pessimism             -0.505     1.484    
+    SLICE_X104Y65        FDRE (Hold_fdre_C_D)         0.121     1.605    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.605    
+                         arrival time                           1.783    
+  -------------------------------------------------------------------
+                         slack                                  0.178    
+
+Slack (MET) :             0.180ns  (arrival time - required time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             myclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
+  Data Path Delay:        0.284ns  (logic 0.186ns (65.536%)  route 0.098ns (34.464%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.013ns
+    Source Clock Delay      (SCD):    1.497ns
+    Clock Pessimism Removal (CPR):    0.504ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.630     1.497    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X106Y66        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X106Y66        FDRE (Prop_fdre_C_Q)         0.141     1.638 f  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[0]/Q
+                         net (fo=15, routed)          0.098     1.735    firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg_n_3_[0]
+    SLICE_X107Y66        LUT1 (Prop_lut1_I0_O)        0.045     1.780 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280[0]_i_1/O
+                         net (fo=1, routed)           0.000     1.780    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_fu_225_p2[0]
+    SLICE_X107Y66        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.898     2.013    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X107Y66        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[0]/C
+                         clock pessimism             -0.504     1.510    
+    SLICE_X107Y66        FDRE (Hold_fdre_C_D)         0.091     1.601    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.601    
+                         arrival time                           1.780    
+  -------------------------------------------------------------------
+                         slack                                  0.180    
+
+Slack (MET) :             0.180ns  (arrival time - required time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             myclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
+  Data Path Delay:        0.263ns  (logic 0.141ns (53.607%)  route 0.122ns (46.393%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.013ns
+    Source Clock Delay      (SCD):    1.497ns
+    Clock Pessimism Removal (CPR):    0.504ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.630     1.497    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X107Y66        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X107Y66        FDRE (Prop_fdre_C_Q)         0.141     1.638 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280_reg[0]/Q
+                         net (fo=1, routed)           0.122     1.760    firConvolutionLoopUnrollingFactor2_IP/U0/i_2_reg_280[0]
+    SLICE_X106Y66        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock myclk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
+                         net (fo=76, routed)          0.898     2.013    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X106Y66        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[0]/C
+                         clock pessimism             -0.504     1.510    
+    SLICE_X106Y66        FDRE (Hold_fdre_C_D)         0.070     1.580    firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_153_reg[0]
   -------------------------------------------------------------------
                          required time                         -1.580    
-                         arrival time                           1.791    
+                         arrival time                           1.760    
   -------------------------------------------------------------------
-                         slack                                  0.212    
+                         slack                                  0.180    
 
-Slack (MET) :             0.214ns  (arrival time - required time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[3]/C
-                            (rising edge-triggered cell FDSE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[2]/D
+Slack (MET) :             0.201ns  (arrival time - required time)
+  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/ram_reg/DIADI[8]
+                            (rising edge-triggered cell RAMB36E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             myclk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
-  Data Path Delay:        0.318ns  (logic 0.209ns (65.775%)  route 0.109ns (34.225%))
-  Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.993ns
-    Source Clock Delay      (SCD):    1.475ns
-    Clock Pessimism Removal (CPR):    0.506ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.608     1.475    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X98Y54         FDSE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X98Y54         FDSE (Prop_fdse_C_Q)         0.164     1.639 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[3]/Q
-                         net (fo=13, routed)          0.109     1.747    firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167[3]
-    SLICE_X99Y54         LUT5 (Prop_lut5_I0_O)        0.045     1.792 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345[2]_i_1/O
-                         net (fo=1, routed)           0.000     1.792    firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345[2]_i_1_n_4
-    SLICE_X99Y54         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.878     1.993    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X99Y54         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[2]/C
-                         clock pessimism             -0.506     1.488    
-    SLICE_X99Y54         FDRE (Hold_fdre_C_D)         0.091     1.579    firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_345_reg[2]
-  -------------------------------------------------------------------
-                         required time                         -1.579    
-                         arrival time                           1.792    
-  -------------------------------------------------------------------
-                         slack                                  0.214    
-
-Slack (MET) :             0.229ns  (arrival time - required time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[6]/C
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CEP
-                            (rising edge-triggered cell DSP48E1 clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             myclk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
-  Data Path Delay:        0.349ns  (logic 0.164ns (47.035%)  route 0.185ns (52.965%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.124ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.080ns
-    Source Clock Delay      (SCD):    1.474ns
+  Data Path Delay:        0.546ns  (logic 0.209ns (38.292%)  route 0.337ns (61.708%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.048ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.028ns
+    Source Clock Delay      (SCD):    1.497ns
     Clock Pessimism Removal (CPR):    0.483ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -961,65 +1206,14 @@ Slack (MET) :             0.229ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.607     1.474    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X96Y56         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[6]/C
+                         net (fo=76, routed)          0.630     1.497    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
+    SLICE_X108Y66        FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X96Y56         FDRE (Prop_fdre_C_Q)         0.164     1.638 r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[6]/Q
-                         net (fo=37, routed)          0.185     1.822    firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_state7
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CEP
-  -------------------------------------------------------------------    -------------------
-
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.965     2.080    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    DSP48_X3Y23          DSP48E1                                      r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CLK
-                         clock pessimism             -0.483     1.597    
-    DSP48_X3Y23          DSP48E1 (Hold_dsp48e1_CLK_CEP)
-                                                     -0.004     1.593    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0
-  -------------------------------------------------------------------
-                         required time                         -1.593    
-                         arrival time                           1.822    
-  -------------------------------------------------------------------
-                         slack                                  0.229    
-
-Slack (MET) :             0.236ns  (arrival time - required time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[11]/C
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[11]/D
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             myclk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
-  Data Path Delay:        0.354ns  (logic 0.272ns (76.814%)  route 0.082ns (23.186%))
-  Logic Levels:           2  (CARRY4=1 LUT4=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.993ns
-    Source Clock Delay      (SCD):    1.475ns
-    Clock Pessimism Removal (CPR):    0.506ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.608     1.475    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X96Y52         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[11]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X96Y52         FDRE (Prop_fdre_C_Q)         0.164     1.639 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[11]/Q
-                         net (fo=2, routed)           0.082     1.721    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg__1[11]
-    SLICE_X97Y52         LUT4 (Prop_lut4_I1_O)        0.045     1.766 r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155[11]_i_6/O
-                         net (fo=1, routed)           0.000     1.766    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155[11]_i_6_n_4
-    SLICE_X97Y52         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.063     1.829 r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[11]_i_1/O[3]
-                         net (fo=1, routed)           0.000     1.829    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[11]_i_1_n_8
-    SLICE_X97Y52         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[11]/D
+    SLICE_X108Y66        FDRE (Prop_fdre_C_Q)         0.164     1.661 r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[2]/Q
+                         net (fo=50, routed)          0.130     1.790    firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/Q[1]
+    SLICE_X109Y66        LUT3 (Prop_lut3_I2_O)        0.045     1.835 r  firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/ram_reg_i_34/O
+                         net (fo=1, routed)           0.207     2.042    firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/d0[8]
+    RAMB36_X5Y13         RAMB36E1                                     r  firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/ram_reg/DIADI[8]
   -------------------------------------------------------------------    -------------------
 
                          (clock myclk rise edge)      0.000     0.000 r  
@@ -1028,220 +1222,16 @@ Slack (MET) :             0.236ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
                          net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.878     1.993    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X97Y52         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[11]/C
-                         clock pessimism             -0.506     1.488    
-    SLICE_X97Y52         FDRE (Hold_fdre_C_D)         0.105     1.593    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[11]
+                         net (fo=76, routed)          0.912     2.028    firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/ap_clk
+    RAMB36_X5Y13         RAMB36E1                                     r  firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/ram_reg/CLKARDCLK
+                         clock pessimism             -0.483     1.545    
+    RAMB36_X5Y13         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_DIADI[8])
+                                                      0.296     1.841    firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/ram_reg
   -------------------------------------------------------------------
-                         required time                         -1.593    
-                         arrival time                           1.829    
+                         required time                         -1.841    
+                         arrival time                           2.042    
   -------------------------------------------------------------------
-                         slack                                  0.236    
-
-Slack (MET) :             0.236ns  (arrival time - required time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[3]/C
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[3]/D
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             myclk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
-  Data Path Delay:        0.354ns  (logic 0.272ns (76.814%)  route 0.082ns (23.186%))
-  Logic Levels:           2  (CARRY4=1 LUT4=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.993ns
-    Source Clock Delay      (SCD):    1.475ns
-    Clock Pessimism Removal (CPR):    0.506ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.608     1.475    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X96Y50         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X96Y50         FDRE (Prop_fdre_C_Q)         0.164     1.639 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[3]/Q
-                         net (fo=2, routed)           0.082     1.721    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg__1[3]
-    SLICE_X97Y50         LUT4 (Prop_lut4_I1_O)        0.045     1.766 r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155[3]_i_5/O
-                         net (fo=1, routed)           0.000     1.766    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155[3]_i_5_n_4
-    SLICE_X97Y50         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.063     1.829 r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[3]_i_1/O[3]
-                         net (fo=1, routed)           0.000     1.829    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[3]_i_1_n_8
-    SLICE_X97Y50         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[3]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.878     1.993    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X97Y50         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[3]/C
-                         clock pessimism             -0.506     1.488    
-    SLICE_X97Y50         FDRE (Hold_fdre_C_D)         0.105     1.593    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[3]
-  -------------------------------------------------------------------
-                         required time                         -1.593    
-                         arrival time                           1.829    
-  -------------------------------------------------------------------
-                         slack                                  0.236    
-
-Slack (MET) :             0.236ns  (arrival time - required time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[7]/C
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[7]/D
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             myclk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
-  Data Path Delay:        0.354ns  (logic 0.272ns (76.814%)  route 0.082ns (23.186%))
-  Logic Levels:           2  (CARRY4=1 LUT4=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.993ns
-    Source Clock Delay      (SCD):    1.475ns
-    Clock Pessimism Removal (CPR):    0.506ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.608     1.475    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X96Y51         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[7]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X96Y51         FDRE (Prop_fdre_C_Q)         0.164     1.639 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[7]/Q
-                         net (fo=2, routed)           0.082     1.721    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg__1[7]
-    SLICE_X97Y51         LUT4 (Prop_lut4_I1_O)        0.045     1.766 r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155[7]_i_6/O
-                         net (fo=1, routed)           0.000     1.766    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155[7]_i_6_n_4
-    SLICE_X97Y51         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.063     1.829 r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[7]_i_1/O[3]
-                         net (fo=1, routed)           0.000     1.829    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[7]_i_1_n_8
-    SLICE_X97Y51         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[7]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.878     1.993    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X97Y51         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[7]/C
-                         clock pessimism             -0.506     1.488    
-    SLICE_X97Y51         FDRE (Hold_fdre_C_D)         0.105     1.593    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[7]
-  -------------------------------------------------------------------
-                         required time                         -1.593    
-                         arrival time                           1.829    
-  -------------------------------------------------------------------
-                         slack                                  0.236    
-
-Slack (MET) :             0.239ns  (arrival time - required time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[1]/D
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             myclk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
-  Data Path Delay:        0.357ns  (logic 0.274ns (76.728%)  route 0.083ns (23.272%))
-  Logic Levels:           2  (CARRY4=1 LUT4=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.993ns
-    Source Clock Delay      (SCD):    1.475ns
-    Clock Pessimism Removal (CPR):    0.506ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.608     1.475    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X96Y50         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X96Y50         FDRE (Prop_fdre_C_Q)         0.164     1.639 r  firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[1]/Q
-                         net (fo=2, routed)           0.083     1.722    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__1[1]
-    SLICE_X97Y50         LUT4 (Prop_lut4_I2_O)        0.045     1.767 r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155[3]_i_7/O
-                         net (fo=1, routed)           0.000     1.767    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155[3]_i_7_n_4
-    SLICE_X97Y50         CARRY4 (Prop_carry4_S[1]_O[1])
-                                                      0.065     1.832 r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[3]_i_1/O[1]
-                         net (fo=1, routed)           0.000     1.832    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[3]_i_1_n_10
-    SLICE_X97Y50         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.878     1.993    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X97Y50         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[1]/C
-                         clock pessimism             -0.506     1.488    
-    SLICE_X97Y50         FDRE (Hold_fdre_C_D)         0.105     1.593    firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_155_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -1.593    
-                         arrival time                           1.832    
-  -------------------------------------------------------------------
-                         slack                                  0.239    
-
-Slack (MET) :             0.240ns  (arrival time - required time)
-  Source:                 firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[3]/C
-                            (rising edge-triggered cell FDSE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[5]/D
-                            (rising edge-triggered cell FDRE clocked by myclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             myclk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (myclk rise@0.000ns - myclk rise@0.000ns)
-  Data Path Delay:        0.376ns  (logic 0.209ns (55.617%)  route 0.167ns (44.383%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.993ns
-    Source Clock Delay      (SCD):    1.475ns
-    Clock Pessimism Removal (CPR):    0.503ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.608     1.475    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X98Y54         FDSE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X98Y54         FDSE (Prop_fdse_C_Q)         0.164     1.639 r  firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167_reg[3]/Q
-                         net (fo=13, routed)          0.167     1.805    firConvolutionLoopUnrollingFactor2_IP/U0/i_1_reg_167[3]
-    SLICE_X98Y53         LUT4 (Prop_lut4_I0_O)        0.045     1.850 r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm[5]_i_1/O
-                         net (fo=1, routed)           0.000     1.850    firConvolutionLoopUnrollingFactor2_IP/U0/i_3_reg_3450
-    SLICE_X98Y53         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[5]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock myclk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  ap_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    ap_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  ap_clk_IBUF_BUFG_inst/O
-                         net (fo=128, routed)         0.878     1.993    firConvolutionLoopUnrollingFactor2_IP/U0/ap_clk
-    SLICE_X98Y53         FDRE                                         r  firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[5]/C
-                         clock pessimism             -0.503     1.491    
-    SLICE_X98Y53         FDRE (Hold_fdre_C_D)         0.120     1.611    firConvolutionLoopUnrollingFactor2_IP/U0/ap_CS_fsm_reg[5]
-  -------------------------------------------------------------------
-                         required time                         -1.611    
-                         arrival time                           1.850    
-  -------------------------------------------------------------------
-                         slack                                  0.240    
+                         slack                                  0.201    
 
 
 
@@ -1255,36 +1245,36 @@ Period(ns):         10.000
 Sources:            { ap_clk }
 
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
-Min Period        n/a     DSP48E1/CLK         n/a            3.884         10.000      6.116      DSP48_X3Y23     firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg__0/CLK
-Min Period        n/a     DSP48E1/CLK         n/a            3.884         10.000      6.116      DSP48_X3Y21     firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg__0/CLK
-Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB36_X4Y10    firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/ram_reg/CLKARDCLK
-Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         10.000      7.424      RAMB36_X4Y10    firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/ram_reg/CLKBWRCLK
+Min Period        n/a     DSP48E1/CLK         n/a            3.884         10.000      6.116      DSP48_X4Y27     firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg__0/CLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB36_X5Y13    firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/ram_reg/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         10.000      7.424      RAMB36_X5Y13    firConvolutionLoopUnrollingFactor2_IP/U0/shiftRegister_U/firConvolutionLoobkb_ram_U/ram_reg/CLKBWRCLK
 Min Period        n/a     BUFG/I              n/a            2.155         10.000      7.845      BUFGCTRL_X0Y16  ap_clk_IBUF_BUFG_inst/I
-Min Period        n/a     DSP48E1/CLK         n/a            2.154         10.000      7.846      DSP48_X3Y20     firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_269_p2/CLK
-Min Period        n/a     DSP48E1/CLK         n/a            2.154         10.000      7.846      DSP48_X3Y22     firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_fu_277_p2/CLK
-Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X95Y53    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[0]/C
-Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X95Y53    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[10]/C
-Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X95Y53    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[11]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X95Y53    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[0]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X95Y53    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[10]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X95Y53    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[11]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X95Y55    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[12]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X95Y54    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[13]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X95Y54    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[14]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X95Y54    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[15]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X95Y55    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[16]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X95Y53    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[4]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X96Y53    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[8]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X96Y50    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[1]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X96Y50    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[2]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X96Y50    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[3]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X96Y52    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[5]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X96Y52    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[6]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X96Y51    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_4_reg_380_reg[7]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X95Y50    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[0]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X96Y52    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[10]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X96Y52    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[11]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X95Y50    firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_375_reg[1]/C
+Min Period        n/a     DSP48E1/CLK         n/a            2.154         10.000      7.846      DSP48_X4Y26     firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_fu_234_p2/CLK
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X107Y65   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[0]/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X109Y66   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[10]/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X109Y67   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[11]/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X109Y67   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[12]/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X109Y67   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[13]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y62   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[0]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y62   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[1]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y62   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[2]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y62   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[3]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X107Y65   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[0]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X102Y65   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[1]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y62   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[0]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y64   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[10]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y64   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[10]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y64   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[11]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X109Y67   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[11]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X109Y67   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[12]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X109Y67   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[13]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X109Y67   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[14]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X102Y65   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[1]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y65   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[12]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y65   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[13]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y65   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[14]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X109Y67   firConvolutionLoopUnrollingFactor2_IP/U0/tmp_8_reg_295_reg[9]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X111Y65   firConvolutionLoopUnrollingFactor2_IP/U0/accumulator_reg_140_reg[15]/C
 
 
 
