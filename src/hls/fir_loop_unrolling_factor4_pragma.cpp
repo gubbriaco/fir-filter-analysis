@@ -2,11 +2,11 @@
 
 
 /**
- * Loop Unrolling Factor=4 Design.
+ * Loop Unrolling Factor=4 with Unrolling Pragma Design.
  * @param inputFilter
  * @param outputFilter
  */
-void firConvolutionLoopUnrollingFactor4(samplesType inputFilter, samplesType* outputFilter) {
+void firConvolutionLoopUnrollingFactor4Pragma(samplesType inputFilter, samplesType* outputFilter) {
 
 	/**
 	 * Data structure containing the coefficients of the FIR filter.
@@ -30,19 +30,15 @@ void firConvolutionLoopUnrollingFactor4(samplesType inputFilter, samplesType* ou
 	/**
 	 *
 	 */
-	loopShifting: for( i=SIZE-1; i>1; i=i-4 ) {
-		shiftRegister[i] = shiftRegister[i-1];
-		shiftRegister[i-1] = shiftRegister[i-2];
-		shiftRegister[i-2] = shiftRegister[i-3];
-		shiftRegister[i-3] = shiftRegister[i-4];
-	}
-	if( i==1 ) {
-		shiftRegister[1] = shiftRegister[0];
-	}
-	shiftRegister[0] = inputFilter;
-
-	loopAccumulator: for( i=SIZE-1; i>=0; --i ) {
-		accumulator += shiftRegister[i] * coefficientsFilter[i];
+	loop: for( i=SIZE-1; i>=0; --i ) {
+		#pragma HLS unroll factor=4
+		if( i==0 ) {
+			accumulator += inputFilter * coefficientsFilter[0];
+			shiftRegister[0] = inputFilter;
+		} else {
+			shiftRegister[i] = shiftRegister[i-1];
+			accumulator += shiftRegister[i] * coefficientsFilter[i];
+		}
 	}
 
 	*outputFilter = accumulator;

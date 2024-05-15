@@ -68,11 +68,39 @@ void firConvolutionLoopFission(samplesType inputFilter, samplesType* outputFilte
 void firConvolutionLoopUnrollingFactor2(samplesType inputFilter, samplesType* outputFilter);
 
 /**
+ * Loop Unrolling Factor=2 with Unrolling Pragma Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionLoopUnrollingFactor2Pragma(samplesType inputFilter, samplesType* outputFilter);
+
+/**
+ * Loop Unrolling Factor=2 with Unrolling Pragma and Partitioning Pragma Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionLoopUnrollingFactor2PragmaPartitioning(samplesType inputFilter, samplesType* outputFilter);
+
+/**
  * Loop Unrolling Factor=4 Design.
  * @param inputFilter
  * @param outputFilter
  */
 void firConvolutionLoopUnrollingFactor4(samplesType inputFilter, samplesType* outputFilter);
+
+/**
+ * Loop Unrolling Factor=4 with Unrolling Pragma Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionLoopUnrollingFactor4Pragma(samplesType inputFilter, samplesType* outputFilter);
+
+/**
+ * Loop Unrolling Factor=4 with Unrolling Pragma and Partitioning Pragma Design.
+ * @param inputFilter
+ * @param outputFilter
+ */
+void firConvolutionLoopUnrollingFactor4PragmaPartitioning(samplesType inputFilter, samplesType* outputFilter);
 
 /**
  * Loop Pipelining Design.

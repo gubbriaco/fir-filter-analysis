@@ -8,7 +8,11 @@ void firConvolutionOperationChaining(samplesType inputFilter, samplesType* outpu
 void firConvolutionLoopFission(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionCodeHoisting(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopUnrollingFactor2(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionLoopUnrollingFactor2Pragma(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionLoopUnrollingFactor2PragmaPartitioning(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopUnrollingFactor4(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionLoopUnrollingFactor4Pragma(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionLoopUnrollingFactor4PragmaPartitioning(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopPipelining(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionBitwidthOptimization(ap_int<32> inputFilter, ap_int<64+(SIZE-1)>* outputFilter);
 void firConvolutionAXI(hls::stream<AXI_TYPE> &inputStreamFilter, hls::stream<AXI_TYPE> &outputStreamFilter);
@@ -50,9 +54,33 @@ int main() {
 		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
 	}
 
+	printf("\n*******firConvolutionLoopUnrollingFactor2Pragma*******\n");
+	for( int i=0; i<SIZE; ++i ) {
+		firConvolutionLoopUnrollingFactor2Pragma( inputFilter[i], &outputFilter );
+		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
+	}
+
+	printf("\n*******firConvolutionLoopUnrollingFactor2PragmaPartitioning*******\n");
+	for( int i=0; i<SIZE; ++i ) {
+		firConvolutionLoopUnrollingFactor2PragmaPartitioning( inputFilter[i], &outputFilter );
+		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
+	}
+
 	printf("\n*******firConvolutionLoopUnrollingFactor4*******\n");
 	for( int i=0; i<SIZE; ++i ) {
 		firConvolutionLoopUnrollingFactor4( inputFilter[i], &outputFilter );
+		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
+	}
+
+	printf("\n*******firConvolutionLoopUnrollingFactor4Pragma*******\n");
+	for( int i=0; i<SIZE; ++i ) {
+		firConvolutionLoopUnrollingFactor4Pragma( inputFilter[i], &outputFilter );
+		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
+	}
+
+	printf("\n*******firConvolutionLoopUnrollingFactor4PragmaPartitioning*******\n");
+	for( int i=0; i<SIZE; ++i ) {
+		firConvolutionLoopUnrollingFactor4PragmaPartitioning( inputFilter[i], &outputFilter );
 		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
 	}
 
