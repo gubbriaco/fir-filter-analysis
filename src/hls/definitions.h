@@ -114,7 +114,7 @@ void firConvolutionLoopPipelining(samplesType inputFilter, samplesType* outputFi
  * @param inputFilter
  * @param outputFilter
  */
-void firConvolutionBitwidthOptimization(ap_int<33> inputFilter, ap_int<64+SIZE>* outputFilter);
+void firConvolutionBitwidthOptimization(ap_int<8> inputFilter, ap_int<18+SIZE>* outputFilter);
 
 /**
  * Represents the AXI type for AXI-stream interface.

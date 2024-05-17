@@ -15,7 +15,7 @@ void firConvolutionLoopUnrollingFactor4(samplesType inputFilter, samplesType* ou
 void firConvolutionLoopUnrollingFactor4Pragma(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopUnrollingFactor4PP(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopPipelining(samplesType inputFilter, samplesType* outputFilter);
-void firConvolutionBitwidthOptimization(ap_int<33> inputFilter, ap_int<64+SIZE>* outputFilter);
+void firConvolutionBitwidthOptimization(ap_int<8> inputFilter, ap_int<18+SIZE>* outputFilter);
 void firConvolutionAXI(hls::stream<AXI_TYPE> &inputStreamFilter, hls::stream<AXI_TYPE> &outputStreamFilter);
 
 
@@ -91,8 +91,8 @@ int main() {
 		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
 	}
 
-	ap_int<33> inputFilterAp[SIZE] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-	ap_int<64+SIZE> outputFilterAp;
+	ap_int<8> inputFilterAp[SIZE] = {42, 7, 58, 120, -64, 15, -89, -75, 43, 43, -14};
+	ap_int<18+SIZE> outputFilterAp;
 	std::cout << "\n*******firConvolutionBitwidthOptimization*******\n";
 	for( int i=0; i<SIZE; ++i ) {
 	    firConvolutionBitwidthOptimization( inputFilterAp[i], &outputFilterAp );
