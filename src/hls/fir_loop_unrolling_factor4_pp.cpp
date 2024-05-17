@@ -6,7 +6,7 @@
  * @param inputFilter
  * @param outputFilter
  */
-void firConvolutionLoopUnrollingFactor4PragmaPartitioning(samplesType inputFilter, samplesType* outputFilter) {
+void firConvolutionLoopUnrollingFactor4PP(samplesType inputFilter, samplesType* outputFilter) {
 
 	/**
 	 * Data structure containing the coefficients of the FIR filter.

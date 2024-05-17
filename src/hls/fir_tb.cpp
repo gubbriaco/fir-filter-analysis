@@ -1,6 +1,7 @@
 #include "definitions.h"
 #include <stdio.h>
 #include "ap_int.h"
+#include <iostream>
 
 
 void firConvolutionUnoptimized(samplesType inputFilter, samplesType* outputFilter);
@@ -9,12 +10,12 @@ void firConvolutionLoopFission(samplesType inputFilter, samplesType* outputFilte
 void firConvolutionCodeHoisting(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopUnrollingFactor2(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopUnrollingFactor2Pragma(samplesType inputFilter, samplesType* outputFilter);
-void firConvolutionLoopUnrollingFactor2PragmaPartitioning(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionLoopUnrollingFactor2PP(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopUnrollingFactor4(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopUnrollingFactor4Pragma(samplesType inputFilter, samplesType* outputFilter);
-void firConvolutionLoopUnrollingFactor4PragmaPartitioning(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionLoopUnrollingFactor4PP(samplesType inputFilter, samplesType* outputFilter);
 void firConvolutionLoopPipelining(samplesType inputFilter, samplesType* outputFilter);
-void firConvolutionBitwidthOptimization(ap_int<32> inputFilter, ap_int<64+(SIZE-1)>* outputFilter);
+void firConvolutionBitwidthOptimization(ap_int<33> inputFilter, ap_int<64+SIZE>* outputFilter);
 void firConvolutionAXI(hls::stream<AXI_TYPE> &inputStreamFilter, hls::stream<AXI_TYPE> &outputStreamFilter);
 
 
@@ -62,7 +63,7 @@ int main() {
 
 	printf("\n*******firConvolutionLoopUnrollingFactor2PragmaPartitioning*******\n");
 	for( int i=0; i<SIZE; ++i ) {
-		firConvolutionLoopUnrollingFactor2PragmaPartitioning( inputFilter[i], &outputFilter );
+		firConvolutionLoopUnrollingFactor2PP( inputFilter[i], &outputFilter );
 		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
 	}
 
@@ -80,7 +81,7 @@ int main() {
 
 	printf("\n*******firConvolutionLoopUnrollingFactor4PragmaPartitioning*******\n");
 	for( int i=0; i<SIZE; ++i ) {
-		firConvolutionLoopUnrollingFactor4PragmaPartitioning( inputFilter[i], &outputFilter );
+		firConvolutionLoopUnrollingFactor4PP( inputFilter[i], &outputFilter );
 		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
 	}
 
@@ -90,16 +91,15 @@ int main() {
 		printf("%-20d%-20d%-20d\n", i, inputFilter[i], outputFilter);
 	}
 
-	/*
-	ap_int<32> inputFilterAp[SIZE] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-	ap_int<64+(SIZE-1)> outputFilterAp;
-	printf("\n*******firConvolutionBitwidthOptimization*******\n");
-	ap_int<4> i;
-	for( i=0; i<SIZE; ++i ) {
-		firConvolutionBitwidthOptimization( inputFilterAp[i], &outputFilterAp );
-		printf("%-20d%-20d%-20d\n", i, inputFilterAp[i], outputFilterAp);
+	ap_int<33> inputFilterAp[SIZE] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+	ap_int<64+SIZE> outputFilterAp;
+	std::cout << "\n*******firConvolutionBitwidthOptimization*******\n";
+	for( int i=0; i<SIZE; ++i ) {
+	    firConvolutionBitwidthOptimization( inputFilterAp[i], &outputFilterAp );
+	    std::cout << std::left << std::setw(20) << i
+	              << std::left << std::setw(20) << inputFilterAp[i]
+	              << std::left << std::setw(20) << outputFilterAp << "\n";
 	}
-	*/
 
 	hls::stream<AXI_TYPE> inputStreamFilter;
 	hls::stream<AXI_TYPE> outputStreamFilter;

@@ -79,7 +79,7 @@ void firConvolutionLoopUnrollingFactor2Pragma(samplesType inputFilter, samplesTy
  * @param inputFilter
  * @param outputFilter
  */
-void firConvolutionLoopUnrollingFactor2PragmaPartitioning(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionLoopUnrollingFactor2PP(samplesType inputFilter, samplesType* outputFilter);
 
 /**
  * Loop Unrolling Factor=4 Design.
@@ -100,7 +100,7 @@ void firConvolutionLoopUnrollingFactor4Pragma(samplesType inputFilter, samplesTy
  * @param inputFilter
  * @param outputFilter
  */
-void firConvolutionLoopUnrollingFactor4PragmaPartitioning(samplesType inputFilter, samplesType* outputFilter);
+void firConvolutionLoopUnrollingFactor4PP(samplesType inputFilter, samplesType* outputFilter);
 
 /**
  * Loop Pipelining Design.
@@ -114,7 +114,7 @@ void firConvolutionLoopPipelining(samplesType inputFilter, samplesType* outputFi
  * @param inputFilter
  * @param outputFilter
  */
-void firConvolutionBitwidthOptimization(ap_int<32> inputFilter, ap_int<64+(SIZE-1)>* outputFilter);
+void firConvolutionBitwidthOptimization(ap_int<33> inputFilter, ap_int<64+SIZE>* outputFilter);
 
 /**
  * Represents the AXI type for AXI-stream interface.
