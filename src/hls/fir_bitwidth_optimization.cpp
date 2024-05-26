@@ -17,7 +17,7 @@ void firConvolutionBitwidthOptimization(ap_int<8> inputFilter, ap_int<18+SIZE>* 
 	/**
 	 *
 	 */
-	static ap_int<18+SIZE> shiftRegister[SIZE];
+	static ap_int<8> shiftRegister[SIZE];
 
 	/**
 	 *

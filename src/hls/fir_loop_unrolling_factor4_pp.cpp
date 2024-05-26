@@ -28,18 +28,17 @@ void firConvolutionLoopUnrollingFactor4PP(samplesType inputFilter, samplesType* 
 
 	int i;
 	/**
-	 *
-	 */
-	loop: for( i=SIZE-1; i>=0; --i ) {
+	  *
+	  */
+	loopShifting: for( i=SIZE-1; i>0; --i ) {
 		#pragma HLS array_partition variable=shiftRegister complete
 		#pragma HLS unroll factor=4
-		if( i==0 ) {
-			accumulator += inputFilter * coefficientsFilter[0];
-			shiftRegister[0] = inputFilter;
-		} else {
-			shiftRegister[i] = shiftRegister[i-1];
-			accumulator += shiftRegister[i] * coefficientsFilter[i];
-		}
+		shiftRegister[i] = shiftRegister[i-1];
+	}
+	shiftRegister[0] = inputFilter;
+	accumulator = 0;
+	loopAccumulator: for( i=SIZE-1; i>=0; --i ) {
+		accumulator += shiftRegister[i] * coefficientsFilter[i];
 	}
 
 	*outputFilter = accumulator;
