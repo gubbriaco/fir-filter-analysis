@@ -1,0 +1,189 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../fir_tb.cpp in debug mode
+   Compiling ../../../fir_axi.cpp in debug mode
+   Compiling ../../../fir_bitwidth_optimization.cpp in debug mode
+   Compiling ../../../fir_code_hoisting.cpp in debug mode
+   Compiling ../../../fir_loop_fission.cpp in debug mode
+   Compiling ../../../fir_loop_pipelining.cpp in debug mode
+   Compiling ../../../fir_loop_unrolling_factor2.cpp in debug mode
+   Compiling ../../../fir_loop_unrolling_factor2_pp.cpp in debug mode
+   Compiling ../../../fir_loop_unrolling_factor2_pragma.cpp in debug mode
+   Compiling ../../../fir_loop_unrolling_factor4.cpp in debug mode
+   Compiling ../../../fir_loop_unrolling_factor4_pp.cpp in debug mode
+   Compiling ../../../fir_loop_unrolling_factor4_pragma.cpp in debug mode
+   Compiling ../../../fir_operation_chaining.cpp in debug mode
+   Compiling ../../../fir_unoptimized.cpp in debug mode
+   Generating csim.exe
+
+*******firConvolutionUnoptimized*******
+iteration           inputFilter[i]      outputFilter[i]     
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+
+*******firConvolutionOperationChaining*******
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+
+*******firConvolutionCodeHoisting*******
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+
+*******firConvolutionLoopFission*******
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+
+*******firConvolutionLoopUnrollingFactor2*******
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+
+*******firConvolutionLoopUnrollingFactor2Pragma*******
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+
+*******firConvolutionLoopUnrollingFactor2PragmaPartitioning*******
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+
+*******firConvolutionLoopUnrollingFactor4*******
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+
+*******firConvolutionLoopUnrollingFactor4Pragma*******
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+
+*******firConvolutionLoopUnrollingFactor4PragmaPartitioning*******
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+
+*******firConvolutionLoopPipelining*******
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+
+*******firConvolutionBitwidthOptimization*******
+0                   42                  2226                
+1                   7                   371                 
+2                   58                  -748                
+3                   120                 5723                
+4                   -64                 4476                
+5                   15                  13066               
+6                   -89                 35907               
+7                   -75                 63411               
+8                   43                  64678               
+9                   43                  18722               
+10                  -14                 -48096              
+
+*******firConvolutionAXI*******
+0                   1                   53                  
+1                   1                   53                  
+2                   1                   -38                 
+3                   1                   -38                 
+4                   1                   275                 
+5                   1                   775                 
+6                   1                   1088                
+7                   1                   1088                
+8                   1                   997                 
+9                   1                   997                 
+10                  1                   1050                
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

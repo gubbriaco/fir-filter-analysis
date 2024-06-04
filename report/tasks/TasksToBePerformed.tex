@@ -1,0 +1,19 @@
+Prendendo come riferimento la struttura del filtro FIR, citato precedentemente, e considerando il tool di sintesi ad alto livello per sistemi digitali, fornito da {Xilinx\textsuperscript{\textregistered} Vivado\textsuperscript{\textregistered}, cercare di ottimizzare secondo le caratteristiche principali il circuito in questione. In particolare, utilizzare diverse tecniche di progettazione ad alto livello e sfruttare, se possibile, le direttive di ottimizzazazione (pragma) per ottenere valori ottimali in termini di latenza, dissipazione di potenza e utilizzazione delle risorse. Fondamentalmente, implementare le seguenti tecniche nella maniera opportuna:
+\begin{itemize}
+    \item \textbf{Unoptimized Solution}\\
+    Rappresenta la soluzione iniziale (non ottimizzata) del filtro FIR in questione.
+    \item \textbf{Operation Chaining Solution}\\
+    Rappresenta una soluzione basata sul cambiamento del periodo del clock.
+    \item \textbf{Code Hoisting Solution}\\
+    Rappresenta una soluzione basata su un'alternativa gestione delle condizioni di controllo.
+    \item \textbf{Loop Fission Solution}\\
+    Rappresenta una soluzione basata sulla scissione di cicli di operazioni complesse in più loop semplici.
+    \item \textbf{Loop Unrolling Solution}\\
+    Rappresenta una soluzione basata sul parallelismo delle operazioni.
+    \item \textbf{Loop Pipelining Solution}\\
+    Rappresenta una soluzione basata sulla scissione di operazioni combinatorie complesse in più procedure semplici.
+    \item \textbf{Bitwidth Optimization Solution}\\
+    Rappresenta una soluzione basata sull'ottimizzazione del numero di bit utilizzati per ogni tipo di dato.
+    \item \textbf{AXI Solution}\\
+    Rappresenta una soluzione basata sull'utilizzo dell'interfaccia AXI-Stream.
+\end{itemize}

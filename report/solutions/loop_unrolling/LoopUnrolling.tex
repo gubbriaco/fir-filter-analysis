@@ -1,0 +1,46 @@
+Considerando l'architettura hardware precedente, è possibile, effettivamente, implementare un approccio più veloce dal punto di vista delle operazioni, cioè una soluzione basata su parallelismo. In particolare, allocando un maggior numero di risorse, è possibile eseguire delle operazioni in parallelo riducendo di conseguenza la latenza, cioè il tempo di esecuzione totale.
+\\
+Tale approccio è possibile implementarlo in due modi differenti:
+\begin{itemize}
+    \item \textbf{Manuale}\\Unrolling ottenuto tramite rimodulazione software
+    \item \textbf{Automatico}\\Unrolling ottenuto tramite direttiva proprietaria (pragma)
+\end{itemize}
+
+In particolare, sia l'unrolling manuale sia quello automatico, sono stati ottenuti considerando sia un fattore di parallelismo pari a 2 sia pari a 4. Inoltre, bisogna specificare che, per quanto riguarda l'unrolling automatico (tramite pragma), è stata realizzata un'ulteriore soluzione hardware, tenendo conto sia del fattore 2 sia del fattore 4, dove è stato considerato sia il pragma di unrolling sia il pragma di partitioning. Il partizionamento serve per risolvere un problema tipicamente causato dagli array. Gli array sono implementati come BRAM, solitamente progettate per un dual-port massimo. Questo può limitare il throughput di un algoritmo ad alta intensità di read/write. La larghezza di banda può essere migliorata dividendo l'array (una singola BRAM) in array più piccoli (più BRAM), aumentando di fatto il numero di porte. Gli array vengono partizionati utilizzando la direttiva ARRAY\_PARTITION. Vivado HLS offre tre tipi di partizionamento degli array. I tre tipi di partizionamento sono:
+\begin{itemize}
+    \item \textbf{block}]\\L'array originale viene suddiviso in blocchi di uguali dimensioni di elementi consecutivi dell'array originale.
+    \item \textbf{cyclic}\\L'array originale viene suddiviso in blocchi di uguali dimensioni che interlacciano gli elementi dell'array originale.
+    \item \textbf{complete}\\L'operazione predefinita consiste nel dividere l'array nei suoi singoli elementi. Ciò corrisponde alla risoluzione di una memoria in registri.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{solutions/loop_unrolling/partitioning.png}
+    \caption{HLS Array Partitioning}
+\end{figure}
+
+Pertanto, è possibile elencare qui di seguito le soluzioni hardware progettate per l'approccio del parallelismo:
+\begin{itemize}
+    \item Unrolling Manuale Fattore=2
+    \item Unrolling Manuale Fattore=4
+    \item Unrolling Automatico Fattore=2
+    \item Unrolling Automatico Fattore=4
+    \item Unrolling Automatico con Partitioning Fattore=2
+    \item Unrolling Automatico con Partitioning Fattore=4
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{solutions/loop_unrolling/unrolling.png}
+    \caption{HLS Loop Unrolling}
+\end{figure}
+
+A questo proposito, verranno analizzati i report considerando le soluzioni hardware aventi stesso fattore così da poter effettuare confronti adeguati tra le varie implementazioni. Bisogna precisare, che in questo caso è stato effettuando un loop unrolling parziale, cioè tenendo conto della figura sopra allegata è stato considerato un fattore 2 o un fattore 4 anziché utilizzare un fattore che potesse \textit{ricoprire} la totalità degli elementi processabili (capacità del filtro). Ovviamente, la figura sopra allegata è solo un esempio per rappresentare meglio il concetto di unrolling e partitioning.
+
+\subsubsection{Loop Unrolling Factor=2}
+\input{solutions/loop_unrolling/factor2/UnrollingFactor2}
+
+\newpage
+
+\subsubsection{Loop Unrolling Factor=4}
+\input{solutions/loop_unrolling/factor4/UnrollingFactor4}

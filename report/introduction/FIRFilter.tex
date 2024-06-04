@@ -1,0 +1,5 @@
+I principali filtri digitali sono i filtri FIR (Finite Impulse Response) e IIR (Infinite Impulse Response). In particolare, un filtro FIR è un sistema LTI causale con risposta finita all'impulso, la cui funzione di trasferimento risulta essere un polinomio in $z^{-1}$. 
+In particolare, considerando $h[n]$, cioè la sequenza di coefficienti del filtro in questione, e la sequenza di ingresso $x[n]$, l'obiettivo è calcolare l'uscita $y[n]$ mediante convoluzione:
+\begin{equation}
+    y[n] = \sum_{k=0}^{N-1} h[k] x[n-k]
+\end{equation}

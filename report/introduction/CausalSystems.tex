@@ -1,0 +1,8 @@
+Un sistema (non necessariamente SLS) si dice causale se l'uscita all'istante $n$ dipende solo dai valori precedenti dell'ingresso:
+\begin{equation}
+    y[n] = \sum_{k=-\infty}^{+\infty} x[k] h[n-k] = \sum_{k=-\infty}^{+\infty} h[k] x[n-k]
+\end{equation}
+Affinché un sistema SLS-TD sia causale è necessario e sufficiente che:
+\begin{equation}
+    h[k] = 0 \quad \text{per ogni} \quad k < 0
+\end{equation}
