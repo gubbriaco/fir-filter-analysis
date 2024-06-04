@@ -22,7 +22,7 @@ Il pipelining in HLS è possibile implementarlo mediante una direttiva proprieta
 
 In questo caso, la soluzione hardware presa come riferimento è stata quella iniziale non ottimizzata. In particolare, all'interno del loop è stata definita sia la direttiva di pipeline, specificando un II=1, sia la direttiva di partizionamento. Nello specifico, è stato considerato il pragma di partitioning al fine di realizzabilità della soluzione in questione. Questo è dovuto al fatto che, senza considerare tale direttiva, si otterrebbe un II\_achieved differente da un II\_target. Infatti, utilizzare lo shift register vuol dire non poter accedere ai dati intermedi ma soltanto a quelli finali. Pertanto, per far fronte a questo problema si potrebbe pensare di realizzare tali shift register mediante Flip Flop (tramite la direttiva di partizionamento).
 \\
-Effettuando la sintesi, la C/RTL Cosimulation ed Export RTL si ottengono i seguenti report.
+Effettuando la sintesi otteniamo i seguenti report.
 
 \begin{table}[H]
     \centering
@@ -54,6 +54,13 @@ Effettuando la sintesi, la C/RTL Cosimulation ed Export RTL si ottengono i segue
     \end{minipage}
 \end{table}
 
+Si può notare come la latenza totale del loop sia notevolmente diminuita rispetto alla soluzione iniziale non ottimizzata. Inoltre, si può evidenziare come l'Initiation Interval raggiunto sia il medesimo di quello target, cioè pari a 1. Questo è stato possibile per i motivi precedentemente citati.
+\\
+In particolare, considerando il valore di Iteration Latency, il valore del Trip Count e il valore di Initiation Interval, è possibile ricavare il valore della latenza relativa al loop:
+\begin{equation}
+	IL+[(N-1)*II]-1 = 4+[(11-1)*1]-1 = 4+[10*1]-1 = 4+10-1 = 13	
+\end{equation}
+
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
@@ -68,7 +75,9 @@ Effettuando la sintesi, la C/RTL Cosimulation ed Export RTL si ottengono i segue
     \label{tab:hls-loop-pipelining-solution-loop-summary}
 \end{table}
 
-\begin{table}[h]
+Per quanto riguarda l'utilizzazione stimata delle risorse, si può notare come il numero di FF sia aumentato rispetto alla soluzione non ottimizzata dal momento che è stato utilizzato il pragma di partizionamento tale da partizionare shiftRegister in diverse strutture da un certo numero di FF ciascuna anziché utilizzare BRAM.
+
+\begin{table}[H]
     \centering
     \begin{tabular}{|l|c|c|c|c|}
         \hline
@@ -87,6 +96,53 @@ Effettuando la sintesi, la C/RTL Cosimulation ed Export RTL si ottengono i segue
     \caption{HLS Loop Pipelining Solution Utilization Estimates Summary}
     \label{tab:hls-loop-pipelining-solution-utilization-estimates-summary}
 \end{table}
+
+In particolare, si può notare come la direttiva proprietaria di partitioning ha partizionato shiftRegister in 10 strutture da 32 FF ciascuna.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|r|r|r|r|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{FF}} & \multicolumn{1}{c|}{\textbf{LUT}} & \multicolumn{1}{c|}{\textbf{Bits}} & \multicolumn{1}{c|}{\textbf{Const Bits}} \\
+		\hline
+		accumulator\_reg\_114 & 32 & 0 & 32 & 0 \\
+		ap\_CS\_fsm & 3 & 0 & 3 & 0 \\
+		ap\_enable\_reg\_pp0\_iter0 & 1 & 0 & 1 & 0 \\
+		ap\_enable\_reg\_pp0\_iter1 & 1 & 0 & 1 & 0 \\
+		ap\_enable\_reg\_pp0\_iter2 & 1 & 0 & 1 & 0 \\
+		ap\_enable\_reg\_pp0\_iter3 & 1 & 0 & 1 & 0 \\
+		ap\_phi\_reg\_pp0\_iter1\_p\_pn\_reg\_138 & 32 & 0 & 32 & 0 \\
+		ap\_phi\_reg\_pp0\_iter2\_p\_pn\_reg\_138 & 32 & 0 & 32 & 0 \\
+		ap\_phi\_reg\_pp0\_iter3\_p\_pn\_reg\_138 & 32 & 0 & 32 & 0 \\
+		coefficientsFilter1\_1\_reg\_458 & 10 & 0 & 10 & 0 \\
+		i\_reg\_127 & 5 & 0 & 5 & 0 \\
+		shiftRegister\_0 & 32 & 0 & 32 & 0 \\
+		shiftRegister\_1 & 32 & 0 & 32 & 0 \\
+		shiftRegister\_2 & 32 & 0 & 32 & 0 \\
+		shiftRegister\_3 & 32 & 0 & 32 & 0 \\
+		shiftRegister\_4 & 32 & 0 & 32 & 0 \\
+		shiftRegister\_5 & 32 & 0 & 32 & 0 \\
+		shiftRegister\_6 & 32 & 0 & 32 & 0 \\
+		shiftRegister\_7 & 32 & 0 & 32 & 0 \\
+		shiftRegister\_8 & 32 & 0 & 32 & 0 \\
+		shiftRegister\_9 & 32 & 0 & 32 & 0 \\
+		shiftRegister\_load\_p\_reg\_453 & 32 & 0 & 32 & 0 \\
+		tmp\_1\_reg\_426 & 1 & 0 & 1 & 0 \\
+		tmp\_2\_reg\_417 & 32 & 0 & 32 & 0 \\
+		tmp\_4\_reg\_430 & 4 & 0 & 4 & 0 \\
+		tmp\_6\_reg\_463 & 32 & 0 & 32 & 0 \\
+		tmp\_reg\_422 & 1 & 0 & 1 & 0 \\
+		tmp\_1\_reg\_426 & 64 & 32 & 1 & 0 \\
+		tmp\_reg\_422 & 64 & 32 & 1 & 0 \\
+		\hline
+		Total & 700 & 64 & 574 & 0 \\
+		\hline
+	\end{tabular}
+	\caption{HLS Loop Pipelining Solution Register Detail Estimates Summary}
+	\label{tab:hls-loop-pipelining-solution-register-detail-estimates-summary}
+\end{table}
+
+Effettuando la C/RTL Cosimulation ed Export RTL si ottengono i seguenti report.
 
 \begin{table}[H]
     \centering
@@ -145,10 +201,10 @@ Effettuando la sintesi, la C/RTL Cosimulation ed Export RTL si ottengono i segue
     \end{minipage}
 \end{table}
 
-
-
 Pertanto, importando l'IP in Vivado e impostando un clock constraint pari a 10ns è possibile analizzare i seguenti report di risorse, timing, potenza dinamica ed energia per singola operazione.
 \lstinputlisting[language=VHDL]{solutions/loop_pipelining/clk_constraint.xdc}
+
+Si può notare come, rispetto alla soluzione iniziale non ottimizzata, si è ottenuto un aumento di circa il $13\%$ delle LUT e un aumento di circa il $186\%$ dei FF.
 
 \begin{table}[H]
     \centering
@@ -162,6 +218,8 @@ Pertanto, importando l'IP in Vivado e impostando un clock constraint pari a 10ns
     \caption{Vivado Loop Pipelining Solution Utilization Report [\#]}
     \label{tab:vivado-loop-pipelining-solution-utilization-reproot}
 \end{table}
+
+Inoltre, si può evidenziare come la maximum clock frequency sia aumentata di circa $15 MHz$ rispetto alla soluzione non ottimizzata di riferimento. Tanto è vero che il WNS, relativo alla soluzione realizzata mediante approccio di pipelining, risulta essere leggermente maggiore.
 
 \begin{table}[H]
     \centering

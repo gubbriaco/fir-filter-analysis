@@ -71,12 +71,13 @@
 \contentsline {table}{\numberline {70}{\ignorespaces HLS Loop Pipelining Solution Timing Summary (ns)}}{55}{table.70}%
 \contentsline {table}{\numberline {71}{\ignorespaces HLS Loop Pipelining Solution Latency Summary (clock cycles)}}{55}{table.71}%
 \contentsline {table}{\numberline {72}{\ignorespaces HLS Loop Pipelining Solution Latency Loops Summary }}{55}{table.72}%
-\contentsline {table}{\numberline {74}{\ignorespaces HLS Loop Pipelining Solution C/RTL Cosimulation Summary }}{55}{table.74}%
 \contentsline {table}{\numberline {73}{\ignorespaces HLS Loop Pipelining Solution Utilization Estimates Summary}}{56}{table.73}%
-\contentsline {table}{\numberline {75}{\ignorespaces HLS Loop Pipelining Solution Export RTL Resource Usage}}{56}{table.75}%
-\contentsline {table}{\numberline {76}{\ignorespaces HLS Loop Pipelining Solution Export RTL Final Timing}}{56}{table.76}%
-\contentsline {table}{\numberline {77}{\ignorespaces Vivado Loop Pipelining Solution Utilization Report [\#]}}{56}{table.77}%
-\contentsline {table}{\numberline {78}{\ignorespaces Vivado Loop Pipelining Solution Timing Report}}{56}{table.78}%
-\contentsline {table}{\numberline {79}{\ignorespaces Vivado Loop Pipelining Solution Dynamic Power Report [mW]}}{56}{table.79}%
-\contentsline {table}{\numberline {80}{\ignorespaces Vivado Loop Pipelining Solution Dynamic Power Report [mW]}}{56}{table.80}%
-\contentsline {table}{\numberline {81}{\ignorespaces Vivado Loop Pipelining Solution Energy Single Operation Report [pJ]}}{56}{table.81}%
+\contentsline {table}{\numberline {74}{\ignorespaces HLS Loop Pipelining Solution Register Detail Estimates Summary}}{56}{table.74}%
+\contentsline {table}{\numberline {75}{\ignorespaces HLS Loop Pipelining Solution C/RTL Cosimulation Summary }}{57}{table.75}%
+\contentsline {table}{\numberline {76}{\ignorespaces HLS Loop Pipelining Solution Export RTL Resource Usage}}{57}{table.76}%
+\contentsline {table}{\numberline {77}{\ignorespaces HLS Loop Pipelining Solution Export RTL Final Timing}}{57}{table.77}%
+\contentsline {table}{\numberline {78}{\ignorespaces Vivado Loop Pipelining Solution Utilization Report [\#]}}{57}{table.78}%
+\contentsline {table}{\numberline {79}{\ignorespaces Vivado Loop Pipelining Solution Timing Report}}{57}{table.79}%
+\contentsline {table}{\numberline {80}{\ignorespaces Vivado Loop Pipelining Solution Dynamic Power Report [mW]}}{57}{table.80}%
+\contentsline {table}{\numberline {81}{\ignorespaces Vivado Loop Pipelining Solution Dynamic Power Report [mW]}}{57}{table.81}%
+\contentsline {table}{\numberline {82}{\ignorespaces Vivado Loop Pipelining Solution Energy Single Operation Report [pJ]}}{57}{table.82}%
