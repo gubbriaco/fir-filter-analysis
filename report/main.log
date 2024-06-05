@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.12.23)  5 JUN 2024 00:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.12.23)  5 JUN 2024 20:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1555,7 +1555,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.160 
       ] (solutions/loop_pipelining/clk_constraint.xdc)
-Overfull \hbox (4.1824pt too wide) in paragraph at lines 239--246
+Overfull \hbox (9.18242pt too wide) in paragraph at lines 241--248
  [][] 
  []
 
@@ -1727,10 +1727,10 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15388 strings out of 475385
- 259646 string characters out of 2793321
+ 15393 strings out of 475385
+ 259943 string characters out of 2793321
  1886491 words of memory out of 3000000
- 35325 multiletter control sequences out of 15000+600000
+ 35330 multiletter control sequences out of 15000+600000
  476651 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,12n,77p,1328b,2251s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1747,7 +1747,7 @@ e1/public/amsfonts/cm/cmr5.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmr7.p
 fb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTex/fonts/type1/
 public/amsfonts/cm/cmsy7.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmti10.p
 fb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (67 pages, 4266363 bytes).
+Output written on main.pdf (67 pages, 4266678 bytes).
 PDF statistics:
  1849 PDF objects out of 2073 (max. 8388607)
  1034 named destinations out of 1200 (max. 500000)

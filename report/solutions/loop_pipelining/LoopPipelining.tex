@@ -216,7 +216,7 @@ Si può notare come, rispetto alla soluzione iniziale non ottimizzata, si è ott
         \hline
     \end{tabular}
     \caption{Vivado Loop Pipelining Solution Utilization Report [\#]}
-    \label{tab:vivado-loop-pipelining-solution-utilization-reproot}
+    \label{tab:vivado-loop-pipelining-solution-utilization-report}
 \end{table}
 
 Inoltre, si può evidenziare come la maximum clock frequency sia aumentata di circa $15 MHz$ rispetto alla soluzione non ottimizzata di riferimento. Tanto è vero che il WNS, relativo alla soluzione realizzata mediante approccio di pipelining, risulta essere leggermente maggiore.
@@ -231,8 +231,10 @@ Inoltre, si può evidenziare come la maximum clock frequency sia aumentata di ci
         \hline
     \end{tabular}
     \caption{Vivado Loop Pipelining Solution Timing Report}
-    \label{tab:vivado-loop-pipelining-solution-timing-reproot}
+    \label{tab:vivado-loop-pipelining-solution-timing-report}
 \end{table}
+
+In particolare, si può notare come, rispetto alla soluzione hardware iniziale non ottimizzata, i contributi di potenza dinamica sono aumentati tale da far aumentare l'energia per singola operazione. Nello specifico, si ha un aumento del contributo \textit{Clocks} di circa il $46\%$ dovuto principalmente all'aumento delle risorse associato alla solution in questione.
 
 \begin{table}[H]
     \centering
@@ -240,11 +242,11 @@ Inoltre, si può evidenziare come la maximum clock frequency sia aumentata di ci
         \hline
         \textbf{BRAM} & \textbf{Clock Enable} & \textbf{Clocks} & \textbf{DSP} & \textbf{Logic} & \textbf{Set/Reset} [mW] & \textbf{Data} \\
         \hline
-        0 & 0.350732822 & 0.642283878 & 1.18907087 & 1.387808239 & 0.018733164 & 1.908166101 \\
+        0 & 0.196236724 & 1.778833685 & 0.814738101 & 1.275097136 & 0.012051522 & 1.206569896 \\
         \hline
     \end{tabular}
     \caption{Vivado Loop Pipelining Solution Dynamic Power Report [mW]}
-    \label{tab:vivado-loop-pipelining-solution-dynamic-power-reproot}
+    \label{tab:vivado-loop-pipelining-solution-dynamic-power-report}
 \end{table}
 
 \begin{table}[H]
@@ -255,11 +257,11 @@ Inoltre, si può evidenziare come la maximum clock frequency sia aumentata di ci
             \hline
             \textbf{Dynamic Total} \\
             \hline
-            5.496795075 \\
+            5.283527065 \\
             \hline
         \end{tabular}
         \caption{Vivado Loop Pipelining Solution Dynamic Power Report [mW]}
-        \label{tab:vivado-loop-pipelining-solution-dynamic-power-reproot}
+        \label{tab:vivado-loop-pipelining-solution-total-dynamic-power-report}
     \end{minipage}
     \hfill
     \centering
@@ -269,10 +271,10 @@ Inoltre, si può evidenziare come la maximum clock frequency sia aumentata di ci
             \hline
             \textbf{Energy Single Operation} \\
             \hline
-            54.96795075 \\
+            52.83527065 \\
             \hline
         \end{tabular}
         \caption{Vivado Loop Pipelining Solution Energy Single Operation Report [pJ]}
-        \label{tab:vivado-loop-pipelining-solution-energy-single-operation-reproot}
+        \label{tab:vivado-loop-pipelining-solution-energy-single-operation-report}
     \end{minipage}
 \end{table}
