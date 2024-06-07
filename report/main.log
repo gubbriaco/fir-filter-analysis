@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.12.23)  7 JUN 2024 16:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.12.23)  7 JUN 2024 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -549,32 +549,34 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 \openout5 = `main.lof'.
 
 
-(main.lot [3])
+(main.lot [3] [4])
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
- [4] (introduction/Introduction.tex (introduction/LTISystems.tex
-<introduction/rispostaimpulsiva.png, id=373, 374.14781pt x 119.69719pt>
+ [5] (introduction/Introduction.tex
+(introduction/LTISystems.tex
+<introduction/rispostaimpulsiva.png, id=397, 374.14781pt x 119.69719pt>
 File: introduction/rispostaimpulsiva.png Graphic file (type png)
 <use introduction/rispostaimpulsiva.png>
 Package pdftex.def Info: introduction/rispostaimpulsiva.png  used on input line
  11.
 (pdftex.def)             Requested size: 234.8775pt x 75.14296pt.
-) (introduction/CausalSystems.tex) (introduction/FIRFilter.tex)
-(introduction/HLS.tex [5 <./introduction/rispostaimpulsiva.png>]
-<introduction/designflow.png, id=393, 453.94594pt x 152.82094pt>
+) (introduction/CausalSystems.tex)
+(introduction/FIRFilter.tex) (introduction/HLS.tex [6 <./introduction/rispostai
+mpulsiva.png>]
+<introduction/designflow.png, id=417, 453.94594pt x 152.82094pt>
 File: introduction/designflow.png Graphic file (type png)
 <use introduction/designflow.png>
 Package pdftex.def Info: introduction/designflow.png  used on input line 31.
 (pdftex.def)             Requested size: 281.85587pt x 94.8879pt.
-)) [6
+)) [7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.59     \newpage
                   <./introduction/designflow.png>]
-(tasks/TasksToBePerformed.tex) [7] (definitions/Definitions.tex
+(tasks/TasksToBePerformed.tex) [8] (definitions/Definitions.tex
 (D:\MikTex\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
@@ -583,12 +585,12 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 2.
- (definitions/definitions.h [8]
-[9])) [10] (c_simulations/CSimulations.tex
+ (definitions/definitions.h [9]
+[10])) [11] (c_simulations/CSimulations.tex
 (D:\MikTex\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) (c_simulations/fir_tb.cpp [11])
-[12] (c_simulations/fir_tb_output.txt [13] [14])) [15] (solutions/Solutions.tex
+) (c_simulations/fir_tb.cpp [12])
+[13] (c_simulations/fir_tb_output.txt [14] [15])) [16] (solutions/Solutions.tex
 (solutions/unoptimized/Unoptimized.tex
 (solutions/unoptimized/fir_unoptimized.cpp)
 Underfull \hbox (badness 10000) in paragraph at lines 5--9
@@ -600,13 +602,13 @@ Overfull \hbox (11.02881pt too wide) in paragraph at lines 14--21
  [][] 
  []
 
-<solutions/unoptimized/clockperiod.png, id=894, 411.78844pt x 143.78719pt>
+<solutions/unoptimized/clockperiod.png, id=918, 411.78844pt x 143.78719pt>
 File: solutions/unoptimized/clockperiod.png Graphic file (type png)
 <use solutions/unoptimized/clockperiod.png>
 Package pdftex.def Info: solutions/unoptimized/clockperiod.png  used on input l
 ine 43.
 (pdftex.def)             Requested size: 234.8775pt x 82.01439pt.
-[16
+[17
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -619,21 +621,21 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
                                                   \__shipout_drop_firstpage_...
 l.46 
      ]
-<solutions/unoptimized/cyclesunoptimized.png, id=918, 1081.79156pt x 725.71124p
+<solutions/unoptimized/cyclesunoptimized.png, id=942, 1081.79156pt x 725.71124p
 t>
 File: solutions/unoptimized/cyclesunoptimized.png Graphic file (type png)
 <use solutions/unoptimized/cyclesunoptimized.png>
 Package pdftex.def Info: solutions/unoptimized/cyclesunoptimized.png  used on i
 nput line 66.
 (pdftex.def)             Requested size: 328.82707pt x 220.58307pt.
-<solutions/unoptimized/cyclesunoptimized2.png, id=919, 1084.05pt x 725.71124pt>
+<solutions/unoptimized/cyclesunoptimized2.png, id=943, 1084.05pt x 725.71124pt>
 
 File: solutions/unoptimized/cyclesunoptimized2.png Graphic file (type png)
 <use solutions/unoptimized/cyclesunoptimized2.png>
 Package pdftex.def Info: solutions/unoptimized/cyclesunoptimized2.png  used on 
 input line 75.
 (pdftex.def)             Requested size: 328.82707pt x 220.12906pt.
- [17
+ [18
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -653,28 +655,28 @@ s been already used, duplicate ignored
 l.77 \end{figure}
                   <./solutions/unoptimized/clockperiod.png> <./solutions/unopti
 mized/cyclesunoptimized.png>]
-<solutions/unoptimized/cyclesunoptimized3.png, id=926, 1081.79156pt x 478.78876
+<solutions/unoptimized/cyclesunoptimized3.png, id=950, 1081.79156pt x 478.78876
 pt>
 File: solutions/unoptimized/cyclesunoptimized3.png Graphic file (type png)
 <use solutions/unoptimized/cyclesunoptimized3.png>
 Package pdftex.def Info: solutions/unoptimized/cyclesunoptimized3.png  used on 
 input line 84.
 (pdftex.def)             Requested size: 211.38832pt x 93.55702pt.
-<solutions/unoptimized/cyclesunoptimized4.png, id=927, 1082.54437pt x 480.29437
+<solutions/unoptimized/cyclesunoptimized4.png, id=951, 1082.54437pt x 480.29437
 pt>
 File: solutions/unoptimized/cyclesunoptimized4.png Graphic file (type png)
 <use solutions/unoptimized/cyclesunoptimized4.png>
 Package pdftex.def Info: solutions/unoptimized/cyclesunoptimized4.png  used on 
 input line 91.
 (pdftex.def)             Requested size: 211.38832pt x 93.78526pt.
-<solutions/unoptimized/cyclesunoptimized5.png, id=928, 1082.54437pt x 477.28313
+<solutions/unoptimized/cyclesunoptimized5.png, id=952, 1082.54437pt x 477.28313
 pt>
 File: solutions/unoptimized/cyclesunoptimized5.png Graphic file (type png)
 <use solutions/unoptimized/cyclesunoptimized5.png>
 Package pdftex.def Info: solutions/unoptimized/cyclesunoptimized5.png  used on 
 input line 100.
 (pdftex.def)             Requested size: 211.38832pt x 93.19728pt.
-<solutions/unoptimized/cyclesunoptimized6.png, id=929, 1081.79156pt x 482.55281
+<solutions/unoptimized/cyclesunoptimized6.png, id=953, 1081.79156pt x 482.55281
 pt>
 File: solutions/unoptimized/cyclesunoptimized6.png Graphic file (type png)
 <use solutions/unoptimized/cyclesunoptimized6.png>
@@ -685,7 +687,7 @@ input line 107.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18
+[19
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -726,7 +728,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--150
 (D:\MikTex\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-(solutions/unoptimized/firConvolutionUnoptimized_top.vhd [19
+(solutions/unoptimized/firConvolutionUnoptimized_top.vhd [20
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -751,13 +753,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has
                                                   \__shipout_drop_firstpage_...
 l.16 end 
          firConvolutionUnoptimized_top;])
-(solutions/unoptimized/firConvolutionUnoptimized_tb.vhd [20])
+(solutions/unoptimized/firConvolutionUnoptimized_tb.vhd [21])
 (solutions/unoptimized/clk_constraint.xdc)
 Underfull \hbox (badness 10000) in paragraph at lines 200--213
 
  []
 
-[21
+[22
 pdfTeX warning (ext4): destination with the same identifier (name{table.8}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -768,7 +770,7 @@ Overfull \hbox (9.18242pt too wide) in paragraph at lines 232--239
  [][] 
  []
 
-) [22
+) [23
 pdfTeX warning (ext4): destination with the same identifier (name{table.9}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -797,7 +799,7 @@ Overfull \hbox (97.8355pt too wide) in paragraph at lines 8--29
  [][] 
  []
 
-[23
+[24
 pdfTeX warning (ext4): destination with the same identifier (name{table.13}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -815,7 +817,7 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.115 \end{table}
-                 ] [24
+                 ] [25
 pdfTeX warning (ext4): destination with the same identifier (name{table.16}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -835,7 +837,7 @@ l.177
 (solutions/operation_chaining/5ns/clk_constraint.xdc)
 (solutions/operation_chaining/4ns/clk_constraint.xdc)
 (solutions/operation_chaining/3ns/clk_constraint.xdc)
-<solutions/operation_chaining/3ns/timingrequirement.png, id=1095, 594.72188pt x
+<solutions/operation_chaining/3ns/timingrequirement.png, id=1120, 594.72188pt x
  15.05624pt>
 File: solutions/operation_chaining/3ns/timingrequirement.png Graphic file (type
  png)
@@ -843,27 +845,27 @@ File: solutions/operation_chaining/3ns/timingrequirement.png Graphic file (type
 Package pdftex.def Info: solutions/operation_chaining/3ns/timingrequirement.png
   used on input line 195.
 (pdftex.def)             Requested size: 469.75502pt x 11.89246pt.
-<solutions/operation_chaining/3ns/critical.png, id=1096, 406.51875pt x 283.8103
+<solutions/operation_chaining/3ns/critical.png, id=1121, 406.51875pt x 283.8103
 2pt>
 File: solutions/operation_chaining/3ns/critical.png Graphic file (type png)
 <use solutions/operation_chaining/3ns/critical.png>
 Package pdftex.def Info: solutions/operation_chaining/3ns/critical.png  used on
  input line 202.
 (pdftex.def)             Requested size: 211.38832pt x 147.57788pt.
-<solutions/operation_chaining/3ns/wns.png, id=1097, 213.79875pt x 123.46124pt>
+<solutions/operation_chaining/3ns/wns.png, id=1122, 213.79875pt x 123.46124pt>
 File: solutions/operation_chaining/3ns/wns.png Graphic file (type png)
 <use solutions/operation_chaining/3ns/wns.png>
 Package pdftex.def Info: solutions/operation_chaining/3ns/wns.png  used on inpu
 t line 209.
 (pdftex.def)             Requested size: 211.38832pt x 122.06874pt.
- [25
+ [26
 pdfTeX warning (ext4): destination with the same identifier (name{table.18}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.214 
        <./solutions/operation_chaining/3ns/timingrequirement.png>]
-<solutions/operation_chaining/operationchainingutilization.png, id=1112, 727.51
+<solutions/operation_chaining/operationchainingutilization.png, id=1136, 727.51
 8pt x 317.55pt>
 File: solutions/operation_chaining/operationchainingutilization.png Graphic fil
 e (type png)
@@ -876,7 +878,7 @@ Overfull \hbox (0.61841pt too wide) in paragraph at lines 251--270
  [][] 
  []
 
-[26
+[27
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -903,7 +905,7 @@ l.273
        <./solutions/operation_chaining/3ns/critical.png> <./solutions/operation
 _chaining/3ns/wns.png> <./solutions/operation_chaining/operationchainingutiliza
 tion.png>]
-<solutions/operation_chaining/operationchainingtiming.png, id=1120, 720.729pt x
+<solutions/operation_chaining/operationchainingtiming.png, id=1144, 720.729pt x
  632.691pt>
 File: solutions/operation_chaining/operationchainingtiming.png Graphic file (ty
 pe png)
@@ -911,7 +913,7 @@ pe png)
 Package pdftex.def Info: solutions/operation_chaining/operationchainingtiming.p
 ng  used on input line 276.
 (pdftex.def)             Requested size: 469.75502pt x 412.3738pt.
- [27
+ [28
 pdfTeX warning (ext4): destination with the same identifier (name{table.20}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -924,7 +926,7 @@ as been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.282 
        <./solutions/operation_chaining/operationchainingtiming.png>]
-<solutions/operation_chaining/operationchainingpower.png, id=1126, 782.487pt x 
+<solutions/operation_chaining/operationchainingpower.png, id=1150, 782.487pt x 
 632.91pt>
 File: solutions/operation_chaining/operationchainingpower.png Graphic file (typ
 e png)
@@ -932,7 +934,7 @@ e png)
 Package pdftex.def Info: solutions/operation_chaining/operationchainingpower.pn
 g  used on input line 364.
 (pdftex.def)             Requested size: 469.75502pt x 379.9614pt.
- [28
+ [29
 pdfTeX warning (ext4): destination with the same identifier (name{table.21}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -950,7 +952,7 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.368 
-      ]) [29
+      ]) [30
 pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -963,14 +965,14 @@ Overfull \hbox (11.02881pt too wide) in paragraph at lines 14--21
  [][] 
  []
 
-<solutions/code_hoisting/codehoistinganalysis.png, id=1136, 1082.54437pt x 727.
+<solutions/code_hoisting/codehoistinganalysis.png, id=1160, 1082.54437pt x 727.
 96968pt>
 File: solutions/code_hoisting/codehoistinganalysis.png Graphic file (type png)
 <use solutions/code_hoisting/codehoistinganalysis.png>
 Package pdftex.def Info: solutions/code_hoisting/codehoistinganalysis.png  used
  on input line 58.
 (pdftex.def)             Requested size: 469.75502pt x 315.8867pt.
-[30
+[31
 pdfTeX warning (ext4): destination with the same identifier (name{table.24}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -988,7 +990,7 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.61 
-     ] [31
+     ] [32
 pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1006,7 +1008,7 @@ Overfull \hbox (4.1824pt too wide) in paragraph at lines 179--186
  [][] 
  []
 
-[32
+[33
 pdfTeX warning (ext4): destination with the same identifier (name{table.28}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1042,7 +1044,7 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.219 
-      ]) [33
+      ]) [34
 pdfTeX warning (ext4): destination with the same identifier (name{table.34}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1060,14 +1062,14 @@ Overfull \hbox (11.02881pt too wide) in paragraph at lines 10--17
  [][] 
  []
 
-<solutions/loop_fission/loopfissionanalysis.png, id=1172, 1082.54437pt x 730.22
+<solutions/loop_fission/loopfissionanalysis.png, id=1196, 1082.54437pt x 730.22
 812pt>
 File: solutions/loop_fission/loopfissionanalysis.png Graphic file (type png)
 <use solutions/loop_fission/loopfissionanalysis.png>
 Package pdftex.def Info: solutions/loop_fission/loopfissionanalysis.png  used o
 n input line 55.
 (pdftex.def)             Requested size: 469.75502pt x 316.8667pt.
-[34
+[35
 pdfTeX warning (ext4): destination with the same identifier (name{table.36}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1085,7 +1087,7 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.58 
-     ] [35
+     ] [36
 pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1103,7 +1105,7 @@ Overfull \hbox (9.18242pt too wide) in paragraph at lines 173--180
  [][] 
  []
 
-) [36
+) [37
 pdfTeX warning (ext4): destination with the same identifier (name{table.40}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1151,29 +1153,29 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.17 \newpage
-             ] [37] (solutions/loop_unrolling/LoopUnrolling.tex
-<solutions/loop_unrolling/partitioning.png, id=1210, 769.37437pt x 330.48468pt>
+             ] [38] (solutions/loop_unrolling/LoopUnrolling.tex
+<solutions/loop_unrolling/partitioning.png, id=1234, 769.37437pt x 330.48468pt>
 
 File: solutions/loop_unrolling/partitioning.png Graphic file (type png)
 <use solutions/loop_unrolling/partitioning.png>
 Package pdftex.def Info: solutions/loop_unrolling/partitioning.png  used on inp
 ut line 18.
 (pdftex.def)             Requested size: 469.75502pt x 201.78699pt.
- [38
+ [39
 pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.23 \begin{itemize}
                      <./solutions/loop_unrolling/partitioning.png>]
-<solutions/loop_unrolling/unrolling.png, id=1216, 490.08093pt x 380.17032pt>
+<solutions/loop_unrolling/unrolling.png, id=1240, 490.08093pt x 380.17032pt>
 File: solutions/loop_unrolling/unrolling.png Graphic file (type png)
 <use solutions/loop_unrolling/unrolling.png>
 Package pdftex.def Info: solutions/loop_unrolling/unrolling.png  used on input 
 line 34.
 (pdftex.def)             Requested size: 469.75502pt x 364.41406pt.
 
-(solutions/loop_unrolling/factor2/UnrollingFactor2.tex [39
+(solutions/loop_unrolling/factor2/UnrollingFactor2.tex [40
 pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1184,12 +1186,12 @@ unrolling.png>]
 (solutions/loop_unrolling/factor2/fir_loop_unrolling_manual_factor2.cpp)
 (solutions/loop_unrolling/factor2/fir_loop_unrolling_automatic_factor2.cpp)
 (solutions/loop_unrolling/factor2/fir_loop_unrolling_automatic_partiotioning_fa
-ctor2.cpp) [40]
+ctor2.cpp) [41]
 Overfull \hbox (14.13878pt too wide) in paragraph at lines 46--61
  [][] 
  []
 
-<solutions/loop_unrolling/factor2/loopunrollingmanual2.png, id=1286, 1082.54437
+<solutions/loop_unrolling/factor2/loopunrollingmanual2.png, id=1310, 1082.54437
 pt x 727.96968pt>
 File: solutions/loop_unrolling/factor2/loopunrollingmanual2.png Graphic file (t
 ype png)
@@ -1197,7 +1199,7 @@ ype png)
 Package pdftex.def Info: solutions/loop_unrolling/factor2/loopunrollingmanual2.
 png  used on input line 69.
 (pdftex.def)             Requested size: 422.77664pt x 284.2958pt.
-[41
+[42
 pdfTeX warning (ext4): destination with the same identifier (name{table.48}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1216,7 +1218,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.72 
      ]
-<solutions/loop_unrolling/factor2/loopunrollingautomatic2.png, id=1291, 1082.54
+<solutions/loop_unrolling/factor2/loopunrollingautomatic2.png, id=1315, 1082.54
 437pt x 727.96968pt>
 File: solutions/loop_unrolling/factor2/loopunrollingautomatic2.png Graphic file
  (type png)
@@ -1224,7 +1226,7 @@ File: solutions/loop_unrolling/factor2/loopunrollingautomatic2.png Graphic file
 Package pdftex.def Info: solutions/loop_unrolling/factor2/loopunrollingautomati
 c2.png  used on input line 75.
 (pdftex.def)             Requested size: 422.77664pt x 284.2958pt.
- [42
+ [43
 pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1242,7 +1244,7 @@ Overfull \hbox (10.5743pt too wide) in paragraph at lines 120--135
  [][] 
  []
 
-(solutions/loop_unrolling/factor2/clk_constraint.xdc) [43
+(solutions/loop_unrolling/factor2/clk_constraint.xdc) [44
 pdfTeX warning (ext4): destination with the same identifier (name{table.51}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1261,7 +1263,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.162 
       ]
-<solutions/loop_unrolling/factor2/loopunrollingfactor2utilization.png, id=1304,
+<solutions/loop_unrolling/factor2/loopunrollingfactor2utilization.png, id=1328,
  731.46pt x 317.55pt>
 File: solutions/loop_unrolling/factor2/loopunrollingfactor2utilization.png Grap
 hic file (type png)
@@ -1269,7 +1271,7 @@ hic file (type png)
 Package pdftex.def Info: solutions/loop_unrolling/factor2/loopunrollingfactor2u
 tilization.png  used on input line 167.
 (pdftex.def)             Requested size: 422.77664pt x 183.54437pt.
- [44
+ [45
 pdfTeX warning (ext4): destination with the same identifier (name{table.54}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1289,7 +1291,7 @@ s been already used, duplicate ignored
 l.194 
        <./solutions/loop_unrolling/factor2/loopunrollingfactor2utilization.png>
 ]
-<solutions/loop_unrolling/factor2/loopunrollingfactor2timing.png, id=1310, 724.
+<solutions/loop_unrolling/factor2/loopunrollingfactor2timing.png, id=1334, 724.
 89pt x 632.691pt>
 File: solutions/loop_unrolling/factor2/loopunrollingfactor2timing.png Graphic f
 ile (type png)
@@ -1307,7 +1309,7 @@ Overfull \hbox (9.18622pt too wide) in paragraph at lines 249--261
  [][] 
  []
 
-[45
+[46
 pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1320,7 +1322,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.265 
        <./solutions/loop_unrolling/factor2/loopunrollingfactor2timing.png>]
-<solutions/loop_unrolling/factor2/loopunrollingfactor2power.png, id=1316, 727.2
+<solutions/loop_unrolling/factor2/loopunrollingfactor2power.png, id=1340, 727.2
 99pt x 632.91pt>
 File: solutions/loop_unrolling/factor2/loopunrollingfactor2power.png Graphic fi
 le (type png)
@@ -1329,7 +1331,7 @@ Package pdftex.def Info: solutions/loop_unrolling/factor2/loopunrollingfactor2p
 ower.png  used on input line 270.
 (pdftex.def)             Requested size: 469.75502pt x 408.79845pt.
 )
-[46
+[47
 pdfTeX warning (ext4): destination with the same identifier (name{table.57}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1352,12 +1354,12 @@ l.43 \newpage
 (solutions/loop_unrolling/factor4/fir_loop_unrolling_manual_factor4.cpp)
 (solutions/loop_unrolling/factor4/fir_loop_unrolling_automatic_factor4.cpp)
 (solutions/loop_unrolling/factor4/fir_loop_unrolling_automatic_partiotioning_fa
-ctor4.cpp) [47]
+ctor4.cpp) [48]
 Overfull \hbox (14.13878pt too wide) in paragraph at lines 42--57
  [][] 
  []
 
-<solutions/loop_unrolling/factor4/loopunrollingmanual4.png, id=1387, 1083.29718
+<solutions/loop_unrolling/factor4/loopunrollingmanual4.png, id=1411, 1083.29718
 pt x 729.47531pt>
 File: solutions/loop_unrolling/factor4/loopunrollingmanual4.png Graphic file (t
 ype png)
@@ -1365,7 +1367,7 @@ ype png)
 Package pdftex.def Info: solutions/loop_unrolling/factor4/loopunrollingmanual4.
 png  used on input line 65.
 (pdftex.def)             Requested size: 422.77664pt x 284.69458pt.
-[48
+[49
 pdfTeX warning (ext4): destination with the same identifier (name{table.59}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1384,7 +1386,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.68 
      ]
-<solutions/loop_unrolling/factor4/loopunrollingautomatic4.png, id=1393, 1081.79
+<solutions/loop_unrolling/factor4/loopunrollingautomatic4.png, id=1418, 1081.79
 156pt x 727.96968pt>
 File: solutions/loop_unrolling/factor4/loopunrollingautomatic4.png Graphic file
  (type png)
@@ -1392,7 +1394,7 @@ File: solutions/loop_unrolling/factor4/loopunrollingautomatic4.png Graphic file
 Package pdftex.def Info: solutions/loop_unrolling/factor4/loopunrollingautomati
 c4.png  used on input line 71.
 (pdftex.def)             Requested size: 422.77664pt x 284.49576pt.
- [49
+ [50
 pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1411,7 +1413,7 @@ Overfull \hbox (10.5743pt too wide) in paragraph at lines 116--131
  []
 
 (solutions/loop_unrolling/factor2/clk_constraint.xdc)
-<solutions/loop_unrolling/factor4/loopunrollingfactor4utilization.png, id=1401,
+<solutions/loop_unrolling/factor4/loopunrollingfactor4utilization.png, id=1425,
  720.072pt x 317.55pt>
 File: solutions/loop_unrolling/factor4/loopunrollingfactor4utilization.png Grap
 hic file (type png)
@@ -1419,7 +1421,7 @@ hic file (type png)
 Package pdftex.def Info: solutions/loop_unrolling/factor4/loopunrollingfactor4u
 tilization.png  used on input line 162.
 (pdftex.def)             Requested size: 422.77664pt x 186.44194pt.
- [50
+ [51
 pdfTeX warning (ext4): destination with the same identifier (name{table.62}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1444,7 +1446,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.165 \end{figure}
                   ]
-<solutions/loop_unrolling/factor4/loopunrollingfactor4timing.png, id=1407, 713.
+<solutions/loop_unrolling/factor4/loopunrollingfactor4timing.png, id=1431, 713.
 94pt x 632.691pt>
 File: solutions/loop_unrolling/factor4/loopunrollingfactor4timing.png Graphic f
 ile (type png)
@@ -1452,7 +1454,7 @@ ile (type png)
 Package pdftex.def Info: solutions/loop_unrolling/factor4/loopunrollingfactor4t
 iming.png  used on input line 192.
 (pdftex.def)             Requested size: 375.80544pt x 333.0366pt.
- [51
+ [52
 pdfTeX warning (ext4): destination with the same identifier (name{figure.25}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1475,7 +1477,7 @@ Overfull \hbox (9.18622pt too wide) in paragraph at lines 242--254
  [][] 
  []
 
-)) [52
+)) [53
 pdfTeX warning (ext4): destination with the same identifier (name{figure.26}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1500,15 +1502,15 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.21 \newpage
               <./solutions/loop_unrolling/factor4/loopunrollingfactor4timing.pn
-g>] [53] (solutions/loop_pipelining/LoopPipelining.tex
-<solutions/loop_pipelining/looppipelining.png, id=1422, 490.08093pt x 279.29344
+g>] [54] (solutions/loop_pipelining/LoopPipelining.tex
+<solutions/loop_pipelining/looppipelining.png, id=1446, 490.08093pt x 279.29344
 pt>
 File: solutions/loop_pipelining/looppipelining.png Graphic file (type png)
 <use solutions/loop_pipelining/looppipelining.png>
 Package pdftex.def Info: solutions/loop_pipelining/looppipelining.png  used on 
 input line 5.
 (pdftex.def)             Requested size: 469.75502pt x 267.71805pt.
- [54
+ [55
 pdfTeX warning (ext4): destination with the same identifier (name{figure.27}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1520,7 +1522,7 @@ Overfull \hbox (11.02881pt too wide) in paragraph at lines 31--38
  [][] 
  []
 
-[55
+[56
 pdfTeX warning (ext4): destination with the same identifier (name{table.70}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1538,7 +1540,7 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.99 
-     ] [56
+     ] [57
 pdfTeX warning (ext4): destination with the same identifier (name{table.73}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1555,7 +1557,7 @@ Overfull \hbox (9.18242pt too wide) in paragraph at lines 241--248
  [][] 
  []
 
-) [57
+) [58
 pdfTeX warning (ext4): destination with the same identifier (name{table.75}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1604,158 +1606,184 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.25 \newpage
              ] (solutions/bitwidth_optimization/BitwidthOptimization.tex
-(solutions/bitwidth_optimization/fir_bitwidth_optimization.cpp) [58]
+(solutions/bitwidth_optimization/fir_bitwidth_optimization.cpp) [59]
 Overfull \hbox (1.85204pt too wide) in paragraph at lines 94--106
  [][] 
  []
 
-) [59
+)) [60
 pdfTeX warning (ext4): destination with the same identifier (name{table.83}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.29 \newpage
-             
+l.75     \newpage
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{table.84}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.29 \newpage
-             
+l.75     \newpage
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{table.85}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.29 \newpage
-             
+l.75     \newpage
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{table.86}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.29 \newpage
-             
+l.75     \newpage
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{table.87}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.29 \newpage
-             
+l.75     \newpage
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{table.88}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.29 \newpage
-             ] (solutions/axi/AXI.tex)) [60] (conclusions/Conclusions.tex
-<conclusions/synthesis.jpeg, id=1493, 1606.0pt x 596.2275pt>
-File: conclusions/synthesis.jpeg Graphic file (type jpg)
-<use conclusions/synthesis.jpeg>
-Package pdftex.def Info: conclusions/synthesis.jpeg  used on input line 5.
-(pdftex.def)             Requested size: 585.38303pt x 217.32555pt.
-
-[61]
-<conclusions/hlsutilization.png, id=1499, 812.709pt x 318.207pt>
-File: conclusions/hlsutilization.png Graphic file (type png)
-<use conclusions/hlsutilization.png>
-Package pdftex.def Info: conclusions/hlsutilization.png  used on input line 12.
-
-(pdftex.def)             Requested size: 455.29901pt x 178.26753pt.
-<conclusions/hlstripcount.png, id=1500, 818.184pt x 317.769pt>
-File: conclusions/hlstripcount.png Graphic file (type png)
-<use conclusions/hlstripcount.png>
-Package pdftex.def Info: conclusions/hlstripcount.png  used on input line 18.
-(pdftex.def)             Requested size: 455.29901pt x 176.8342pt.
- [62
+l.75     \newpage
+                 ] (solutions/axi/AXI.tex
+<solutions/axi/axistream.png, id=1513, 322.20375pt x 177.66376pt>
+File: solutions/axi/axistream.png Graphic file (type png)
+<use solutions/axi/axistream.png>
+Package pdftex.def Info: solutions/axi/axistream.png  used on input line 7.
+(pdftex.def)             Requested size: 328.82707pt x 181.32306pt.
+ (solutions/axi/fir_axi.cpp [61
 pdfTeX warning (ext4): destination with the same identifier (name{figure.28}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.21 \end{figure}
-                  <./conclusions/synthesis.jpeg>]
-<conclusions/hlslatency.png, id=1505, 813.585pt x 318.426pt>
-File: conclusions/hlslatency.png Graphic file (type png)
-<use conclusions/hlslatency.png>
-Package pdftex.def Info: conclusions/hlslatency.png  used on input line 24.
-(pdftex.def)             Requested size: 455.29901pt x 178.20071pt.
-<conclusions/hlsinterval.png, id=1506, 814.68pt x 317.769pt>
-File: conclusions/hlsinterval.png Graphic file (type png)
-<use conclusions/hlsinterval.png>
-Package pdftex.def Info: conclusions/hlsinterval.png  used on input line 30.
-(pdftex.def)             Requested size: 455.29901pt x 177.59544pt.
- [63
+l.24 	
+      	outFilter.strb = 15; <./solutions/axi/axistream.png>])
+Overfull \hbox (11.02881pt too wide) in paragraph at lines 29--36
+ [][] 
+ []
+
+[62
+pdfTeX warning (ext4): destination with the same identifier (name{table.89}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.104 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.90}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.104 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.91}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.104 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.92}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.104 
+      ] (solutions/axi/clk_constraint.xdc)) [63
+pdfTeX warning (ext4): destination with the same identifier (name{table.93}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.79     \newpage
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{table.94}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.79     \newpage
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{table.95}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.79     \newpage
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{table.96}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.79     \newpage
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{table.97}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.79     \newpage
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{table.98}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.79     \newpage
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{table.99}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.79     \newpage
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{table.100}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.79     \newpage
+                 ] (conclusions/Conclusions.tex
+<conclusions/powerreport.png, id=1561, 569.619pt x 638.385pt>
+File: conclusions/powerreport.png Graphic file (type png)
+<use conclusions/powerreport.png>
+Package pdftex.def Info: conclusions/powerreport.png  used on input line 5.
+(pdftex.def)             Requested size: 455.29901pt x 510.28008pt.
+<conclusions/utilization.png, id=1562, 569.619pt x 317.988pt>
+File: conclusions/utilization.png Graphic file (type png)
+<use conclusions/utilization.png>
+Package pdftex.def Info: conclusions/utilization.png  used on input line 12.
+(pdftex.def)             Requested size: 455.29901pt x 254.17725pt.
+ [64
 pdfTeX warning (ext4): destination with the same identifier (name{figure.29}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.34 
-     
+l.16 
+      <./conclusions/powerreport.png>]
+<conclusions/wns.png, id=1568, 569.619pt x 319.302pt>
+File: conclusions/wns.png Graphic file (type png)
+<use conclusions/wns.png>
+Package pdftex.def Info: conclusions/wns.png  used on input line 19.
+(pdftex.def)             Requested size: 455.29901pt x 255.22757pt.
+<conclusions/frequency.png, id=1569, 569.838pt x 321.273pt>
+File: conclusions/frequency.png Graphic file (type png)
+<use conclusions/frequency.png>
+Package pdftex.def Info: conclusions/frequency.png  used on input line 26.
+(pdftex.def)             Requested size: 455.29901pt x 256.70499pt.
+) [65
 pdfTeX warning (ext4): destination with the same identifier (name{figure.30}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.34 
-     
+l.83     \newpage
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.31}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.34 
-      <./conclusions/hlsutilization.png> <./conclusions/hlstripcount.png> <./co
-nclusions/hlslatency.png>]
-<conclusions/cosimulation.jpeg, id=1514, 789.95125pt x 687.56876pt>
-File: conclusions/cosimulation.jpeg Graphic file (type jpg)
-<use conclusions/cosimulation.jpeg>
-Package pdftex.def Info: conclusions/cosimulation.jpeg  used on input line 38.
-(pdftex.def)             Requested size: 455.29901pt x 396.2932pt.
- [64
+l.83     \newpage
+                  <./conclusions/utilization.png> <./conclusions/wns.png>]
+[66
 pdfTeX warning (ext4): destination with the same identifier (name{figure.32}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.42 
-      <./conclusions/hlsinterval.png>]
-<conclusions/hlscosimulation.png, id=1520, 1728.348pt x 650.211pt>
-File: conclusions/hlscosimulation.png Graphic file (type png)
-<use conclusions/hlscosimulation.png>
-Package pdftex.def Info: conclusions/hlscosimulation.png  used on input line 45
-.
-(pdftex.def)             Requested size: 585.38303pt x 220.2255pt.
- [65
-pdfTeX warning (ext4): destination with the same identifier (name{figure.33}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.49 
-      <./conclusions/cosimulation.jpeg>]
-<conclusions/exportrtl.jpeg, id=1525, 1112.155pt x 687.56876pt>
-File: conclusions/exportrtl.jpeg Graphic file (type jpg)
-<use conclusions/exportrtl.jpeg>
-Package pdftex.def Info: conclusions/exportrtl.jpeg  used on input line 53.
-(pdftex.def)             Requested size: 585.38303pt x 361.90225pt.
- [66
-pdfTeX warning (ext4): destination with the same identifier (name{figure.34}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.57 
-      <./conclusions/hlscosimulation.png>]
-<conclusions/hlsexportrtl.png, id=1531, 1396.344pt x 317.988pt>
-File: conclusions/hlsexportrtl.png Graphic file (type png)
-<use conclusions/hlsexportrtl.png>
-Package pdftex.def Info: conclusions/hlsexportrtl.png  used on input line 60.
-(pdftex.def)             Requested size: 585.38303pt x 133.30658pt.
-) [67
-pdfTeX warning (ext4): destination with the same identifier (name{figure.35}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.79     \newpage
-                  <./conclusions/exportrtl.jpeg>] [68
-pdfTeX warning (ext4): destination with the same identifier (name{figure.36}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.79     \newpage
-                  <./conclusions/hlsexportrtl.png>] (main.aux)
+l.83     \newpage
+                  <./conclusions/frequency.png>] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1765,9 +1793,9 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15425 strings out of 475385
- 260769 string characters out of 2793321
- 1887063 words of memory out of 3000000
+ 15465 strings out of 475385
+ 261357 string characters out of 2793321
+ 1887543 words of memory out of 3000000
  35334 multiletter control sequences out of 15000+600000
  476651 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1785,9 +1813,9 @@ e1/public/amsfonts/cm/cmr5.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmr7.p
 fb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTex/fonts/type1/
 public/amsfonts/cm/cmsy7.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmti10.p
 fb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (68 pages, 4283039 bytes).
+Output written on main.pdf (66 pages, 3136702 bytes).
 PDF statistics:
- 1889 PDF objects out of 2073 (max. 8388607)
- 1059 named destinations out of 1200 (max. 500000)
- 351 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1937 PDF objects out of 2073 (max. 8388607)
+ 1100 named destinations out of 1200 (max. 500000)
+ 331 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -22,7 +22,7 @@ Il pipelining in HLS è possibile implementarlo mediante una direttiva proprieta
 
 In questo caso, la soluzione hardware presa come riferimento è stata quella iniziale non ottimizzata. In particolare, all'interno del loop è stata definita sia la direttiva di pipeline, specificando un II=1, sia la direttiva di partizionamento. Nello specifico, è stato considerato il pragma di partitioning al fine di realizzabilità della soluzione in questione. Questo è dovuto al fatto che, senza considerare tale direttiva, si otterrebbe un II\_achieved differente da un II\_target. Infatti, utilizzare lo shift register vuol dire non poter accedere ai dati intermedi ma soltanto a quelli finali. Pertanto, per far fronte a questo problema si potrebbe pensare di realizzare tali shift register mediante Flip Flop (tramite la direttiva di partizionamento).
 \\
-Effettuando la sintesi otteniamo i seguenti report.
+Effettuando la sintesi si ottengono i seguenti report.
 
 \begin{table}[H]
     \centering

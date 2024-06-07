@@ -1,89 +1,101 @@
 \babel@toc {english}{}\relax 
-\contentsline {table}{\numberline {1}{\ignorespaces HLS Unoptimized Solution Timing Summary (ns)}}{16}{table.1}%
-\contentsline {table}{\numberline {2}{\ignorespaces HLS Unoptimized Solution Latency Summary (clock cycles)}}{16}{table.2}%
-\contentsline {table}{\numberline {3}{\ignorespaces HLS Unoptimized Solution Latency Loops Summary }}{17}{table.3}%
-\contentsline {table}{\numberline {4}{\ignorespaces HLS Unoptimized Solution Utilization Estimates Summary}}{19}{table.4}%
-\contentsline {table}{\numberline {5}{\ignorespaces HLS Unoptimized Solution C/RTL Cosimulation Summary }}{19}{table.5}%
-\contentsline {table}{\numberline {6}{\ignorespaces HLS Unoptimized Solution Export RTL Resource Usage}}{19}{table.6}%
-\contentsline {table}{\numberline {7}{\ignorespaces HLS Unoptimized Solution Export RTL Final Timing}}{19}{table.7}%
-\contentsline {table}{\numberline {8}{\ignorespaces Vivado Unoptimized Solution Utilization Report [\#]}}{21}{table.8}%
-\contentsline {table}{\numberline {9}{\ignorespaces Vivado Unoptimized Solution Timing Report}}{22}{table.9}%
-\contentsline {table}{\numberline {10}{\ignorespaces Vivado Unoptimized Solution Dynamic Power Report [mW]}}{22}{table.10}%
-\contentsline {table}{\numberline {11}{\ignorespaces Vivado Unoptimized Solution Dynamic Power Report [mW]}}{22}{table.11}%
-\contentsline {table}{\numberline {12}{\ignorespaces Vivado Unoptimized Solution Energy Single Operation Report [pJ]}}{22}{table.12}%
-\contentsline {table}{\numberline {13}{\ignorespaces HLS Operation Chaining Solution Timing Summary (ns)}}{23}{table.13}%
-\contentsline {table}{\numberline {14}{\ignorespaces HLS Operation Chaining Solution Latency Summary (clock cycles)}}{23}{table.14}%
-\contentsline {table}{\numberline {15}{\ignorespaces HLS Operation Chaining Solution Latency Loops Summary }}{23}{table.15}%
-\contentsline {table}{\numberline {16}{\ignorespaces HLS Operation Chaining Solution Utilization Estimates [\#]}}{24}{table.16}%
-\contentsline {table}{\numberline {17}{\ignorespaces HLS Operation Chaining Solution C/RTL Cosimulation Report }}{24}{table.17}%
-\contentsline {table}{\numberline {18}{\ignorespaces HLS Operation Chaining Solution Export RTL Report}}{25}{table.18}%
-\contentsline {table}{\numberline {19}{\ignorespaces Vivado Operation Chaining Solution Utilization Report [\#]}}{26}{table.19}%
-\contentsline {table}{\numberline {20}{\ignorespaces Vivado Operation Chaining Solution Timing Report}}{27}{table.20}%
-\contentsline {table}{\numberline {21}{\ignorespaces Vivado Operation Chaining Solution Dynamic Power Report [mW]}}{28}{table.21}%
-\contentsline {table}{\numberline {22}{\ignorespaces Vivado Operation Chaining Solution Dynamic Power Report [mW]}}{28}{table.22}%
-\contentsline {table}{\numberline {23}{\ignorespaces Vivado Operation Chaining Solution Energy Single Operation Report [pJ]}}{28}{table.23}%
-\contentsline {table}{\numberline {24}{\ignorespaces HLS Code Hoisting Solution Timing Summary (ns)}}{30}{table.24}%
-\contentsline {table}{\numberline {25}{\ignorespaces HLS Code Hoisting Solution Latency Summary (clock cycles)}}{30}{table.25}%
-\contentsline {table}{\numberline {26}{\ignorespaces HLS Code Hoisting Solution Latency Loops Summary }}{30}{table.26}%
-\contentsline {table}{\numberline {27}{\ignorespaces HLS Code Hoisting Solution Utilization Estimates Summary}}{31}{table.27}%
-\contentsline {table}{\numberline {28}{\ignorespaces HLS Code Hoisting Solution C/RTL Cosimulation Summary }}{32}{table.28}%
-\contentsline {table}{\numberline {29}{\ignorespaces HLS Code Hoisting Solution Export RTL Resource Usage}}{32}{table.29}%
-\contentsline {table}{\numberline {30}{\ignorespaces HLS Code Hoisting Solution Export RTL Final Timing}}{32}{table.30}%
-\contentsline {table}{\numberline {31}{\ignorespaces Vivado Code Hoisting Solution Utilization Report [\#]}}{32}{table.31}%
-\contentsline {table}{\numberline {32}{\ignorespaces Vivado Code Hoisting Solution Timing Report}}{32}{table.32}%
-\contentsline {table}{\numberline {33}{\ignorespaces Vivado Code Hoisting Solution Dynamic Power Report [mW]}}{32}{table.33}%
-\contentsline {table}{\numberline {34}{\ignorespaces Vivado Code Hoisting Solution Dynamic Power Report [mW]}}{33}{table.34}%
-\contentsline {table}{\numberline {35}{\ignorespaces Vivado Code Hoisting Solution Energy Single Operation Report [pJ]}}{33}{table.35}%
-\contentsline {table}{\numberline {36}{\ignorespaces HLS Loop Fission Solution Timing Summary (ns)}}{34}{table.36}%
-\contentsline {table}{\numberline {37}{\ignorespaces HLS Loop Fission Solution Latency Summary (clock cycles)}}{34}{table.37}%
-\contentsline {table}{\numberline {38}{\ignorespaces HLS Loop Fission Solution Latency Loops Summary }}{34}{table.38}%
-\contentsline {table}{\numberline {39}{\ignorespaces HLS Loop Fission Solution Utilization Estimates Summary}}{35}{table.39}%
-\contentsline {table}{\numberline {40}{\ignorespaces HLS Loop Fissiong Solution C/RTL Cosimulation Summary }}{36}{table.40}%
-\contentsline {table}{\numberline {41}{\ignorespaces HLS Loop Fissiong Solution Export RTL Resource Usage}}{36}{table.41}%
-\contentsline {table}{\numberline {42}{\ignorespaces HLS Loop Fissiong Solution Export RTL Final Timing}}{36}{table.42}%
-\contentsline {table}{\numberline {43}{\ignorespaces Vivado Loop Fission Solution Utilization Report [\#]}}{36}{table.43}%
-\contentsline {table}{\numberline {44}{\ignorespaces Vivado Loop Fission Solution Timing Report}}{36}{table.44}%
-\contentsline {table}{\numberline {45}{\ignorespaces Vivado Loop Fission Solution Dynamic Power Report [mW]}}{36}{table.45}%
-\contentsline {table}{\numberline {46}{\ignorespaces Vivado Loop Fission Solution Dynamic Power Report [mW]}}{36}{table.46}%
-\contentsline {table}{\numberline {47}{\ignorespaces Vivado Loop Fission Solution Energy Single Operation Report [pJ]}}{36}{table.47}%
-\contentsline {table}{\numberline {48}{\ignorespaces HLS Loop Unrolling Factor=2 Solution Timing Summary (ns)}}{41}{table.48}%
-\contentsline {table}{\numberline {49}{\ignorespaces HLS Loop Unrolling Factor=2 Solution Latency Summary (clock cycles)}}{41}{table.49}%
-\contentsline {table}{\numberline {50}{\ignorespaces HLS Loop Unrolling Factor=2 Solution Latency Loops Summary }}{41}{table.50}%
-\contentsline {table}{\numberline {51}{\ignorespaces HLS Loop Unrolling Factor=2 Solution Utilization Estimates [\#]}}{43}{table.51}%
-\contentsline {table}{\numberline {52}{\ignorespaces HLS Loop Unrolling Factor=2 Solution C/RTL Cosimulation Report }}{43}{table.52}%
-\contentsline {table}{\numberline {53}{\ignorespaces HLS Loop Unrolling Factor=2 Solution Export RTL Report}}{43}{table.53}%
-\contentsline {table}{\numberline {54}{\ignorespaces Vivado Loop Unrolling Factor=2 Solution Utilization Report [\#]}}{44}{table.54}%
-\contentsline {table}{\numberline {55}{\ignorespaces Vivado Loop Unrolling Factor=2 Solution Timing Report}}{44}{table.55}%
-\contentsline {table}{\numberline {56}{\ignorespaces Vivado Loop Unrolling Factor=2 Solution Dynamic Power Report [mW]}}{45}{table.56}%
-\contentsline {table}{\numberline {57}{\ignorespaces Vivado Loop Unrolling Factor=2 Solution Dynamic Power Report [mW]}}{46}{table.57}%
-\contentsline {table}{\numberline {58}{\ignorespaces Vivado Loop Unrolling Factor=2 Solution Energy Single Operation Report [pJ]}}{46}{table.58}%
-\contentsline {table}{\numberline {59}{\ignorespaces HLS Loop Unrolling Factor=4 Solution Timing Summary (ns)}}{48}{table.59}%
-\contentsline {table}{\numberline {60}{\ignorespaces HLS Loop Unrolling Factor=4 Solution Latency Summary (clock cycles)}}{48}{table.60}%
-\contentsline {table}{\numberline {61}{\ignorespaces HLS Loop Unrolling Factor=4 Solution Latency Loops Summary }}{48}{table.61}%
-\contentsline {table}{\numberline {62}{\ignorespaces HLS Loop Unrolling Factor=4 Solution Utilization Estimates [\#]}}{50}{table.62}%
-\contentsline {table}{\numberline {63}{\ignorespaces HLS Loop Unrolling Factor=4 Solution C/RTL Cosimulation Report }}{50}{table.63}%
-\contentsline {table}{\numberline {64}{\ignorespaces HLS Loop Unrolling Factor=4 Solution Export RTL Report}}{50}{table.64}%
-\contentsline {table}{\numberline {65}{\ignorespaces Vivado Loop Unrolling Factor=4 Solution Utilization Report [\#]}}{50}{table.65}%
-\contentsline {table}{\numberline {66}{\ignorespaces Vivado Loop Unrolling Factor=4 Solution Timing Report}}{51}{table.66}%
-\contentsline {table}{\numberline {67}{\ignorespaces Vivado Loop Unrolling Factor=4 Solution Dynamic Power Report [mW]}}{52}{table.67}%
-\contentsline {table}{\numberline {68}{\ignorespaces Vivado Loop Unrolling Factor=4 Solution Dynamic Power Report [mW]}}{52}{table.68}%
-\contentsline {table}{\numberline {69}{\ignorespaces Vivado Loop Unrolling Factor=4 Solution Energy Single Operation Report [pJ]}}{52}{table.69}%
-\contentsline {table}{\numberline {70}{\ignorespaces HLS Loop Pipelining Solution Timing Summary (ns)}}{55}{table.70}%
-\contentsline {table}{\numberline {71}{\ignorespaces HLS Loop Pipelining Solution Latency Summary (clock cycles)}}{55}{table.71}%
-\contentsline {table}{\numberline {72}{\ignorespaces HLS Loop Pipelining Solution Latency Loops Summary }}{55}{table.72}%
-\contentsline {table}{\numberline {73}{\ignorespaces HLS Loop Pipelining Solution Utilization Estimates Summary}}{56}{table.73}%
-\contentsline {table}{\numberline {74}{\ignorespaces HLS Loop Pipelining Solution Register Detail Estimates Summary}}{56}{table.74}%
-\contentsline {table}{\numberline {75}{\ignorespaces HLS Loop Pipelining Solution C/RTL Cosimulation Summary }}{57}{table.75}%
-\contentsline {table}{\numberline {76}{\ignorespaces HLS Loop Pipelining Solution Export RTL Resource Usage}}{57}{table.76}%
-\contentsline {table}{\numberline {77}{\ignorespaces HLS Loop Pipelining Solution Export RTL Final Timing}}{57}{table.77}%
-\contentsline {table}{\numberline {78}{\ignorespaces Vivado Loop Pipelining Solution Utilization Report [\#]}}{57}{table.78}%
-\contentsline {table}{\numberline {79}{\ignorespaces Vivado Loop Pipelining Solution Timing Report}}{57}{table.79}%
-\contentsline {table}{\numberline {80}{\ignorespaces Vivado Loop Pipelining Solution Dynamic Power Report [mW]}}{57}{table.80}%
-\contentsline {table}{\numberline {81}{\ignorespaces Vivado Loop Pipelining Solution Dynamic Power Report [mW]}}{57}{table.81}%
-\contentsline {table}{\numberline {82}{\ignorespaces Vivado Loop Pipelining Solution Energy Single Operation Report [pJ]}}{57}{table.82}%
-\contentsline {table}{\numberline {83}{\ignorespaces HLS Bitwidth Optimization Solution Timing Summary (ns)}}{59}{table.83}%
-\contentsline {table}{\numberline {84}{\ignorespaces HLS Bitwidth Optimization Solution Latency Summary (clock cycles)}}{59}{table.84}%
-\contentsline {table}{\numberline {85}{\ignorespaces HLS Bitwidth Optimization Solution Latency Loops Summary }}{59}{table.85}%
-\contentsline {table}{\numberline {86}{\ignorespaces HLS Bitwidth Optimization Solution Utilization Estimates [\#]}}{59}{table.86}%
-\contentsline {table}{\numberline {87}{\ignorespaces HLS Bitwidth Optimization Solution C/RTL Cosimulation Report }}{59}{table.87}%
-\contentsline {table}{\numberline {88}{\ignorespaces HLS Bitwidth Optimization Solution Export RTL Report}}{59}{table.88}%
+\contentsline {table}{\numberline {1}{\ignorespaces HLS Unoptimized Solution Timing Summary (ns)}}{17}{table.1}%
+\contentsline {table}{\numberline {2}{\ignorespaces HLS Unoptimized Solution Latency Summary (clock cycles)}}{17}{table.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces HLS Unoptimized Solution Latency Loops Summary }}{18}{table.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces HLS Unoptimized Solution Utilization Estimates Summary}}{20}{table.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces HLS Unoptimized Solution C/RTL Cosimulation Summary }}{20}{table.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces HLS Unoptimized Solution Export RTL Resource Usage}}{20}{table.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces HLS Unoptimized Solution Export RTL Final Timing}}{20}{table.7}%
+\contentsline {table}{\numberline {8}{\ignorespaces Vivado Unoptimized Solution Utilization Report [\#]}}{22}{table.8}%
+\contentsline {table}{\numberline {9}{\ignorespaces Vivado Unoptimized Solution Timing Report}}{23}{table.9}%
+\contentsline {table}{\numberline {10}{\ignorespaces Vivado Unoptimized Solution Dynamic Power Report [mW]}}{23}{table.10}%
+\contentsline {table}{\numberline {11}{\ignorespaces Vivado Unoptimized Solution Dynamic Power Report [mW]}}{23}{table.11}%
+\contentsline {table}{\numberline {12}{\ignorespaces Vivado Unoptimized Solution Energy Single Operation Report [pJ]}}{23}{table.12}%
+\contentsline {table}{\numberline {13}{\ignorespaces HLS Operation Chaining Solution Timing Summary (ns)}}{24}{table.13}%
+\contentsline {table}{\numberline {14}{\ignorespaces HLS Operation Chaining Solution Latency Summary (clock cycles)}}{24}{table.14}%
+\contentsline {table}{\numberline {15}{\ignorespaces HLS Operation Chaining Solution Latency Loops Summary }}{24}{table.15}%
+\contentsline {table}{\numberline {16}{\ignorespaces HLS Operation Chaining Solution Utilization Estimates [\#]}}{25}{table.16}%
+\contentsline {table}{\numberline {17}{\ignorespaces HLS Operation Chaining Solution C/RTL Cosimulation Report }}{25}{table.17}%
+\contentsline {table}{\numberline {18}{\ignorespaces HLS Operation Chaining Solution Export RTL Report}}{26}{table.18}%
+\contentsline {table}{\numberline {19}{\ignorespaces Vivado Operation Chaining Solution Utilization Report [\#]}}{27}{table.19}%
+\contentsline {table}{\numberline {20}{\ignorespaces Vivado Operation Chaining Solution Timing Report}}{28}{table.20}%
+\contentsline {table}{\numberline {21}{\ignorespaces Vivado Operation Chaining Solution Dynamic Power Report [mW]}}{29}{table.21}%
+\contentsline {table}{\numberline {22}{\ignorespaces Vivado Operation Chaining Solution Dynamic Power Report [mW]}}{29}{table.22}%
+\contentsline {table}{\numberline {23}{\ignorespaces Vivado Operation Chaining Solution Energy Single Operation Report [pJ]}}{29}{table.23}%
+\contentsline {table}{\numberline {24}{\ignorespaces HLS Code Hoisting Solution Timing Summary (ns)}}{31}{table.24}%
+\contentsline {table}{\numberline {25}{\ignorespaces HLS Code Hoisting Solution Latency Summary (clock cycles)}}{31}{table.25}%
+\contentsline {table}{\numberline {26}{\ignorespaces HLS Code Hoisting Solution Latency Loops Summary }}{31}{table.26}%
+\contentsline {table}{\numberline {27}{\ignorespaces HLS Code Hoisting Solution Utilization Estimates Summary}}{32}{table.27}%
+\contentsline {table}{\numberline {28}{\ignorespaces HLS Code Hoisting Solution C/RTL Cosimulation Summary }}{33}{table.28}%
+\contentsline {table}{\numberline {29}{\ignorespaces HLS Code Hoisting Solution Export RTL Resource Usage}}{33}{table.29}%
+\contentsline {table}{\numberline {30}{\ignorespaces HLS Code Hoisting Solution Export RTL Final Timing}}{33}{table.30}%
+\contentsline {table}{\numberline {31}{\ignorespaces Vivado Code Hoisting Solution Utilization Report [\#]}}{33}{table.31}%
+\contentsline {table}{\numberline {32}{\ignorespaces Vivado Code Hoisting Solution Timing Report}}{33}{table.32}%
+\contentsline {table}{\numberline {33}{\ignorespaces Vivado Code Hoisting Solution Dynamic Power Report [mW]}}{33}{table.33}%
+\contentsline {table}{\numberline {34}{\ignorespaces Vivado Code Hoisting Solution Dynamic Power Report [mW]}}{34}{table.34}%
+\contentsline {table}{\numberline {35}{\ignorespaces Vivado Code Hoisting Solution Energy Single Operation Report [pJ]}}{34}{table.35}%
+\contentsline {table}{\numberline {36}{\ignorespaces HLS Loop Fission Solution Timing Summary (ns)}}{35}{table.36}%
+\contentsline {table}{\numberline {37}{\ignorespaces HLS Loop Fission Solution Latency Summary (clock cycles)}}{35}{table.37}%
+\contentsline {table}{\numberline {38}{\ignorespaces HLS Loop Fission Solution Latency Loops Summary }}{35}{table.38}%
+\contentsline {table}{\numberline {39}{\ignorespaces HLS Loop Fission Solution Utilization Estimates Summary}}{36}{table.39}%
+\contentsline {table}{\numberline {40}{\ignorespaces HLS Loop Fissiong Solution C/RTL Cosimulation Summary }}{37}{table.40}%
+\contentsline {table}{\numberline {41}{\ignorespaces HLS Loop Fissiong Solution Export RTL Resource Usage}}{37}{table.41}%
+\contentsline {table}{\numberline {42}{\ignorespaces HLS Loop Fissiong Solution Export RTL Final Timing}}{37}{table.42}%
+\contentsline {table}{\numberline {43}{\ignorespaces Vivado Loop Fission Solution Utilization Report [\#]}}{37}{table.43}%
+\contentsline {table}{\numberline {44}{\ignorespaces Vivado Loop Fission Solution Timing Report}}{37}{table.44}%
+\contentsline {table}{\numberline {45}{\ignorespaces Vivado Loop Fission Solution Dynamic Power Report [mW]}}{37}{table.45}%
+\contentsline {table}{\numberline {46}{\ignorespaces Vivado Loop Fission Solution Dynamic Power Report [mW]}}{37}{table.46}%
+\contentsline {table}{\numberline {47}{\ignorespaces Vivado Loop Fission Solution Energy Single Operation Report [pJ]}}{37}{table.47}%
+\contentsline {table}{\numberline {48}{\ignorespaces HLS Loop Unrolling Factor=2 Solution Timing Summary (ns)}}{42}{table.48}%
+\contentsline {table}{\numberline {49}{\ignorespaces HLS Loop Unrolling Factor=2 Solution Latency Summary (clock cycles)}}{42}{table.49}%
+\contentsline {table}{\numberline {50}{\ignorespaces HLS Loop Unrolling Factor=2 Solution Latency Loops Summary }}{42}{table.50}%
+\contentsline {table}{\numberline {51}{\ignorespaces HLS Loop Unrolling Factor=2 Solution Utilization Estimates [\#]}}{44}{table.51}%
+\contentsline {table}{\numberline {52}{\ignorespaces HLS Loop Unrolling Factor=2 Solution C/RTL Cosimulation Report }}{44}{table.52}%
+\contentsline {table}{\numberline {53}{\ignorespaces HLS Loop Unrolling Factor=2 Solution Export RTL Report}}{44}{table.53}%
+\contentsline {table}{\numberline {54}{\ignorespaces Vivado Loop Unrolling Factor=2 Solution Utilization Report [\#]}}{45}{table.54}%
+\contentsline {table}{\numberline {55}{\ignorespaces Vivado Loop Unrolling Factor=2 Solution Timing Report}}{45}{table.55}%
+\contentsline {table}{\numberline {56}{\ignorespaces Vivado Loop Unrolling Factor=2 Solution Dynamic Power Report [mW]}}{46}{table.56}%
+\contentsline {table}{\numberline {57}{\ignorespaces Vivado Loop Unrolling Factor=2 Solution Dynamic Power Report [mW]}}{47}{table.57}%
+\contentsline {table}{\numberline {58}{\ignorespaces Vivado Loop Unrolling Factor=2 Solution Energy Single Operation Report [pJ]}}{47}{table.58}%
+\contentsline {table}{\numberline {59}{\ignorespaces HLS Loop Unrolling Factor=4 Solution Timing Summary (ns)}}{49}{table.59}%
+\contentsline {table}{\numberline {60}{\ignorespaces HLS Loop Unrolling Factor=4 Solution Latency Summary (clock cycles)}}{49}{table.60}%
+\contentsline {table}{\numberline {61}{\ignorespaces HLS Loop Unrolling Factor=4 Solution Latency Loops Summary }}{49}{table.61}%
+\contentsline {table}{\numberline {62}{\ignorespaces HLS Loop Unrolling Factor=4 Solution Utilization Estimates [\#]}}{51}{table.62}%
+\contentsline {table}{\numberline {63}{\ignorespaces HLS Loop Unrolling Factor=4 Solution C/RTL Cosimulation Report }}{51}{table.63}%
+\contentsline {table}{\numberline {64}{\ignorespaces HLS Loop Unrolling Factor=4 Solution Export RTL Report}}{51}{table.64}%
+\contentsline {table}{\numberline {65}{\ignorespaces Vivado Loop Unrolling Factor=4 Solution Utilization Report [\#]}}{51}{table.65}%
+\contentsline {table}{\numberline {66}{\ignorespaces Vivado Loop Unrolling Factor=4 Solution Timing Report}}{52}{table.66}%
+\contentsline {table}{\numberline {67}{\ignorespaces Vivado Loop Unrolling Factor=4 Solution Dynamic Power Report [mW]}}{53}{table.67}%
+\contentsline {table}{\numberline {68}{\ignorespaces Vivado Loop Unrolling Factor=4 Solution Dynamic Power Report [mW]}}{53}{table.68}%
+\contentsline {table}{\numberline {69}{\ignorespaces Vivado Loop Unrolling Factor=4 Solution Energy Single Operation Report [pJ]}}{53}{table.69}%
+\contentsline {table}{\numberline {70}{\ignorespaces HLS Loop Pipelining Solution Timing Summary (ns)}}{56}{table.70}%
+\contentsline {table}{\numberline {71}{\ignorespaces HLS Loop Pipelining Solution Latency Summary (clock cycles)}}{56}{table.71}%
+\contentsline {table}{\numberline {72}{\ignorespaces HLS Loop Pipelining Solution Latency Loops Summary }}{56}{table.72}%
+\contentsline {table}{\numberline {73}{\ignorespaces HLS Loop Pipelining Solution Utilization Estimates Summary}}{57}{table.73}%
+\contentsline {table}{\numberline {74}{\ignorespaces HLS Loop Pipelining Solution Register Detail Estimates Summary}}{57}{table.74}%
+\contentsline {table}{\numberline {75}{\ignorespaces HLS Loop Pipelining Solution C/RTL Cosimulation Summary }}{58}{table.75}%
+\contentsline {table}{\numberline {76}{\ignorespaces HLS Loop Pipelining Solution Export RTL Resource Usage}}{58}{table.76}%
+\contentsline {table}{\numberline {77}{\ignorespaces HLS Loop Pipelining Solution Export RTL Final Timing}}{58}{table.77}%
+\contentsline {table}{\numberline {78}{\ignorespaces Vivado Loop Pipelining Solution Utilization Report [\#]}}{58}{table.78}%
+\contentsline {table}{\numberline {79}{\ignorespaces Vivado Loop Pipelining Solution Timing Report}}{58}{table.79}%
+\contentsline {table}{\numberline {80}{\ignorespaces Vivado Loop Pipelining Solution Dynamic Power Report [mW]}}{58}{table.80}%
+\contentsline {table}{\numberline {81}{\ignorespaces Vivado Loop Pipelining Solution Dynamic Power Report [mW]}}{58}{table.81}%
+\contentsline {table}{\numberline {82}{\ignorespaces Vivado Loop Pipelining Solution Energy Single Operation Report [pJ]}}{58}{table.82}%
+\contentsline {table}{\numberline {83}{\ignorespaces HLS Bitwidth Optimization Solution Timing Summary (ns)}}{60}{table.83}%
+\contentsline {table}{\numberline {84}{\ignorespaces HLS Bitwidth Optimization Solution Latency Summary (clock cycles)}}{60}{table.84}%
+\contentsline {table}{\numberline {85}{\ignorespaces HLS Bitwidth Optimization Solution Latency Loops Summary }}{60}{table.85}%
+\contentsline {table}{\numberline {86}{\ignorespaces HLS Bitwidth Optimization Solution Utilization Estimates [\#]}}{60}{table.86}%
+\contentsline {table}{\numberline {87}{\ignorespaces HLS Bitwidth Optimization Solution C/RTL Cosimulation Report }}{60}{table.87}%
+\contentsline {table}{\numberline {88}{\ignorespaces HLS Bitwidth Optimization Solution Export RTL Report}}{60}{table.88}%
+\contentsline {table}{\numberline {89}{\ignorespaces HLS AXI Solution Timing Summary (ns)}}{62}{table.89}%
+\contentsline {table}{\numberline {90}{\ignorespaces HLS AXI Solution Latency Summary (clock cycles)}}{62}{table.90}%
+\contentsline {table}{\numberline {91}{\ignorespaces HLS AXI Solution Latency Loops Summary }}{62}{table.91}%
+\contentsline {table}{\numberline {92}{\ignorespaces HLS AXI Solution Utilization Estimates Summary}}{62}{table.92}%
+\contentsline {table}{\numberline {93}{\ignorespaces HLS AXI Solution C/RTL Cosimulation Summary }}{63}{table.93}%
+\contentsline {table}{\numberline {94}{\ignorespaces HLS AXI Solution Export RTL Resource Usage}}{63}{table.94}%
+\contentsline {table}{\numberline {95}{\ignorespaces HLS AXI Solution Export RTL Final Timing}}{63}{table.95}%
+\contentsline {table}{\numberline {96}{\ignorespaces Vivado AXI Solution Utilization Report [\#]}}{63}{table.96}%
+\contentsline {table}{\numberline {97}{\ignorespaces Vivado AXI Solution Timing Report}}{63}{table.97}%
+\contentsline {table}{\numberline {98}{\ignorespaces Vivado AXI Solution Dynamic Power Report [mW]}}{63}{table.98}%
+\contentsline {table}{\numberline {99}{\ignorespaces Vivado AXI Solution Dynamic Power Report [mW]}}{63}{table.99}%
+\contentsline {table}{\numberline {100}{\ignorespaces Vivado AXI Solution Energy Single Operation Report [pJ]}}{63}{table.100}%
