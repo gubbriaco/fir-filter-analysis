@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.12.23)  7 JUN 2024 20:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.12.23)  7 JUN 2024 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1740,69 +1740,64 @@ l.79     \newpage
 <conclusions/utilization.png, id=1571, 569.619pt x 317.988pt>
 File: conclusions/utilization.png Graphic file (type png)
 <use conclusions/utilization.png>
-Package pdftex.def Info: conclusions/utilization.png  used on input line 35.
-(pdftex.def)             Requested size: 455.29901pt x 254.17725pt.
-
-Overfull \hbox (69.20743pt too wide) in paragraph at lines 44--68
- [][] 
- []
-
-[64
+Package pdftex.def Info: conclusions/utilization.png  used on input line 34.
+(pdftex.def)             Requested size: 390.26196pt x 217.86897pt.
+ [64
 pdfTeX warning (ext4): destination with the same identifier (name{table.101}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.71 
+l.41 
      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.29}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.71 
+l.41 
       <./conclusions/utilization.png>]
-Overfull \hbox (15.21399pt too wide) in paragraph at lines 108--131
+Overfull \hbox (69.20743pt too wide) in paragraph at lines 44--68
+ [][] 
+ []
+
+
+Overfull \hbox (15.21399pt too wide) in paragraph at lines 106--129
  [][] 
  []
 
 <conclusions/powerreport.png, id=1577, 569.619pt x 638.385pt>
 File: conclusions/powerreport.png Graphic file (type png)
 <use conclusions/powerreport.png>
-Package pdftex.def Info: conclusions/powerreport.png  used on input line 139.
+Package pdftex.def Info: conclusions/powerreport.png  used on input line 136.
 (pdftex.def)             Requested size: 455.29901pt x 510.28008pt.
 [65
 pdfTeX warning (ext4): destination with the same identifier (name{table.102}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.143 
+l.140 
       
 pdfTeX warning (ext4): destination with the same identifier (name{table.103}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.143 
+l.140 
       
 pdfTeX warning (ext4): destination with the same identifier (name{table.104}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.143 
+l.140 
       ] [66
 pdfTeX warning (ext4): destination with the same identifier (name{figure.30}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.175 
-       <./conclusions/powerreport.png>]
-<conclusions/wns.png, id=1587, 569.619pt x 319.302pt>
-File: conclusions/wns.png Graphic file (type png)
-<use conclusions/wns.png>
-Package pdftex.def Info: conclusions/wns.png  used on input line 178.
-(pdftex.def)             Requested size: 455.29901pt x 255.22757pt.
-<conclusions/frequency.png, id=1588, 569.838pt x 321.273pt>
+l.173 \end{table}
+                  <./conclusions/powerreport.png>]
+<conclusions/frequency.png, id=1587, 569.838pt x 321.273pt>
 File: conclusions/frequency.png Graphic file (type png)
 <use conclusions/frequency.png>
-Package pdftex.def Info: conclusions/frequency.png  used on input line 185.
+Package pdftex.def Info: conclusions/frequency.png  used on input line 177.
 (pdftex.def)             Requested size: 455.29901pt x 256.70499pt.
 ) [67
 pdfTeX warning (ext4): destination with the same identifier (name{table.105}) h
@@ -1816,13 +1811,7 @@ as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.83     \newpage
-                  <./conclusions/wns.png>] [68
-pdfTeX warning (ext4): destination with the same identifier (name{figure.32}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.83     \newpage
-                  <./conclusions/frequency.png>] (main.aux)
+                  <./conclusions/frequency.png>] [68] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1832,29 +1821,33 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15477 strings out of 475385
- 261650 string characters out of 2793321
- 1887952 words of memory out of 3000000
- 35339 multiletter control sequences out of 15000+600000
+ 15471 strings out of 475385
+ 261501 string characters out of 2793321
+ 1887948 words of memory out of 3000000
+ 35333 multiletter control sequences out of 15000+600000
  476651 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,12n,77p,1815b,2251s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\giorg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
-ec/dpi600\tcrm0700.pk> <C:\Users\giorg\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
-appen/ec/dpi600\tcrm1000.pk> <C:\Users\giorg\AppData\Local\MiKTeX\fonts/pk/ljfo
-ur/jknappen/ec/dpi600\tcbx0700.pk><D:/MikTex/fonts/type1/public/amsfonts/cm/cmb
-x10.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MikTex/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTex/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmr
-12.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MikTex/fonts/typ
-e1/public/amsfonts/cm/cmr5.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmr7.p
-fb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTex/fonts/type1/
-public/amsfonts/cm/cmsy7.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmti10.p
-fb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (68 pages, 3147980 bytes).
+
+pdfTeX warning (dest): name{figure.32} has been referenced but does not exist, 
+replaced by a fixed one
+
+ <C:\Users\giorg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm07
+00.pk> <C:\Users\giorg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm1000.pk> <C:\Users\giorg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/d
+pi600\tcbx0700.pk><D:/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikT
+ex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MikTex/fonts/type1/public/amsf
+onts/cm/cmex10.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Mik
+Tex/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTex/fonts/type1/public/amsf
+onts/cm/cmr10.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MikTe
+x/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MikTex/fonts/type1/public/amsfon
+ts/cm/cmr5.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTex/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTex/fonts/type1/public/amsfonts/
+cm/cmsy7.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:/MikTex/fo
+nts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on main.pdf (68 pages, 3013231 bytes).
 PDF statistics:
- 1957 PDF objects out of 2073 (max. 8388607)
+ 1955 PDF objects out of 2073 (max. 8388607)
  1107 named destinations out of 1200 (max. 500000)
- 331 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 326 words of extra memory for PDF output out of 10000 (max. 10000000)
 
