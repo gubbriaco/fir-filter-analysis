@@ -27,3 +27,4 @@
 \contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor2/clk\textunderscore constraint.xdc}{50}{lstlisting.-27}%
 \contentsline {lstlisting}{solutions/loop\textunderscore pipelining/fir\textunderscore loop\textunderscore pipelining.cpp}{55}{lstlisting.-28}%
 \contentsline {lstlisting}{solutions/loop\textunderscore pipelining/clk\textunderscore constraint.xdc}{57}{lstlisting.-29}%
+\contentsline {lstlisting}{solutions/bitwidth\textunderscore optimization/fir\textunderscore bitwidth\textunderscore optimization.cpp}{58}{lstlisting.-30}%

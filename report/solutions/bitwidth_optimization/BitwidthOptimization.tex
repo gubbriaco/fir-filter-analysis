@@ -1,0 +1,108 @@
+In questa sezione verrà discussa il possibile sovradimensionamento riguardo i tipi di dato relativi alle variabili utilizzate nelle varie architetture proposte. Effettivamente, nelle soluzioni hardware precedentemente citate, è stato principalmente utilizzato il tipo di dato \textit{int} anche in casi in cui bastava utilizzare un numero di bit notevolmente minore. Quello che si potrebbe fare è utilizzare tipi di dato aventi un numero di bit inferiore come, ad esempio, \textit{char} o \textit{short}. In alcuni casi, potrebbe accadere che il numero di bit richiesto è ulteriormente inferiore a questi tipi di dato disponibili negli ambienti \textit{C-like}. A tale proposito, nel contesto dei linguaggi ad alto livello C e C++, è disponibile una libreria, \textbf{ap\_int.h} che permette di modellare il tipo di dato \textit{int} scegliendo opportunamente il numero di bit da riservare per una determinata variabile. Pertanto, si potrebbe implementare una \textit{Bitwidth Optimization Solution} dove venga efficientemente allocato un numero di bit per le variabili al fine di ridurre l'utilizzazione delle risorse corrispondente. Ovviamente, utilizzare un numero ben preciso di bit per ogni variabile, vuol dire avere una soluzione custom per un certo range di bit e, nel caso in cui si debba utilizzare, ad esempio, un input che non sia incluso nel range di bit previsto, si dovrebbe, pertanto, implementare una nuova architettura con un numero di bit differente per le variabili corrispondenti. Ovviamente, in generale, si è considerato un numero di bit maggiorato di un'unità, dal momento che \textit{ap\_int.h} è una libreria che prevede un tipo di dato con segno.
+
+\lstinputlisting[language=C++]{solutions/bitwidth_optimization/fir_bitwidth_optimization.cpp}
+
+In particolare, la soluzione hardware proposta prevede un input ad 8 bit ed un output corrispondente a $18+SIZE = 18+11 = 29$ bit. La scelta del numero di bit relativi all'\textit{inputFilter} è arbitrario. Ovviamente, al variare di tale valore, il numero di bit previsto per le variabili interne cambierà di conseguenza. \\
+Per quanto riguarda, invece, il numero di bit previsto per gli elementi presenti in \textit{coefficientsFilter}, sono stati considerati il valore massimo e minimo previsti all'interno dell'array. Riguardo l'array \textit{shiftRegister}, la bitwidth scelta è la medesima dell'input dal mommento che tale struttura dati viene utilizzata soltanto per lo shifting dei valori in ingresso all'architettura. Viceversa, la variabile \textit{accumulator} prevede un numero di bit uguale a quello dell'uscita del metodo. Infatti, tale variabile prevede, per ogni iterazione all'interno del ciclo for, una moltiplicazione e una somma. In particolare, la moltiplicazione richiede un numero di bit fisso, cioè 8+10 bit, mentre la somma, che viene effettuata sempre sulla medesima variabile in questione, richiede un numero di bit sempre maggiore per ogni iterazione. Quindi, tenendo conto che le iterazioni sono pari a $SIZE=11$, allora il numero di bit previsto per la variabile \textit{accumulator} è pari a $8+10+SIZE = 8+10+11 = 29$. Infine, per quanto riguarda il numero di bit associato alla variabile indice \textit{i} è relazionato al numero di iterazioni da effettuare che sono pari a $SIZE=11$.
+\\
+In particolare, l'architettura di riferimento utilizzata è basata sulla \textit{Code Hoisting Solution}. Pertanto, considerando i risultati ottenuti in corrispondenza della soluzione hardware citata ed effettuando la sintesi, la C/RTL Cosimulation e l'Export RTL della \textit{Bitwidth Optimization Solution}, è possibile effettuare i seguenti confronti.
+\\
+Si può notare come, dopo aver effettuato la sintesi, il numero di risorse, rispetto alla soluzione basata su Code Hoisting, presenti una diminuzione di circa il $65\%$ dei FF e di circa il $55\%$ delle LUT. Il numero dei DSP stimati e diminuito di 2 unità. Inoltre, si può notare come la latenza stimata è diminuita di 10 cicli rispetto alla soluzione presa come riferimento. Ovviamente il Trip Count è il medesimo dal momento che l'architettura proposta nella \textit{Bitwidth Optimization Solution} è equivalente a quella proposta nel \textit{Code Hoisting Solution}.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{Solution} & \textbf{Clock} & \textbf{Target} & \textbf{Estimated} & \textbf{Uncertainty} \\
+		\hline
+		Code Hoisting & ap\_clk & 10.00 & 8.510 & 1.25 \\
+		\hline
+		Bitwidth Opt. & ap\_clk & 10.00 & 6.38 & 1.25 \\
+		\hline
+	\end{tabular}
+	\caption{HLS Bitwidth Optimization Solution Timing Summary (ns)}
+	\label{tab:hls-bitwidth-optimization-solution-timing-summary}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Solution}} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{2}{|c|}{\textbf{Interval}} \\
+		& min & max & min & max \\
+		\hline
+		Code Hoisting & 42 & 42 & 42 & 42 \\
+		\hline
+		Bitwidth Opt. & 31 & 31 & 31 & 31 \\
+		\hline
+	\end{tabular}
+	\caption{HLS Bitwidth Optimization Solution Latency Summary (clock cycles)}
+	\label{tab:hls-bitwidth-optimization-solution-latency-summary}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Solution}} & \multicolumn{1}{|c|}{Loop Name} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{2}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip}}  \\
+		&  & min & max & min & max & achieved & target & \textbf{Count} \\
+		\hline
+		Code Hoisting & - loop & 40 & 40 & 4 & 4 & - & - & 10 \\
+		\hline
+		Bitwidth Opt. & - loop & 30 & 30 & 3 & 3 & - & - & 10 \\
+		\hline
+	\end{tabular}
+	\caption{HLS Bitwidth Optimization Solution Latency Loops Summary }
+	\label{tab:hls-bitwidth-optimization-solution-loop-summary}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{Solution} & \textbf{BRAM\_18K} & \textbf{DSP48E} & \textbf{FF} & \textbf{LUT} \\
+		\hline
+		Bitwidth Opt. & 0 & 4 & 230 & 240 \\
+		\hline
+		Code Hoisting & 0 & 2 & 81 & 107 \\
+		\hline
+	\end{tabular}
+	\caption{HLS Bitwidth Optimization Solution Utilization Estimates [\#]}
+	\label{tab:vivado-bitwidth-optimization-solution-utilization-report}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Solution}} & \multicolumn{1}{|c|}{RTL} & \multicolumn{1}{|c|}{Status} & \multicolumn{3}{c|}{\textbf{Latency}} & \multicolumn{3}{c|}{\textbf{Interval}} \\
+		& &  & min & avg & max & min & avg & max \\
+		\hline
+		Code Hoisting & VHDL & Pass & 42 & 42 & 43 & 42 & 42 & 43 \\
+		\hline
+		Bitwidth Opt. & VHDL & Pass & 31 & 31 & 32 & 31 & 31 & 32 \\
+		\hline
+	\end{tabular}
+	\caption{HLS Bitwidth Optimization Solution C/RTL Cosimulation Report }
+	\label{tab:hls-bitwidth-optimization-solution-cosimulation-report}
+\end{table}
+
+Analizzando il report dell'Export RTL si può notare come l'utilizzazione delle risorse è notevolmente diminuita. Tanto è vero che il numero delle LUT e dei FF è diminuito di circa l'$82\%$. Questo decremento dell'utilizzazione delle risorse prevista è dovuto al fatto che nella \textit{Bitwidth Optimization Solution} sono stati utilizzati dei tipi di dato con un numero di bit custom per la soluzione in questione.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+		\hline
+		\textbf{Solution} & \textbf{SLICE} & \textbf{LUT} & \textbf{FF} & \textbf{DSP} & \textbf{BRAM} & \textbf{CP} & \textbf{CP} & \textbf{CP} \\
+		& & & & & & \textbf{required} & \textbf{achieved} & \textbf{achieved}\\
+		& & & & & & & \textbf{post-} & \textbf{post-}\\
+		& & & & & & & \textbf{synthesis} & \textbf{implementation}\\
+		\hline
+		Code Hoisting & 75 & 270 & 131 & 2 & 0 & 10 & 5.745 & 6.847 \\
+		\hline
+		Bitwidth Opt. & 15 & 50 & 24 & 2 & 0 & 10 & 5.745 & 5.692 \\
+		\hline
+	\end{tabular}
+	\caption{HLS Bitwidth Optimization Solution Export RTL Report}
+	\label{tab:vivado-bitwidth-optimization-solution-export-rtl-report}
+\end{table}

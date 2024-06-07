@@ -26,12 +26,12 @@
 \contentsline {figure}{\numberline {25}{\ignorespaces Vivado Loop Unrolling Factor=4 Utilization Plot}}{51}{figure.25}%
 \contentsline {figure}{\numberline {26}{\ignorespaces Vivado Loop Unrolling Factor=4 Timing Plot}}{52}{figure.26}%
 \contentsline {figure}{\numberline {27}{\ignorespaces HLS Loop Pipelining}}{54}{figure.27}%
-\contentsline {figure}{\numberline {28}{\ignorespaces HLS Synthesis Report}}{61}{figure.28}%
-\contentsline {figure}{\numberline {29}{\ignorespaces HLS Synthesis Utilization Estimates Report Plot}}{62}{figure.29}%
-\contentsline {figure}{\numberline {30}{\ignorespaces HLS Synthesis Trip Count Report Plot}}{62}{figure.30}%
-\contentsline {figure}{\numberline {31}{\ignorespaces HLS Synthesis Latency Reportv Plot}}{62}{figure.31}%
-\contentsline {figure}{\numberline {32}{\ignorespaces HLS Synthesis Interval Report Plot}}{63}{figure.32}%
-\contentsline {figure}{\numberline {33}{\ignorespaces HLS C/RTL Cosimulation Report}}{64}{figure.33}%
-\contentsline {figure}{\numberline {34}{\ignorespaces HLS C/RTL Cosimulation Report Report Plot}}{65}{figure.34}%
-\contentsline {figure}{\numberline {35}{\ignorespaces HLS Export RTL Report}}{66}{figure.35}%
-\contentsline {figure}{\numberline {36}{\ignorespaces HLS Export RTL Report Report Plot}}{67}{figure.36}%
+\contentsline {figure}{\numberline {28}{\ignorespaces HLS Synthesis Report}}{62}{figure.28}%
+\contentsline {figure}{\numberline {29}{\ignorespaces HLS Synthesis Utilization Estimates Report Plot}}{63}{figure.29}%
+\contentsline {figure}{\numberline {30}{\ignorespaces HLS Synthesis Trip Count Report Plot}}{63}{figure.30}%
+\contentsline {figure}{\numberline {31}{\ignorespaces HLS Synthesis Latency Reportv Plot}}{63}{figure.31}%
+\contentsline {figure}{\numberline {32}{\ignorespaces HLS Synthesis Interval Report Plot}}{64}{figure.32}%
+\contentsline {figure}{\numberline {33}{\ignorespaces HLS C/RTL Cosimulation Report}}{65}{figure.33}%
+\contentsline {figure}{\numberline {34}{\ignorespaces HLS C/RTL Cosimulation Report Report Plot}}{66}{figure.34}%
+\contentsline {figure}{\numberline {35}{\ignorespaces HLS Export RTL Report}}{67}{figure.35}%
+\contentsline {figure}{\numberline {36}{\ignorespaces HLS Export RTL Report Report Plot}}{68}{figure.36}%

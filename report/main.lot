@@ -81,3 +81,9 @@
 \contentsline {table}{\numberline {80}{\ignorespaces Vivado Loop Pipelining Solution Dynamic Power Report [mW]}}{57}{table.80}%
 \contentsline {table}{\numberline {81}{\ignorespaces Vivado Loop Pipelining Solution Dynamic Power Report [mW]}}{57}{table.81}%
 \contentsline {table}{\numberline {82}{\ignorespaces Vivado Loop Pipelining Solution Energy Single Operation Report [pJ]}}{57}{table.82}%
+\contentsline {table}{\numberline {83}{\ignorespaces HLS Bitwidth Optimization Solution Timing Summary (ns)}}{59}{table.83}%
+\contentsline {table}{\numberline {84}{\ignorespaces HLS Bitwidth Optimization Solution Latency Summary (clock cycles)}}{59}{table.84}%
+\contentsline {table}{\numberline {85}{\ignorespaces HLS Bitwidth Optimization Solution Latency Loops Summary }}{59}{table.85}%
+\contentsline {table}{\numberline {86}{\ignorespaces HLS Bitwidth Optimization Solution Utilization Estimates [\#]}}{59}{table.86}%
+\contentsline {table}{\numberline {87}{\ignorespaces HLS Bitwidth Optimization Solution C/RTL Cosimulation Report }}{59}{table.87}%
+\contentsline {table}{\numberline {88}{\ignorespaces HLS Bitwidth Optimization Solution Export RTL Report}}{59}{table.88}%
