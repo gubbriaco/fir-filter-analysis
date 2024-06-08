@@ -1,4 +1,4 @@
-In questa sezione verrà discussa una possibile implementazione di una soluzione hardware basata su un approccio non ottimizzato (medesimo a quello iniziale) in cui è stato considerato il protocollo AXI4-Stream. Pertanto, tale solution non è da considerare come ottimizzazione rispetto alle precedenti ma come caso d'uso dello standard in corrispondenza di una delle solution precedentemente citate. In particolare, come già citato per semplicità si farà riferimento alla \textit{Unoptimized Solution}.
+In questa sezione verrà discussa una possibile implementazione di una soluzione hardware basata su un approccio non ottimizzato (medesimo a quello iniziale) in cui è stato considerato il protocollo AXI4-Stream. Pertanto, tale solution, come si vedrà in seguito, può essere considerata come un'ottimizzazione dal punto di vista della latenza ma non è da considerare come possibile ottimizzazione dal punto di vista dell'utilizzazione delle risorse e della potenza dinamica rispetto alle precedenti. Anzi potrebbe essere considerata come un esempio di utilizzo dello standard in corrispondenza di una delle solution precedentemente citate. In particolare, come già citato per semplicità si farà riferimento alla \textit{Unoptimized Solution}.
 \\
 Il protocollo AXI4-Stream è utilizzato come interfaccia standard per collegare componenti che desiderano scambiare dati. L'interfaccia può essere utilizzata per collegare un singolo master, che genera dati, a un singolo slave, che riceve dati. Il protocollo può essere utilizzato anche per collegare un numero maggiore di componenti master e slave. Lo standard supporta flussi di dati multipli che utilizzano lo stesso insieme di bus condivisi, consentendo di costruire un'interconnessione generica. In particolare, con l'interfaccia Stream si garantisce un nuovo dato in input ad ogni colpo di clock. In questo caso specifico, quindi, ci si aspetta che lo standard garantisca 11 dati in input per 11 colpi di clock così da essere processati ed essere messi in uscita.
 
@@ -18,7 +18,7 @@ Per quanto riguarda, invece, le direttive specificate inizialmente, la prima fa 
 \\
 Inoltre, si può notare come, all'interno del ciclo while, sia stato specificato un approccio \textit{non blocking}, cioè in riferimento al fatto che non si sa a priori la quantità di dati entranti nel buffer.
 \\
-Ovviamente, bisogna specificare che il segnale di \textit{TVALID} sarà pari a 1 soltanto nel momento in cui si ha il risultato finale, cioè in corrispondenza dell'accumulo finale.
+Ovviamente, bisogna specificare che il segnale di \textit{TLAST} sarà pari a 1 soltanto nel momento in cui si ha il risultato finale, cioè in corrispondenza dell'accumulo finale.
 \\
 Effettuando la sintesi, la C/RTL Cosimulation e l'Export RTL si ottengono i seguenti report.
 
@@ -146,6 +146,8 @@ Si può notare come la latenza totale e quella relativa al ciclo for presentano 
 \end{table}
 
 Pertanto, importando l'IP in Vivado e impostando un clock constraint pari a 10ns è possibile analizzare i seguenti report di risorse, timing, potenza dinamica ed energia per singola operazione.
+\lstinputlisting[language=VHDL]{solutions/axi/firConvolutionAXI_top.vhd
+}
 \lstinputlisting[language=VHDL]{solutions/axi/clk_constraint.xdc}
 In particolare, si può effettuare un confronto rispetto alla soluzione iniziale non ottimizzata, considerata come riferimento per questa implementazione, per valutare gli effetti dell'introduzione del protocollo AXI nell'architettura in questione. Si può notare un aumento dell'utilizzazione delle LUT circa pari al $169\%$ e un aumento del numero di FF circa pari al $337\%$. 
 \begin{table}[H]
@@ -161,7 +163,7 @@ In particolare, si può effettuare un confronto rispetto alla soluzione iniziale
 	\label{tab:vivado-axi-solution-utilization-report}
 \end{table}
 
-Si può evidenziare come il numero di cicli previsto per questa soluzione sia pari a 11 come ipotizzato inizialmente.
+Si può evidenziare come il numero di cicli utile per garantire un risultato in uscita sia pari a 1. Questo vuol dire che ad ogni colpo di clock ogni verrà processato in uscita un risultato parziale. Pertanto, in corrispondenza dell'11esimo colpo di clock si avrà il risultato finale corrispondente come citato precedentemente.
 
 \begin{table}[H]
 	\centering
@@ -169,7 +171,7 @@ Si può evidenziare come il numero di cicli previsto per questa soluzione sia pa
 		\hline
 		\textbf{Cycles} [\#] & \textbf{Clock Constraint} [ns] & \textbf{WNS} [ns] & \textbf{Maximum Clock Frequency} [Mhz] \\
 		\hline
-		11 & 10 & 1.369 & 115.8614297 \\
+		1 & 10 & 1.369 & 115.8614297 \\
 		\hline
 	\end{tabular}
 	\caption{Vivado AXI Solution Timing Report}

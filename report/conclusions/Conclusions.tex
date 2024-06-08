@@ -1,4 +1,4 @@
-Si può notare che le soluzioni aventi il minor numero di risorse utilizzate risultano essere la "Loop Unrolling Factor=2 Manual Solution" e la "Loop Unrolling Factor=2 Automatic Solution". In particolare, entrambe presentano, rispetto alla soluzione iniziale non ottimizzata, una diminuzione di circa il $64\%$ in corrispondenza delle LUT e del $55\%$ in corrispondenza dei FF. Inoltre, si può evidenziare un andamento crescente del numero dei FF al diminuire del periodo di clock in corrispondenza delle soluzioni hardware basate sulla tecnica dell'Operation Chaining. Infine, si può notare i picchi di utilizzazione delle risorse in corrispondenza rispettivamente delle soluzioni hardware "Loop Unrolling Factor=2 Automatic and Partitioning Solution" e "Loop Unrolling Factor=4 Automatic and Partitioning Solution".
+Si può notare che le soluzioni aventi il minor numero di risorse utilizzate risultano essere la "Loop Unrolling Factor=2 Manual Solution" e la "Loop Unrolling Factor=2 Automatic Solution". In particolare, entrambe presentano, rispetto alla soluzione iniziale non ottimizzata, una diminuzione di circa il $64\%$ in corrispondenza delle LUT e del $55\%$ in corrispondenza dei FF. Inoltre, si può evidenziare un andamento crescente del numero dei FF al diminuire del periodo di clock in corrispondenza delle soluzioni hardware basate sulla tecnica dell'Operation Chaining. Infine, si possono notare i picchi di utilizzazione delle risorse in corrispondenza rispettivamente delle soluzioni hardware "Loop Unrolling Factor=2 Automatic and Partitioning Solution" e "Loop Unrolling Factor=4 Automatic and Partitioning Solution".
 
 \begin{table}[H]
 	\centering
@@ -23,6 +23,7 @@ Si può notare che le soluzioni aventi il minor numero di risorse utilizzate ris
 		Op Chain 5ns & 186 & 32 & 258 & 0 & 4 & 71 & 1 \\
 		Op Chain 4ns & 188 & 32 & 376 & 0 & 4 & 71 & 1 \\
 		Loop Pipe & 311 & 0 & 458 & 0 & 2 & 71 & 1 \\
+		AXI & 739 & 0 & 699 & 0 & 0 & 93 & 1 \\
 		\hline
 	\end{tabular}
 	\caption{Vivado Solutions Utilization Report [\#]}
@@ -37,7 +38,7 @@ Si può notare che le soluzioni aventi il minor numero di risorse utilizzate ris
 \end{figure}
 
 
-Per quanto riguarda la potenza dinamica totale e l'energia per singola operazione, i minori valori si hanno in corrispondenza delle soluzioni hardware basate su "Loop Unrolling Factor=2 Manual Solution", "Loop Unrolling Factor=2 Automatic Solution" e "Loop Unrolling Factor=4 Automatic Solution". Inoltre, si può evidenziare un andamento crescente al diminuire del periodo di clock in corrispondenza delle soluzioni hardware basate sulla tecnica dell'Operation Chaining. In particolare, in corrispondenza di un clock pari a 4ns si ha la soluzione hardware che presenta il maggior valore di potenza dinamica totale associata. Invece, il valore di energia per singola operazione si ha in corrispondenza della soluzione "Loop Unrolling Factor=4 Automatic and Partitioning Solution".
+Per quanto riguarda la potenza dinamica totale e l'energia per singola operazione, i valori minori si hanno in corrispondenza delle soluzioni hardware basate sul loop unrolling di fattore pari a 2 manuale e automatico e di fattore pari a 4 automatico. Inoltre, si può evidenziare un andamento crescente al diminuire del periodo di clock in corrispondenza delle soluzioni hardware basate sulla tecnica dell'Operation Chaining. Infine, si può notare come i massimi valori si hanno in corrispondenza della soluzione AXI poiché, come precedentemente citato, si tiene conto della logica di controllo associata all'interfaccia.
 
 \begin{table}[H]
 	\centering
@@ -63,6 +64,7 @@ Per quanto riguarda la potenza dinamica totale e l'energia per singola operazion
 		Op Chain 5ns & 0 & 0.556948828 & 3.174162703 & 0.291668839 & 0.943421735 & 0.004532358 & 0.906153 \\
 		Op Chain 4ns & 0 & 0.57213963 & 3.804846667 & 0.253423554 & 0.799402245 & 0.002476984 & 0.756326073 \\
 		Loop Pipe & 0 & 0.196236724 & 1.778833685 & 0.814738101 & 1.275097136 & 0.012051522 & 1.206569896 \\
+		AXI & 0 & 0.361682673 &	2.409646753 & 0 & 7.963255048 &	0.008282737 & 5.53872576 \\
 		\hline
 	\end{tabular}
 	\caption{Vivado Solutions Dynamic Power Report [mW]}
@@ -94,6 +96,7 @@ Per quanto riguarda la potenza dinamica totale e l'energia per singola operazion
 			Op Chain 5ns & 5.876887 \\
 			Op Chain 4ns & 6.188615 \\
 			Loop Pipe & 5.283527 \\
+			AXI & 16.28159297 \\
 			\hline
 		\end{tabular}
 		\caption{Vivado Solutions Total Dynamic Power Report [mW]}
@@ -124,6 +127,7 @@ Per quanto riguarda la potenza dinamica totale e l'energia per singola operazion
 			Op Chain 5ns & 29.38444 \\
 			Op Chain 4ns & 24.75446 \\
 			Loop Pipe & 52.83527 \\
+			AXI & 162.8159297 \\
 			\hline
 		\end{tabular}
 		\caption{Vivado Solutions Energy Single Operation Report [pJ]}
@@ -138,7 +142,7 @@ Per quanto riguarda la potenza dinamica totale e l'energia per singola operazion
 	\label{fig:vivado-solutions-power-plot}
 \end{figure}
 
-Per quanto riguarda il report di timing, si può notare come il minor numero di cicli, utili per ottenere un risultato, si ha in corrispondenza della soluzione "Loop Pipelining Solution". Inoltre, si può evidenziare un andamento crescente al diminuire del periodo di clock in corrispondenza delle soluzioni hardware basate sulla tecnica dell'Operation Chaining. In particolare, in corrispondenza di un clock pari a 4ns si ha la soluzione hardware che presenta il maggior valore di cicli.
+Per quanto riguarda il report di timing, si può notare come il minor numero di cicli, utili per ottenere un risultato, si ha in corrispondenza della soluzione "AXI Solution" poiché, come già citato precedentemente, viene garantito un risultato parziale per ogni ciclo di clock a differenza delle altre solution che garantivano un risultato parziale con un numero di cicli nettamente maggiore (nel caso del "Loop Pipelining Solution", ad esempio, pari a 16). Tanto è vero che nella tabella, sotto allegata, in corrispondenza di "AXI Solution" il numero di cicli è pari a 1. Inoltre, si può evidenziare un andamento crescente al diminuire del periodo di clock in corrispondenza delle soluzioni hardware basate sulla tecnica dell'Operation Chaining. In particolare, in corrispondenza di un clock pari a 4ns si ha la soluzione hardware che presenta il maggior valore di cicli.
 \\
 Riguardo, invece, la Maximum Clock Frequency, il massimo valore si ha in corrispondenza della soluzione "Operation Chaining clk=4ns Solution" che presenta un valore pari a circa $282 MHz$. In particolare, nel caso della tecnica Operation Chaining, al diminuire del periodo del clock il WNS diminuisce e la massima frequenza aumenta.
 
@@ -166,6 +170,7 @@ Riguardo, invece, la Maximum Clock Frequency, il massimo valore si ha in corrisp
 		Op Chain 5ns & 88 & 5 & 0.374 & 216.1694769\\
 		Op Chain 4ns & 131 & 4 & 0.454 & 282.0078962\\
 		Loop Pipe & 16 & 10 & 4.208 & 172.6519337\\
+		AXI & 1 & 10 & 1.369 & 115.8614297\\
 		\hline
 	\end{tabular}
 	\caption{Vivado Solutions Timing Report}
@@ -179,4 +184,4 @@ Riguardo, invece, la Maximum Clock Frequency, il massimo valore si ha in corrisp
 	\label{fig:vivado-maximum-clock-frequency-plot}
 \end{figure}
 
-Tenendo conto delle analisi e dei confronti effettuati, si possono evidenziare alcune tecniche che presentano dei trade-off interessanti. In particolare, per quanto riguarda la tecnica dell'Operation Chaining, come già precedentemente citato, il periodo di clock ottimale è pari a 7ns. Infatti, confrontandola con la soluzione iniziale non ottimizzata, in corrispondenza di tale soluzione hardware si ha un leggero incremento del numero di cicli ma allo stesso tempo presenta un aumento della Maximum Clock Frequency e una diminuzione delle risorse utilizzate. Ovviamente bisogna anche tenere presente di un leggero aumento della potenza dinamica totale e dell'energia per singola operazione. Bisogna notare che una soluzione migliore rispetto a quella appena citata si ha in corrispondenza delle "Loop Unrolling Factor=2 Manual Solution" e "Loop Unrolling Factor=2 Automatic Solution". Tanto è vero che esse presentano, rispetto alla soluzione iniziale non ottimizzata, una diminuzione notevole delle risorse, una diminuzione della potenza dinamica totale e dell'energia per singola operazione e un aumento della Maximum Clock Frequency. Bisogna notare, però, che in corrispondenza di tali soluzioni si ha un leggero aumento del numero di cicli utili per ottenere un risultato. Ovviamente, nel caso in cui si debba ottenere il minor numero di cicli, bisognerebbe scegliere, come già precedentemente citato, la soluzione basata su pipelining che presenta una diminuzione di circa il $63\%$ di tale parametro. Ad ogni modo, si avrebbe, in corrispondenza di tale soluzione hardware, un aumento dell'utilizzazione delle risorse, un aumento della potenza dinamica totale e dell'energia per singola operazione.
+Tenendo conto delle analisi e dei confronti effettuati, si possono evidenziare alcune tecniche che presentano dei trade-off interessanti. In particolare, per quanto riguarda la tecnica dell'Operation Chaining, come già precedentemente citato, il periodo di clock ottimale è pari a 7ns. Infatti, confrontandola con la soluzione iniziale non ottimizzata, in corrispondenza di tale soluzione hardware si ha un leggero incremento del numero di cicli ma allo stesso tempo presenta un aumento della Maximum Clock Frequency e una diminuzione delle risorse utilizzate. Ovviamente bisogna anche tenere presente di un leggero aumento della potenza dinamica totale e dell'energia per singola operazione. Bisogna notare che una soluzione migliore rispetto a quella appena citata si ha in corrispondenza delle "Loop Unrolling Factor=2 Manual Solution" e "Loop Unrolling Factor=2 Automatic Solution". Tanto è vero che esse presentano, rispetto alla soluzione iniziale non ottimizzata, una diminuzione notevole delle risorse, una diminuzione della potenza dinamica totale e dell'energia per singola operazione e un aumento della Maximum Clock Frequency. Bisogna notare, però, che in corrispondenza di tali soluzioni si ha un leggero aumento del numero di cicli utili per ottenere un risultato. Ovviamente, nel caso in cui si debba ottenere il minor numero di cicli, bisognerebbe scegliere, come già precedentemente citato, la soluzione basata su AXI poiché permette di avere in uscita un risultato parziale per ogni ciclo di clock. Ad ogni modo, si avrebbe, in corrispondenza di tale soluzione hardware, un aumento dell'utilizzazione delle risorse, un aumento della potenza dinamica totale e dell'energia per singola operazione dovuti alla logica di controllo associata allo standard.

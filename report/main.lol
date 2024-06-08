@@ -29,4 +29,5 @@
 \contentsline {lstlisting}{solutions/loop\textunderscore pipelining/clk\textunderscore constraint.xdc}{58}{lstlisting.-29}%
 \contentsline {lstlisting}{solutions/bitwidth\textunderscore optimization/fir\textunderscore bitwidth\textunderscore optimization.cpp}{59}{lstlisting.-30}%
 \contentsline {lstlisting}{solutions/axi/fir\textunderscore axi.cpp}{61}{lstlisting.-31}%
-\contentsline {lstlisting}{solutions/axi/clk\textunderscore constraint.xdc}{63}{lstlisting.-32}%
+\contentsline {lstlisting}{solutions/axi/firConvolutionAXI\textunderscore top.vhd }{63}{lstlisting.-32}%
+\contentsline {lstlisting}{solutions/axi/clk\textunderscore constraint.xdc}{64}{lstlisting.-33}%
