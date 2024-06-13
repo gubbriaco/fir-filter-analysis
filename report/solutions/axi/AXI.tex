@@ -18,6 +18,8 @@ Per quanto riguarda, invece, le direttive specificate inizialmente, la prima fa 
 \\
 Inoltre, si può notare come, all'interno del ciclo while, sia stato specificato un approccio \textit{non blocking}, cioè in riferimento al fatto che non si sa a priori la quantità di dati entranti nel buffer.
 \\
+In aggiunta, si evidenzia l'utilizzo della direttiva di pipeline dove viene specificato II=1. Questo pragma è di fondamentale utilizzo per garantire le performance che ci si aspetta dallo standard in questione e, in particolare, un throughput unitario affinché la latenza totale sia la minima possibile. Infatti, come verrà analizzato e spiegato in seguito, in corrispondenza di tale solution si riesce a garantire un numero di cicli di latenza pari alla capacità del filtro corrispondente.
+\\
 Ovviamente, bisogna specificare che il segnale di \textit{TLAST} sarà pari a 1 soltanto nel momento in cui si ha il risultato finale, cioè in corrispondenza dell'accumulo finale.
 \\
 Effettuando la sintesi, la C/RTL Cosimulation e l'Export RTL si ottengono i seguenti report.
