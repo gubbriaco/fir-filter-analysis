@@ -90,12 +90,12 @@
 \contentsline {table}{\numberline {89}{\ignorespaces HLS AXI Solution Timing Summary (ns)}}{62}{table.89}%
 \contentsline {table}{\numberline {90}{\ignorespaces HLS AXI Solution Latency Summary (clock cycles)}}{62}{table.90}%
 \contentsline {table}{\numberline {91}{\ignorespaces HLS AXI Solution Latency Loops Summary }}{62}{table.91}%
-\contentsline {table}{\numberline {92}{\ignorespaces HLS AXI Solution Utilization Estimates Summary}}{62}{table.92}%
+\contentsline {table}{\numberline {92}{\ignorespaces HLS AXI Solution Utilization Estimates Summary}}{63}{table.92}%
 \contentsline {table}{\numberline {93}{\ignorespaces HLS AXI Solution C/RTL Cosimulation Summary }}{63}{table.93}%
 \contentsline {table}{\numberline {94}{\ignorespaces HLS AXI Solution Export RTL Resource Usage}}{63}{table.94}%
 \contentsline {table}{\numberline {95}{\ignorespaces HLS AXI Solution Export RTL Final Timing}}{63}{table.95}%
 \contentsline {table}{\numberline {96}{\ignorespaces Vivado AXI Solution Utilization Report [\#]}}{64}{table.96}%
-\contentsline {table}{\numberline {97}{\ignorespaces Vivado AXI Solution Timing Report}}{64}{table.97}%
+\contentsline {table}{\numberline {97}{\ignorespaces Vivado AXI Solution Timing Report}}{65}{table.97}%
 \contentsline {table}{\numberline {98}{\ignorespaces Vivado AXI Solution Dynamic Power Report [mW]}}{65}{table.98}%
 \contentsline {table}{\numberline {99}{\ignorespaces Vivado AXI Solution Dynamic Power Report [mW]}}{65}{table.99}%
 \contentsline {table}{\numberline {100}{\ignorespaces Vivado AXI Solution Energy Single Operation Report [pJ]}}{65}{table.100}%
