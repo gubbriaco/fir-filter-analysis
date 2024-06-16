@@ -21,13 +21,14 @@
 \contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor2/fir\textunderscore loop\textunderscore unrolling\textunderscore automatic\textunderscore factor2.cpp}{41}{lstlisting.-21}%
 \contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor2/fir\textunderscore loop\textunderscore unrolling\textunderscore automatic\textunderscore partiotioning\textunderscore factor2.cpp}{41}{lstlisting.-22}%
 \contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor2/clk\textunderscore constraint.xdc}{44}{lstlisting.-23}%
-\contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor4/fir\textunderscore loop\textunderscore unrolling\textunderscore manual\textunderscore factor4.cpp}{48}{lstlisting.-24}%
-\contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor4/fir\textunderscore loop\textunderscore unrolling\textunderscore automatic\textunderscore factor4.cpp}{48}{lstlisting.-25}%
-\contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor4/fir\textunderscore loop\textunderscore unrolling\textunderscore automatic\textunderscore partiotioning\textunderscore factor4.cpp}{48}{lstlisting.-26}%
-\contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor2/clk\textunderscore constraint.xdc}{51}{lstlisting.-27}%
-\contentsline {lstlisting}{solutions/loop\textunderscore pipelining/fir\textunderscore loop\textunderscore pipelining.cpp}{56}{lstlisting.-28}%
-\contentsline {lstlisting}{solutions/loop\textunderscore pipelining/clk\textunderscore constraint.xdc}{58}{lstlisting.-29}%
-\contentsline {lstlisting}{solutions/bitwidth\textunderscore optimization/fir\textunderscore bitwidth\textunderscore optimization.cpp}{59}{lstlisting.-30}%
-\contentsline {lstlisting}{solutions/axi/fir\textunderscore axi.cpp}{61}{lstlisting.-31}%
-\contentsline {lstlisting}{solutions/axi/firConvolutionAXI\textunderscore top.vhd }{63}{lstlisting.-32}%
-\contentsline {lstlisting}{solutions/axi/clk\textunderscore constraint.xdc}{64}{lstlisting.-33}%
+\contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor2/unrolling\textunderscore loopAccumulator.cpp}{48}{lstlisting.-24}%
+\contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor4/fir\textunderscore loop\textunderscore unrolling\textunderscore manual\textunderscore factor4.cpp}{49}{lstlisting.-25}%
+\contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor4/fir\textunderscore loop\textunderscore unrolling\textunderscore automatic\textunderscore factor4.cpp}{49}{lstlisting.-26}%
+\contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor4/fir\textunderscore loop\textunderscore unrolling\textunderscore automatic\textunderscore partiotioning\textunderscore factor4.cpp}{49}{lstlisting.-27}%
+\contentsline {lstlisting}{solutions/loop\textunderscore unrolling/factor2/clk\textunderscore constraint.xdc}{52}{lstlisting.-28}%
+\contentsline {lstlisting}{solutions/loop\textunderscore pipelining/fir\textunderscore loop\textunderscore pipelining.cpp}{57}{lstlisting.-29}%
+\contentsline {lstlisting}{solutions/loop\textunderscore pipelining/clk\textunderscore constraint.xdc}{59}{lstlisting.-30}%
+\contentsline {lstlisting}{solutions/bitwidth\textunderscore optimization/fir\textunderscore bitwidth\textunderscore optimization.cpp}{60}{lstlisting.-31}%
+\contentsline {lstlisting}{solutions/axi/fir\textunderscore axi.cpp}{62}{lstlisting.-32}%
+\contentsline {lstlisting}{solutions/axi/firConvolutionAXI\textunderscore top.vhd }{64}{lstlisting.-33}%
+\contentsline {lstlisting}{solutions/axi/clk\textunderscore constraint.xdc}{65}{lstlisting.-34}%
