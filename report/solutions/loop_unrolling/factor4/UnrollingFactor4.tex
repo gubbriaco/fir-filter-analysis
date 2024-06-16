@@ -257,3 +257,76 @@ Analogamente all'unrolling di fattore pari a 2, anche in questo caso in corrispo
 \end{table}
 
 Bisogna notare un aspetto molto interessante. La potenza dinamica totale e l'energia per singola operazione associata alla soluzione hardware basata su loop unrolling automatico di fattore pari a 4 risultano essere pressocché le medesime di quelle relative all'unrolling automatico di fattore pari a 2. Questo potrebbe essere dovuto a ottimizzazione effettuate dal tool tramite la direttiva proprietaria dell'unrolling.
+
+
+Inoltre, si potrebbe analizzare un ulteriore caso di unrolling. In particolare, potrebbe essere effettuato un unrolling manuale del loop di accumulo. Nello specifico, verrà analizzato soltanto il report di sintesi per effettuare un confronto con la soluzione basata su unrolling manuale del loop di shifting.
+
+\lstinputlisting[language=C++]{solutions/loop_unrolling/factor4/fir_loop_unrolling_manual_factor4_accumulator.cpp}
+
+\begin{table}[H]
+	\centering
+	\begin{minipage}[t]{0.45\linewidth}
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Clock} & \textbf{Target} & \textbf{Estimated} & \textbf{Uncertainty} \\
+			\hline
+			ap\_clk & 10.00 & 8.510 & 1.25 \\
+			\hline
+		\end{tabular}
+		\caption{HLS Loop Unrolling Factor=4 Accumulator Solution Timing Summary (ns)}
+		\label{tab:hls-loop-unrolling4-accumulator-solution-timing-summary}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.45\linewidth}
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{2}{|c|}{\textbf{Interval}} \\
+			min & max & min & max \\
+			\hline
+			37 & 37 & 37 & 37 \\
+			\hline
+		\end{tabular}
+		\caption{HLS Loop Unrolling Factor=4 Accumulator Solution Latency Summary (clock cycles)}
+		\label{tab:hls-loop-unrolling4-accumulator-solution-latency-summary}
+	\end{minipage}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|c|}{Loop} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{1}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip Count}}  \\
+		Name & min & max & & achieved & target &  \\
+		\hline
+		- loopShifting & 12 & 12 & 4 & - & - & 3 \\
+		- loopAccumulator & 10 & 10 & 5 & - & - & 2 \\
+		- Loop3 & 10 & 10 & 5 & - & - & 2 \\
+		\hline
+	\end{tabular}
+	\caption{HLS Loop Unrolling Factor=4 Accumulator Solution Latency Loops Summary }
+	\label{tab:hls-loop-unrolling4-accumulator-solution-loop-summary}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|c|c|c|c|}
+		\hline
+		\textbf{Name}    & \textbf{BRAM\_18K} & \textbf{DSP48E} & \textbf{FF} & \textbf{LUT} \\ \hline
+		DSP              & -                   & -               & -           & -            \\ 
+		Expression       & -                   & 10               & 0           & 423          \\ 
+		FIFO             & -                   & -               & -           & -            \\ 
+		Instance         & -                   & -               & -           & -            \\ 
+		Memory           & 2                   & -               & 20          & 2            \\ 
+		Multiplexer      & -                   & -               & -           & 258          \\ 
+		Register         & -                   & -               & 422         & -            \\ \hline
+		\textbf{Total}   & 2                   & 10               & 442         & 683          \\ \hline
+		\textbf{Available} & 280               & 220             & 106400      & 53200        \\ \hline
+		\textbf{Utilization (\%)} & 0            & 4              & $\sim$0     & 1     \\ \hline
+	\end{tabular}
+	\caption{HLS Loop Unrolling Factor=4 Accumulator Solution Utilization Estimates Summary}
+	\label{tab:hls-loop-unrolling4-accumulator-solution-utilization-estimates-summary}
+\end{table}
+
+In particolare, si può notare come il trip count associato al loopAccumulator risulta essere minore rispetto a quello relativo alla solution basata su unrolling manuale del loopShifting. Inoltre, si può notare che il numero di DSP è aumentato di 8 unità, il numero dei FF è aumentato del $100\%$ e il numero di LUT di circa il $115\%$ dal momento che è stato applicato l'unrolling anche sul loopAccumulator. Ovviamente, anche se l'utilizzazione delle risorse è aumentata, si può evidenziare come la latenza associata sia notevolmente diminuita.

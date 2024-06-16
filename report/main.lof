@@ -21,12 +21,12 @@
 \contentsline {figure}{\numberline {20}{\ignorespaces Vivado Loop Unrolling Factor=2 Utilization Plot}}{45}{figure.20}%
 \contentsline {figure}{\numberline {21}{\ignorespaces Vivado Loop Unrolling Factor=2 Timing Plot}}{46}{figure.21}%
 \contentsline {figure}{\numberline {22}{\ignorespaces Vivado Loop Unrolling Factor=2 Dynamic Power Plot}}{47}{figure.22}%
-\contentsline {figure}{\numberline {23}{\ignorespaces HLS Loop Unrolling Manual Factor=4 Analysis}}{50}{figure.23}%
-\contentsline {figure}{\numberline {24}{\ignorespaces HLS Loop Unrolling Automatic Factor=4 Analysis}}{50}{figure.24}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Vivado Loop Unrolling Factor=4 Utilization Plot}}{52}{figure.25}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Vivado Loop Unrolling Factor=4 Timing Plot}}{53}{figure.26}%
-\contentsline {figure}{\numberline {27}{\ignorespaces HLS Loop Pipelining}}{55}{figure.27}%
-\contentsline {figure}{\numberline {28}{\ignorespaces AXI4-Stream Protocol}}{61}{figure.28}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Vivado Solutions Utilization Plot}}{66}{figure.29}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Vivado Total Dynamic Power and Energy Single Operation Plot}}{68}{figure.30}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Vivado Solutions Maximum Clock Frequency Plot}}{69}{figure.31}%
+\contentsline {figure}{\numberline {23}{\ignorespaces HLS Loop Unrolling Manual Factor=4 Analysis}}{52}{figure.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces HLS Loop Unrolling Automatic Factor=4 Analysis}}{52}{figure.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Vivado Loop Unrolling Factor=4 Utilization Plot}}{54}{figure.25}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Vivado Loop Unrolling Factor=4 Timing Plot}}{55}{figure.26}%
+\contentsline {figure}{\numberline {27}{\ignorespaces HLS Loop Pipelining}}{58}{figure.27}%
+\contentsline {figure}{\numberline {28}{\ignorespaces AXI4-Stream Protocol}}{64}{figure.28}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Vivado Solutions Utilization Plot}}{69}{figure.29}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Vivado Total Dynamic Power and Energy Single Operation Plot}}{71}{figure.30}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Vivado Solutions Maximum Clock Frequency Plot}}{72}{figure.31}%
