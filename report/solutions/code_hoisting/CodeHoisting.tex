@@ -39,12 +39,12 @@ Pertanto, si mostrano qui di seguito i report, generati da HLS, riguardo la sint
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
         \hline
-        \multicolumn{1}{|c|}{Loop} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{2}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip Count}}  \\
-        Name & min & max & min & max & achieved & target &  \\
+        \multicolumn{1}{|c|}{Loop} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{1}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip Count}}  \\
+        Name & min & max & & achieved & target &  \\
         \hline
-        - loop & 40 & 40 & 4 & 4 & - & - & 10 \\
+        - loop & 40 & 40 & 4 $\sim$ 4 & - & - & 10 \\
         \hline
     \end{tabular}
     \caption{HLS Code Hoisting Solution Latency Loops Summary }
@@ -59,7 +59,7 @@ Si può notare come il numero di iterazioni del loop, in questo caso, sia pari a
     \caption{HLS Code Hoisting Solution Trip Count Analysis}
 \end{figure}
 
-In particolare, è opportuno fare un'attenta riflessione riguardo la latenza totale dell'architettura hardware in questione. Il report di sintesi, effettivamente, ha restituito una stima di tale valore pari a 42 dal momento bisogna considera una latenza totale del loop pari a 40, un ciclo di latency ulteriori dovuti alla lettura iniziale dell'input (come avviene per ogni soluzione progettata) e, come ultimo, un altro ciclo finale dovuto alle due operazioni in parallelo effettuate: accumulo associato al coefficiente in posizione 0 e scrittura del dato in uscita. Precedentemente, nella soluzione iniziale non ottimizzata, tale latenza finale non era prevista dal momento che il caso $i==0$ veniva gestito all'interno del loop mediante istruzione condizionale e la scrittura del dato in uscita veniva effettuata in parallelo all'operazione appena citata.
+In particolare, è opportuno fare un'attenta riflessione riguardo la latenza totale dell'architettura hardware in questione. Il report di sintesi, effettivamente, ha restituito una stima di tale valore pari a 42 dal momento bisogna considera una latenza totale del loop pari a 40, un ciclo di latency ulteriore dovuto alla lettura iniziale dell'input (come avviene per ogni soluzione progettata) e, come ultimo, un altro ciclo finale dovuto alle due operazioni in parallelo effettuate: accumulo associato al coefficiente in posizione 0 e scrittura del dato in uscita. Precedentemente, nella soluzione iniziale non ottimizzata, tale latenza finale non era prevista dal momento che il caso $i==0$ veniva gestito all'interno del loop mediante istruzione condizionale e la scrittura del dato in uscita veniva effettuata in parallelo all'operazione appena citata.
 
 \begin{table}[h]
     \centering
@@ -97,7 +97,7 @@ Si può notare come il report di C/RTL Cosimulation evidenzi un ciclo di latenza
     \label{tab:hls-code-hoisting-solution-cosimulation-summary}
 \end{table}
 
-Inoltre, si può notare come il numero di risorse relative alla soluzione hardware in questione risulta essere pressocché il medesimo tranne per il numero di FF che risulta essere ridotto di circa il 18\%. In aggiunta, si evidenzia come, rispetto alla soluzione iniziale, il periodo di clock raggiunto nella fase di post-implementation (stimato) risulta essere maggiore e, pertanto, avente una corrispondente incertezza minore.
+Inoltre, si può notare come il numero di risorse relative alla soluzione hardware in questione risulta essere pressocché il medesimo tranne per il numero di FF che risulta essere ridotto di circa il 18\%.
 
 \begin{table}[H]
     \centering
@@ -173,7 +173,7 @@ Dal momento che il WNS è diminuito, si può notare come la maximum clock freque
     \label{tab:vivado-code-hoisting-solution-timing-reproot}
 \end{table}
 
-Per quanto riguarda la potenza dinamica e l'energia per singola operazione, si evidenzia un aumento rispetto alla soluzione iniziale. Si può ipotizzare che, dal punto di vista della potenza, il tool riesca meglio ad ottimizzare direttamente tutte le operazioni relative ad accumulo e shifting nello stesso ciclo, anziché averne 10 nel ciclo ed una al di fuori. 
+Per quanto riguarda la potenza dinamica e l'energia per singola operazione, si evidenzia un aumento rispetto alla soluzione iniziale. Si può ipotizzare che, dal punto di vista della potenza, il tool riesca meglio ad ottimizzare direttamente tutte le operazioni relative ad accumulo e shifting nello stesso ciclo, anziché avere 10 operazioni all'interno del loop e una fuori dal ciclo. 
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -217,4 +217,4 @@ Per quanto riguarda la potenza dinamica e l'energia per singola operazione, si e
     \end{minipage}
 \end{table}
 
-Pertanto, se da una parte si è ottenuto una piccola diminuzione delle risorse avendo gestito l'overhead di risorse dovuto alle istruzioni condizionali presenti all'interno del loop, dall'altra parte si è ottenuto un aumento di circa il 21\% della potenza dinamica rispetto alla soluzione iniziale noon ottimizzata.
+Pertanto, se da una parte si è ottenuto una piccola diminuzione delle risorse avendo gestito l'overhead di risorse dovuto alle istruzioni condizionali presenti all'interno del loop, dall'altra parte si è ottenuto un aumento di circa il 21\% della potenza dinamica rispetto alla soluzione iniziale non ottimizzata.

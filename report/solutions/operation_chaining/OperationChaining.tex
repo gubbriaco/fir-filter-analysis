@@ -61,26 +61,26 @@ Qui di seguito verranno presentati i report associati alla sintesi, C/RTL Cosimu
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
         \hline
-        \multicolumn{1}{|c|}{\textbf{Solution}} & \multicolumn{1}{|c|}{Loop} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{2}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip Count}}  \\
-        & Name & min & max & min & max & achieved & target &  \\
+        \multicolumn{1}{|c|}{\textbf{Solution}} & \multicolumn{1}{|c|}{Loop} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{1}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip Count}}  \\
+        & Name & min & max &  & achieved & target &  \\
         \hline
-        clk=10ns & - loop & 22 & 44 & 2 & 4 & - & - & 11 \\
+        clk=10ns & - loop & 22 & 44 & 2 $\sim$ 4 & - & - & 11 \\
         \hline
-        clk=9ns & - loop & 22 & 55 & 2 & 5 & - & - & 11 \\
+        clk=9ns & - loop & 22 & 55 & 2 $\sim$ 5 & - & - & 11 \\
         \hline
-        clk=8ns & - loop & 22 & 55 & 2 & 5 & - & - & 11 \\
+        clk=8ns & - loop & 22 & 55 & 2 $\sim$ 5 & - & - & 11 \\
         \hline
-        clk=7ns & - loop & 22 & 66 & 2 & 6 & - & - & 11 \\
+        clk=7ns & - loop & 22 & 66 & 2 $\sim$ 6 & - & - & 11 \\
         \hline
-        clk=6ns & - loop & 22 & 88 & 2 & 8 & - & - & 11 \\
+        clk=6ns & - loop & 22 & 88 & 2 $\sim$ 8 & - & - & 11 \\
         \hline
-        clk=5ns & - loop & 22 & 88 & 2 & 8 & - & - & 11 \\
+        clk=5ns & - loop & 22 & 88 & 2 $\sim$ 8 & - & - & 11 \\
         \hline
-        clk=4ns & - loop & 33 & 132 & 3 & 12 & - & - & 11 \\
+        clk=4ns & - loop & 33 & 132 & 3 $\sim$ 12 & - & - & 11 \\
         \hline
-        clk=3ns & - loop & 33 & 132 & 3 & 12 & - & - & 11 \\
+        clk=3ns & - loop & 33 & 132 & 3 $\sim$ 12 & - & - & 11 \\
         \hline
     \end{tabular}
     \caption{HLS Operation Chaining Solution Latency Loops Summary }
@@ -278,7 +278,7 @@ Pertanto, si procede con l'analisi dei report delle soluzioni hardware implement
     \label{fig:vivado-operation-chaining-timing-plot}
 \end{figure}
 
-Si può notare come in corrispondenza dell'architettura hardware a cui corrisponde un periodo di clock pari a 7ns si ha l'utilizzazione delle risorse minore a meno del numero di LUT e FF che risulta essere aumentato rispettivamente di un'unità e di 66 unità. Questo aumento di risorse può essere giustificato dal momento che, rispetto alla soluzione iniziale non ottimizzata a 10ns, il periodo del clock risulta essere diminuito e, pertanto, il tool prevede una gestione delle istruzioni in maniera più complessa comportando un'aumento delleee risorse stesse. Tanto è vero che al diminuire del periodo di clock, si ha un aumento delle risorse utilizzate e dei cicli di clock considerati per ottenere un nuovo risultato. In particolare, per quanto riguarda la massima frequenza di clock associata ad ogni soluzione proposta in questa sezione, si può notare come quella a cui corrisponde un periodo di clock pari a 7ns, presenta una maximum clock frequency maggiore rispetto a quelle avente periodo maggiore. Questo aumento lo si può, inoltre, evidenziare nelle successive soluzioni aventi periodo di clock ancora minore. Tanto è vero che il WNS, al diminuire del clock constraint, anch'esso diminuisce.
+Si può notare come in corrispondenza dell'architettura hardware a cui corrisponde un periodo di clock pari a 7ns si ha l'utilizzazione delle risorse minore a meno del numero di LUT e FF che risulta essere aumentato rispettivamente di un'unità e di 66 unità. Questo aumento di risorse può essere giustificato dal momento che, rispetto alla soluzione iniziale non ottimizzata a 10ns, il periodo del clock risulta essere diminuito e, pertanto, il tool prevede una gestione delle istruzioni in maniera più complessa comportando un'aumento delle risorse stesse. Tanto è vero che al diminuire del periodo di clock, si ha un aumento delle risorse utilizzate e dei cicli di clock considerati per ottenere un nuovo risultato. In particolare, per quanto riguarda la massima frequenza di clock associata ad ogni soluzione proposta in questa sezione, si può notare come quella a cui corrisponde un periodo di clock pari a 7ns, presenta una maximum clock frequency maggiore rispetto a quelle avente periodo maggiore. Questo aumento lo si può, inoltre, evidenziare nelle successive soluzioni aventi periodo di clock ancora minore. Tanto è vero che il WNS, al diminuire del clock constraint, anch'esso diminuisce.
 
 \begin{table}[H]
     \centering
