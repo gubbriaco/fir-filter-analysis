@@ -37,13 +37,13 @@ Si può notare come la latenza sia aumentata rispetto alle soluzioni precedenti 
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
         \hline
-        \multicolumn{1}{|c|}{Loop} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{2}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip Count}}  \\
-        Name & min & max & min & max & achieved & target &  \\
+        \multicolumn{1}{|c|}{Loop} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{1}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip Count}}  \\
+        Name & min & max &  & achieved & target &  \\
         \hline
-        - loopShifting & 20 & 20 & 2 & 2 & - & - & 10 \\
-        - loopAccumulator & 44 & 44 & 4 & 4 & - & - & 11 \\
+        - loopShifting & 20 & 20 & 2  & - & - & 10 \\
+        - loopAccumulator & 44 & 44 & 4  & - & - & 11 \\
         \hline
     \end{tabular}
     \caption{HLS Loop Fission Solution Latency Loops Summary }

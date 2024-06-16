@@ -43,19 +43,19 @@ Si può evidenziare come, nel caso della soluzione hardware con urolling automat
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
         \hline
-        \multicolumn{1}{|c|}{\textbf{Solution}} & \multicolumn{1}{|c|}{Loop Name} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{2}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip}}  \\
-        &  & min & max & min & max & achieved & target & \textbf{Count} \\
+        \multicolumn{1}{|c|}{\textbf{Solution}} & \multicolumn{1}{|c|}{Loop Name} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{1}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip}}  \\
+        &  & min & max & & achieved & target & \textbf{Count} \\
         \hline
-        Manuale & - loopShifting & 10 & 10 & 2 & 2 & - & - & 5 \\
-        & - loopAccumulator & 44 & 44 & 4 & 4 & - & - & 11 \\
+        Manuale & - loopShifting & 10 & 10 & 2 & - & - & 5 \\
+        & - loopAccumulator & 44 & 44 & 4 & - & - & 11 \\
         \hline
-        Automatico & - loopShifting & 10 & 10 & 2 & 2 & - & - & 5 \\
-        & - loopAccumulator & 44 & 44 & 4 & 4 & - & - & 11 \\
+        Automatico & - loopShifting & 10 & 10 & 2 & - & - & 5 \\
+        & - loopAccumulator & 44 & 44 & 4 & - & - & 11 \\
         \hline
-        Automatico  & - loopShifting & 15 & 20 & 3 & 4 & - & - & 5 \\
-        con Partitioning & - loopAccumulator & 44 & 44 & 4 & 4 & - & - & 11 \\
+        Automatico  & - loopShifting & 15 & 20 & 3 $\sim$ 4 & - & - & 5 \\
+        con Partitioning & - loopAccumulator & 44 & 44 & 4 & - & - & 11 \\
         \hline
     \end{tabular}
     \caption{HLS Loop Unrolling Factor=2 Solution Latency Loops Summary }

@@ -1,6 +1,6 @@
 In questa sezione verrà discussa una possibile implementazione di una soluzione hardware basata su un approccio non ottimizzato (medesimo a quello iniziale) in cui è stato considerato il protocollo AXI4-Stream. Pertanto, tale solution, come si vedrà in seguito, può essere considerata come un'ottimizzazione dal punto di vista della latenza ma non è da considerare come possibile ottimizzazione dal punto di vista dell'utilizzazione delle risorse e della potenza dinamica rispetto alle precedenti. Anzi potrebbe essere considerata come un esempio di utilizzo dello standard in corrispondenza di una delle solution precedentemente citate. In particolare, come già citato per semplicità si farà riferimento alla \textit{Unoptimized Solution}.
 \\
-Il protocollo AXI4-Stream è utilizzato come interfaccia standard per collegare componenti che desiderano scambiare dati. L'interfaccia può essere utilizzata per collegare un singolo master, che genera dati, a un singolo slave, che riceve dati. Il protocollo può essere utilizzato anche per collegare un numero maggiore di componenti master e slave. Lo standard supporta flussi di dati multipli che utilizzano lo stesso insieme di bus condivisi, consentendo di costruire un'interconnessione generica. In particolare, con l'interfaccia Stream si garantisce un nuovo dato in input ad ogni colpo di clock. In questo caso specifico, quindi, ci si aspetta che lo standard garantisca 11 dati in input per 11 colpi di clock così da essere processati ed essere messi in uscita.
+Il protocollo AXI4-Stream è utilizzato come interfaccia standard per collegare componenti che desiderano scambiare dati. L'interfaccia può essere utilizzata per collegare un singolo master, che genera dati, a un singolo slave, che riceve dati. Il protocollo può essere utilizzato anche per collegare un numero maggiore di componenti master e slave. In particolare, con l'interfaccia Stream si garantisce un nuovo dato in input ad ogni colpo di clock. In questo caso specifico, quindi, ci si aspetta che lo standard garantisca 11 dati in input per 11 colpi di clock così da essere processati ed essere messi in uscita.
 
 \begin{figure}[H]
 	\centering
@@ -19,8 +19,6 @@ Per quanto riguarda, invece, le direttive specificate inizialmente, la prima fa 
 Inoltre, si può notare come, all'interno del ciclo while, sia stato specificato un approccio \textit{non blocking}, cioè in riferimento al fatto che non si sa a priori la quantità di dati entranti nel buffer.
 \\
 In aggiunta, si evidenzia l'utilizzo della direttiva di pipeline dove viene specificato II=1. Questo pragma è di fondamentale utilizzo per garantire le performance che ci si aspetta dallo standard in questione e, in particolare, un throughput unitario affinché la latenza totale sia la minima possibile. Infatti, come verrà analizzato e spiegato in seguito, in corrispondenza di tale solution si riesce a garantire un numero di cicli di latenza pari alla capacità del filtro corrispondente.
-\\
-Ovviamente, bisogna specificare che il segnale di \textit{TLAST} sarà pari a 1 soltanto nel momento in cui si ha il risultato finale, cioè in corrispondenza dell'accumulo finale.
 \\
 Effettuando la sintesi, la C/RTL Cosimulation e l'Export RTL si ottengono i seguenti report.
 
@@ -58,12 +56,12 @@ Si può notare come la latenza totale e quella relativa al ciclo for presentano 
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
 		\hline
-		\multicolumn{1}{|c|}{Loop} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{2}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip Count}}  \\
-		Name & min & max & min & max & achieved & target &  \\
+		\multicolumn{1}{|c|}{Loop} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{1}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip Count}}  \\
+		Name & min & max & & achieved & target &  \\
 		\hline
-		- loop & ? & ? & 4 & 4 & 1 & 1 & ? \\
+		- loop & ? & ? & 4  & 1 & 1 & ? \\
 		\hline
 	\end{tabular}
 	\caption{HLS AXI Solution Latency Loops Summary }
@@ -180,7 +178,7 @@ Si può evidenziare come il numero di cicli utile per garantire un risultato in 
 	\label{tab:vivado-axi-solution-timing-report}
 \end{table}
 
-Per quanto riguarda la potenza dinamica totale e l'energia per singola operazione, si può notare un aumento rispetto alla soluzione dove non è presenta la logica di controllo relativa al protocollo AXI. In particolare, notevoli aumenti si hanno in corrispondenza dei contributi di \textit{Clocks}, \textit{Logic} e \textit{Data}.
+Per quanto riguarda la potenza dinamica totale e l'energia per singola operazione, si può notare un aumento rispetto alla soluzione dove non è presente la logica di controllo relativa al protocollo AXI. In particolare, notevoli aumenti si hanno in corrispondenza dei contributi di \textit{Clocks}, \textit{Logic} e \textit{Data}.
 
 \begin{table}[H]
 	\centering

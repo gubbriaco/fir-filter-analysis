@@ -16,7 +16,7 @@ In particolare, è possibile evidenziare due parametri fondamentali per questa t
 
 Idealmente, ci si aspetta un throughput pari a 1 perchè corrisponderebbe al caso migliore per il pipelining. Ovviamente non sempre è possibile ottenere un throughput pari a 1 ma in questo caso l'obiettivo è quello di ottenerlo.
 \\
-Il pipelining in HLS è possibile implementarlo mediante una direttiva proprietaria che permette, inoltre, di specificare l'Initiation Interval desiderato. Tanto è vero che all'interno del report di sintesi viene specificato l'II target, cioè quello specificato nella direttiva, e l'II raggiunto dal tool. Teoricamente, si dovrebbe ottenere II\_target=II\_achieved. Se così non fosse allora il tool non è riuscito a raggiungere l'obiettivo prefissato. Pertanto, si potrebbe modificare il codice per vedere se effettivamente il problema può essere risolto nella seguente maniera. Se così non fosse, evidentemente non dipende dal codice ma dal tipo di applicazione che si sta cercando di implementare che non lo permette.
+Il pipelining in HLS è possibile implementarlo mediante una direttiva proprietaria che permette, inoltre, di specificare l'Initiation Interval desiderato. Tanto è vero che all'interno del report di sintesi viene specificato l'II target, cioè quello specificato nella direttiva, e l'II raggiunto dal tool. Teoricamente, si dovrebbe ottenere II\_target=II\_achieved. Se così non fosse allora il tool non è riuscito a raggiungere l'obiettivo prefissato. Pertanto, si potrebbe modificare il codice per vedere se effettivamente il problema può essere risolto nella seguente maniera. 
 
 \lstinputlisting[language=C++]{solutions/loop_pipelining/fir_loop_pipelining.cpp}
 
@@ -63,19 +63,19 @@ In particolare, considerando il valore di Iteration Latency, il valore del Trip 
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
         \hline
-        \multicolumn{1}{|c|}{Loop} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{2}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip Count}}  \\
-        Name & min & max & min & max & achieved & target &  \\
+        \multicolumn{1}{|c|}{Loop} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{1}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip Count}}  \\
+        Name & min & max & & achieved & target &  \\
         \hline
-        - loop & 13 & 13 & 4 & 4 & 1 & 1 & 11 \\
+        - loop & 13 & 13 & 4 & 1 & 1 & 11 \\
         \hline
     \end{tabular}
     \caption{HLS Loop Pipelining Solution Latency Loops Summary }
     \label{tab:hls-loop-pipelining-solution-loop-summary}
 \end{table}
 
-Per quanto riguarda l'utilizzazione stimata delle risorse, si può notare come il numero di FF sia aumentato rispetto alla soluzione non ottimizzata dal momento che è stato utilizzato il pragma di partizionamento tale da partizionare shiftRegister in diverse strutture da un certo numero di FF ciascuna anziché utilizzare BRAM.
+Per quanto riguarda l'utilizzazione stimata delle risorse, si può notare come il numero di FF sia aumentato rispetto alla soluzione non ottimizzata dal momento che è stato utilizzato il pragma di partizionamento.
 
 \begin{table}[H]
     \centering

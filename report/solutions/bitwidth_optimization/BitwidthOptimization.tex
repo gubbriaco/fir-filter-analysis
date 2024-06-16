@@ -7,7 +7,7 @@ Per quanto riguarda, invece, il numero di bit previsto per gli elementi presenti
 \\
 In particolare, l'architettura di riferimento utilizzata è basata sulla \textit{Code Hoisting Solution}. Pertanto, considerando i risultati ottenuti in corrispondenza della soluzione hardware citata ed effettuando la sintesi, la C/RTL Cosimulation e l'Export RTL della \textit{Bitwidth Optimization Solution}, è possibile effettuare i seguenti confronti.
 \\
-Si può notare come, dopo aver effettuato la sintesi, il numero di risorse, rispetto alla soluzione basata su Code Hoisting, presenti una diminuzione di circa il $65\%$ dei FF e di circa il $55\%$ delle LUT. Il numero dei DSP stimati e diminuito di 2 unità. Inoltre, si può notare come la latenza stimata è diminuita di 10 cicli rispetto alla soluzione presa come riferimento. Ovviamente il Trip Count è il medesimo dal momento che l'architettura proposta nella \textit{Bitwidth Optimization Solution} è equivalente a quella proposta nel \textit{Code Hoisting Solution}.
+Si può notare come, dopo aver effettuato la sintesi, il numero di risorse, rispetto alla soluzione basata su Code Hoisting, presenti una diminuzione di circa il $65\%$ dei FF e di circa il $55\%$ delle LUT. Il numero dei DSP stimati è diminuito di 2 unità. Inoltre, si può notare come la latenza stimata è diminuita di 10 cicli rispetto alla soluzione presa come riferimento. Ovviamente il Trip Count è il medesimo dal momento che l'architettura proposta nella \textit{Bitwidth Optimization Solution} è equivalente a quella proposta nel \textit{Code Hoisting Solution}.
 
 \begin{table}[H]
 	\centering
@@ -42,14 +42,14 @@ Si può notare come, dopo aver effettuato la sintesi, il numero di risorse, risp
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
 		\hline
-		\multicolumn{1}{|c|}{\textbf{Solution}} & \multicolumn{1}{|c|}{Loop Name} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{2}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip}}  \\
-		&  & min & max & min & max & achieved & target & \textbf{Count} \\
+		\multicolumn{1}{|c|}{\textbf{Solution}} & \multicolumn{1}{|c|}{Loop Name} & \multicolumn{2}{|c|}{\textbf{Latency}} & \multicolumn{1}{c|}{\textbf{Iteration Latency}} & \multicolumn{2}{c|}{\textbf{Initiation Interval}} & \multicolumn{1}{c|}{\textbf{Trip}}  \\
+		&  & min & max & & achieved & target & \textbf{Count} \\
 		\hline
-		Code Hoisting & - loop & 40 & 40 & 4 & 4 & - & - & 10 \\
+		Code Hoisting & - loop & 40 & 40 & 4 & - & - & 10 \\
 		\hline
-		Bitwidth Opt. & - loop & 30 & 30 & 3 & 3 & - & - & 10 \\
+		Bitwidth Opt. & - loop & 30 & 30 & 3 & - & - & 10 \\
 		\hline
 	\end{tabular}
 	\caption{HLS Bitwidth Optimization Solution Latency Loops Summary }
